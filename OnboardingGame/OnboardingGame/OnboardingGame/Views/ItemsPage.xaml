@@ -5,7 +5,8 @@
              Title="{Binding Title}"
              xmlns:local="clr-namespace:OnboardingGame.ViewModels"  
              xmlns:model="clr-namespace:OnboardingGame.Models"  
-             x:Name="BrowseItemsPage">
+             x:Name="BrowseItemsPage"
+             Shell.TabBarIsVisible="False">
 
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Add" Command="{Binding AddItemCommand}" />
