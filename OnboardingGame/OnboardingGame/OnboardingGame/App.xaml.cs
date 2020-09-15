@@ -33,7 +33,6 @@ namespace OnboardingGame
 
                     Database.SaveItemAsync(itemT0).Wait();
                     Database.SaveItemAsync(itemT1).Wait();
-
                 }
                 return database;
             }
@@ -46,8 +45,10 @@ namespace OnboardingGame
             MainPage = new AppShell();
         }
 
-        protected override void OnStart()
-        {
+        protected override void OnStart() {
+            if(Database.GetToDoListAsync().Result.Count == 0) {
+
+            }
         }
 
         protected override void OnSleep()
