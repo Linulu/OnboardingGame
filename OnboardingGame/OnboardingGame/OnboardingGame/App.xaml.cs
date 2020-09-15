@@ -19,16 +19,21 @@ namespace OnboardingGame
                     database = new Database(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "Data.db3"));
 
                     ToDoList listT = new ToDoList();
-                    TaskItem itemT = new TaskItem();
+                    TaskItem itemT0 = new TaskItem();
+                    TaskItem itemT1 = new TaskItem();
 
                     listT.Name = "ListItem";
-                    itemT.Description = "TaskItem";
+                    itemT0.Description = "TaskItem";
+                    itemT1.Description = "TaskItem2";
 
                     Database.SaveItemAsync(listT).Wait();
 
-                    itemT.ListID = Database.GetToDoListAsync().Result[0].ID;
+                    itemT0.ListID = Database.GetToDoListAsync().Result[0].ID;
+                    itemT1.ListID = Database.GetToDoListAsync().Result[0].ID;
 
-                    Database.SaveItemAsync(itemT).Wait();
+                    Database.SaveItemAsync(itemT0).Wait();
+                    Database.SaveItemAsync(itemT1).Wait();
+
                 }
                 return database;
             }
