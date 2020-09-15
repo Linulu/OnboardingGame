@@ -18,9 +18,13 @@ namespace OnboardingGame.Data
         }
 
         //Return a list of TaskItems who's ListID matches that of the given id 
-        //parameter. Use this method to get all the TaskItems from a given ToDoList
-        public Task<List<TaskItem>> GetTaskFromListAsync(int id) {
+        //parameter. Use this method to get all the TaskItems from a given ToDoList 
+        public Task<List<TaskItem>> GetTasksFromListAsync(int id) {
             return _database.Table<TaskItem>().Where(i => i.ListID == id).ToListAsync();
+        }
+
+        public Task<List<TaskItem>> GetTaskItem() {
+            return _database.Table<TaskItem>().ToListAsync();
         }
 
         public Task<TaskItem> GetTaskItem(int id) {
