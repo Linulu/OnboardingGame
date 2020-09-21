@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Text;
 using OnboardingGame.Models;
 using System.Threading.Tasks;
+using System.Data.SqlTypes;
 
 namespace OnboardingGame.Data
 {
@@ -21,6 +22,10 @@ namespace OnboardingGame.Data
         //parameter. Use this method to get all the TaskItems from a given ToDoList 
         public Task<List<TaskItem>> GetTasksFromListAsync(int id) {
             return _database.Table<TaskItem>().Where(i => i.ListID == id).ToListAsync();
+        }
+
+        public Task<ToDoList> GetLatestSavedList() {
+            return _database.Table<ToDoList>().ElementAtAsync(_database.Table<ToDoList>().CountAsync().Result - 1);
         }
 
         public Task<List<TaskItem>> GetTaskItem() {

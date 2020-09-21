@@ -5,7 +5,9 @@
              Title="{Binding Name}">
     <ContentPage.Content>
         <StackLayout Margin="20, 35, 20, 20">
-            <ListView ItemsSource="{Binding List}">
+            <ListView ItemsSource="{Binding List}"
+                      HasUnevenRows="True"
+                      ItemSelected="OnListViewItemSelected">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>

@@ -26,5 +26,13 @@ namespace OnboardingGame.Pages
 
             BindingContext = this;
         }
+
+        async void OnListViewItemSelected(object sender, SelectedItemChangedEventArgs e) {
+            Console.WriteLine((e.SelectedItem as TaskItem).Description);
+        }
+
+        async void OnListViewItemTapped(object sender, ItemTappedEventArgs e) { 
+            
+        }
     }
 }
