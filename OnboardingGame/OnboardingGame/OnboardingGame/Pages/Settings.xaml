@@ -2,10 +2,12 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              Shell.TabBarIsVisible="False"
-             Title="Profile"
-             x:Class="OnboardingGame.Pages.Profile">
+             Title="Settings"
+             x:Class="OnboardingGame.Pages.Settings">
     <ContentPage.Content>
         <StackLayout Margin="20,35,20,20">
+            <Button Text="Reset Data"
+                    Clicked="OnButtonPress"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

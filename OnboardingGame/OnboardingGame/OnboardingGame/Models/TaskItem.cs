@@ -19,8 +19,22 @@ namespace OnboardingGame.Models
         [ForeignKey(typeof(ToDoList))]
         public int ListID { get; set; }
 
-        public const int NOT_STARTED = -1;
-        public const int STARTED = 0;
-        public const int COMPLETED = 1;
+        public string StatusMessage {
+            get {
+                if (Status < 0)
+                {
+                    return "Not Started";
+                }
+                else if (Status > 0)
+                {
+                    return "Completed";
+                }
+                else if (Status == 0)
+                {
+                    return "Started";
+                }
+                return "No status set";
+            }
+        }
     }
 }

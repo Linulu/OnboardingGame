@@ -20,22 +20,6 @@ namespace OnboardingGame
             get {
                 if (database == null) {
                     database = new Database(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "Data.db3"));
-
-                    /*ToDoList listT = new ToDoList();
-                    TaskItem itemT0 = new TaskItem();
-                    TaskItem itemT1 = new TaskItem();
-
-                    listT.Name = "ListItem";
-                    itemT0.Description = "TaskItem";
-                    itemT1.Description = "TaskItem2";
-
-                    Database.SaveItemAsync(listT).Wait();
-
-                    itemT0.ListID = Database.GetToDoListAsync().Result[0].ID;
-                    itemT1.ListID = Database.GetToDoListAsync().Result[0].ID;
-
-                    Database.SaveItemAsync(itemT0).Wait();
-                    Database.SaveItemAsync(itemT1).Wait();*/
                 }
                 return database;
             }
@@ -61,11 +45,12 @@ namespace OnboardingGame
                 while ((line = file.ReadLine()) != null) {
                     if (line.Contains("\t"))
                     {
+                        line = line.Replace("\t", "");
                         await Database.SaveItemAsync(new TaskItem()
                         {
                             ListID = Database.GetLatestSavedList().Result.ID,
-                            Description = Regex.Replace(line, @"\t", ""),
-                            Status = TaskItem.NOT_STARTED
+                            Description = line,
+                            Status = -1
                         });
                     }
                     else {

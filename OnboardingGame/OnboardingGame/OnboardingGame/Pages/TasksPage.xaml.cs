@@ -13,26 +13,40 @@ namespace OnboardingGame.Pages
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class TasksPage : ContentPage
     {
-        public List<TaskItem> List { get; private set; }
-
-        public string Name { get; private set; }
+        private int ListID { get; set; }
 
         public TasksPage(int listID)
         {   
             InitializeComponent();
-
-            Name = App.Database.GetToDoListAsync(listID).Result.Name;
-            List = App.Database.GetTasksFromListAsync(listID).Result;
-
-            BindingContext = this;
+            ListID = listID;
+            Title = App.Database.GetToDoListAsync(ListID).Result.Name;
         }
 
-        async void OnListViewItemSelected(object sender, SelectedItemChangedEventArgs e) {
-            Console.WriteLine((e.SelectedItem as TaskItem).Description);
-        }
-
-        async void OnListViewItemTapped(object sender, ItemTappedEventArgs e) { 
+        protected override async void OnAppearing() {
+            base.OnAppearing();
             
+            listView.ItemsSource = await App.Database.GetTasksFromListAsync(ListID);
+        }
+
+        async void OnListViewItemTapped(object sender, ItemTappedEventArgs e) {
+
+            if ((e.Item as TaskItem).Status < 0)
+            {
+                bool response = await DisplayAlert(Title, (e.Item as TaskItem).Description, "Start this task", "Cancel");
+                (e.Item as TaskItem).Status = response.CompareTo(false) - 1;
+                await App.Database.SaveItemAsync(e.Item as TaskItem);
+                listView.ItemsSource = await App.Database.GetTasksFromListAsync(ListID);
+            }
+            else if ((e.Item as TaskItem).Status == 0)
+            {
+                bool response = await DisplayAlert(Title, (e.Item as TaskItem).Description, "Finish this task", "Cancel");
+                (e.Item as TaskItem).Status = response.CompareTo(false);
+                await App.Database.SaveItemAsync(e.Item as TaskItem);
+                listView.ItemsSource = await App.Database.GetTasksFromListAsync(ListID);
+            }
+            else {
+                await DisplayAlert("Completed", "Congratulations you've completed this task!", "Next Task");
+            }
         }
     }
 }
