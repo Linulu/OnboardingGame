@@ -6,8 +6,11 @@
              x:Class="OnboardingGame.Pages.Settings">
     <ContentPage.Content>
         <StackLayout Margin="20,35,20,20">
+            <Button Text="Change Profile Name"
+                    Clicked="ProfileButtonPress"/>
             <Button Text="Reset Data"
-                    Clicked="OnButtonPress"/>
+                    Clicked="OnButtonPress"
+                    BackgroundColor="Red"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

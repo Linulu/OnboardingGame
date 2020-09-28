@@ -6,6 +6,9 @@
              x:Class="OnboardingGame.Pages.Profile">
     <ContentPage.Content>
         <StackLayout Margin="20,35,20,20">
+            <Label Text="{Binding Name}"
+                   FontSize="Large"/>
+            <Label x:Name="Lvl"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

@@ -1,11 +1,12 @@
-﻿using SQLite;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using SQLite;
+using SQLiteNetExtensions.Attributes;
 
 namespace OnboardingGame.Models
 {
-    public class ToDoList
+    public class PlayerProfile
     {
         [PrimaryKey, AutoIncrement]
         public int ID { get; set; }

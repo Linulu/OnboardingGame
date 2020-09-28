@@ -45,6 +45,7 @@ namespace OnboardingGame
                 while ((line = file.ReadLine()) != null) {
                     if (line.Contains("\t"))
                     {
+                        //Split the line variable at the "/" to get the Title and Description separately
                         line = line.Replace("\t", "");
                         await Database.SaveItemAsync(new TaskItem()
                         {
@@ -56,7 +57,8 @@ namespace OnboardingGame
                     else {
                         await Database.SaveItemAsync(new ToDoList()
                         {
-                            Name = line
+                            Name = line,
+                            EXP = 10
                         });
                     }
                 }
