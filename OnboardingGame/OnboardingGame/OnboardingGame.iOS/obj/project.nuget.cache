@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "xPF4urR0NtSt4a2IYpytGmKqFfd04fa5oWARmDCUNewzpLPaTFfCibWTloYRjOzl9aQgu6mAjsQd2VbtWqpl9w==",
+  "dgSpecHash": "gMo8XHiI8VvThCKFerLoqQE76Bwa2Bqvtf8MqaCzDAStmh+A8VImFzwdzPe7ETkepGIG9FYCfWzajbreDWybSA==",
   "success": true,
   "projectFilePath": "C:\\Users\\lcg\\Git\\OnboardingGame\\OnboardingGame\\OnboardingGame\\OnboardingGame.iOS\\OnboardingGame.iOS.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\lcg\\.nuget\\packages\\newtonsoft.json\\9.0.1\\newtonsoft.json.9.0.1.nupkg.sha512",
+    "C:\\Users\\lcg\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512",
     "C:\\Users\\lcg\\.nuget\\packages\\sqlite-net-pcl\\1.7.335\\sqlite-net-pcl.1.7.335.nupkg.sha512",
     "C:\\Users\\lcg\\.nuget\\packages\\sqlitenetextensions\\2.1.0\\sqlitenetextensions.2.1.0.nupkg.sha512",
     "C:\\Users\\lcg\\.nuget\\packages\\sqlitepclraw.bundle_green\\2.0.3\\sqlitepclraw.bundle_green.2.0.3.nupkg.sha512",

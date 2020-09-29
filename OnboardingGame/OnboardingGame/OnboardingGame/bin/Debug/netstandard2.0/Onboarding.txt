@@ -15,7 +15,7 @@ Onboarding-ticket till IT
 	Säkerhetställa att konto får tillgång till Microsoft Teams
 	Be om att vara lokal admin för datorn (Enbart Utvecklare)
 	Be om licens för Visual Studio (Enbart SW Devs)
-	Maila cloudios@phoniro.com för tillgång till SVN, Git, Azure DevOps and access ti the Azure test subscription (Enbart SW Devs)
+	Maila cloudios@phoniro.com för tillgång till SVN, Git, Azure DevOps and access to the Azure test subscription (Enbart SW Devs)
 	Beställ tillägg av mailgrupper enligt vilken gruppering som den anställde jobbar inom
 	Beställ tillägg av korrekt BOX-access
 Vid Start

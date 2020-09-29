@@ -1,0 +1,230 @@
+﻿{
+	"TaskItems":
+	[
+		{
+			"Title" = "Anställningsavtal in för arkivering",
+			"Description" = "Gör klart anställningsavtalet",
+			"ListID" = 0
+		},
+		{
+			"Title" = "CV",
+			"Description" = "Cv (box)",
+			"ListID" = 0
+		},
+		{
+			"Title" = "Info nyanställning på intranätet",
+			"Description" = "",
+			"ListID" = 0
+		},
+		{
+			"Title" = "AD konto, IT (Bilaga 1)",
+			"Description" = "",
+			"ListID" = 0
+		},
+		{
+			"Title" = "Dator (Bilaga 1)",
+			"Description" = "",
+			"ListID" = 0
+		},
+		{
+			"Title" = "Telefon (Bilaga 1)",
+			"Description" = "",
+			"ListID" = 0
+		},
+		{
+			"Title" = "Arbetesplats (Skrivbord, stol, m.m)",
+			"Description" = "",
+			"ListID" = 0
+		},
+		{
+			"Title" = "Bil (Om akutellt)",
+			"Description" = "",
+			"ListID" = 0
+		},
+		{
+			"Title" = "Blankett personaluppgifter vid nyanställning (Bank, & konto, anhörig)",
+			"Description" = "",
+			"ListID" = 0
+		},
+		{
+			"Title" = "Inloggning till avdelingsspecifika system (Bilaga 1)",
+			"Description" = "",
+			"ListID" = 1
+		},
+		{
+			"Title" = "Säkerhetställa konto för Service Now blit skapat",
+			"Description" = "",
+			"ListID" = 1
+		},
+		{
+			"Title" = "Säkerhetställa att phoniro.com blir avsändaradress",
+			"Description" = "",
+			"ListID" = 1
+		},
+		{
+			"Title" = "Säkerhetställa att konto får tillgång till Microsoft Teams",
+			"Description" = "",
+			"ListID" = 1
+		},
+		{
+			"Title" = "Be om att vara lokal admin för datorn (Enbart Utvecklare)",
+			"Description" = "",
+			"ListID" = 1
+		},
+		{
+			"Title" = "Be om licens för Visual Studio (Enbart SW Devs)",
+			"Description" = "",
+			"ListID" = 1
+		},
+		{
+			"Title" = "Maila cloudios@phoniro.com för tillgång till SVN, Git, Azure DevOps and access to the Azure test subscription (Enbart SW Devs)",
+			"Description" = "",
+			"ListID" = 1
+		},
+		{
+			"Title" = "Beställ tillägg av mailgrupper enligt vilken gruppering som den anställde jobbar inom",
+			"Description" = "",
+			"ListID" = 1
+		},
+		{
+			"Title" = "Beställ tillägg av korrekt BOX-access",
+			"Description" = "",
+			"ListID" = 1
+		},
+		{
+			"Title" = "Rundvandring, lokal kännedom, boka kort möte med skyddsombud",
+			"Description" = "",
+			"ListID" = 2
+		},
+		{
+			"Title" = "Arbetesplats, Skrivbord, Skrivbordstol",
+			"Description" = "",
+			"ListID" = 2
+		},
+		{
+			"Title" = "Historia, affärsidé, policies, mål, ägare, organisaton",
+			"Description" = "",
+			"ListID" = 2
+		},
+		{
+			"Title" = "Produkter. Visa videos om våra Produkter och tjänstererbjudande (Safe@Home, DKMCloud, KS03)",
+			"Description" = "",
+			"ListID" = 2
+		},
+		{
+			"Title" = "Intranät och Keypoint",
+			"Description" = "",
+			"ListID" = 2
+		},
+		{
+			"Title" = "Vett och Etikett, klädsel (se etiska riktlinjer och värderingar)",
+			"Description" = "",
+			"ListID" = 2
+		},
+		{
+			"Title" = "Kvalitetssystem (ISO)",
+			"Description" = "",
+			"ListID" = 2
+		},
+		{
+			"Title" = "Säkra upp en plats på introduktionsutbildning (2 dgr)",
+			"Description" = "",
+			"ListID" = 2
+		},
+		{
+			"Title" = "Ansvarsområden",
+			"Description" = "",
+			"ListID" = 2
+		},
+		{
+			"Title" = "Gruppens processer och rutiner",
+			"Description" = "",
+			"ListID" = 2
+		},
+		{
+			"Title" = "Kollegor",
+			"Description" = "",
+			"ListID" = 2
+		},
+		{
+			"Title" = "Rollbeskrivning",
+			"Description" = "",
+			"ListID" = 2
+		},
+		{
+			"Title" = "Avdelningspecifika program",
+			"Description" = "",
+			"ListID" = 2
+		},
+		{
+			"Title" = "Arbetsplats, PC(dataväska 500kr inkl moms), tangentbord, mus, kontorsmaterial, visitkort, namnskylt, postgång",
+			"Description" = "",
+			"ListID" = 2
+		},
+		{
+			"Title" = "Telefon, växelsystem SolunoBC, Skärmsydd(400kr inkl moms)",
+			"Description" = "",
+			"ListID" = 2
+		},
+		{
+			"Title" = "Företagskort",
+			"Description" = "",
+			"ListID" = 2
+		},
+		{
+			"Title" = "Larm, nycklar samt genomgång av Phoniro Care",
+			"Description" = "",
+			"ListID" = 2
+		},
+		{
+			"Title" = "Lönesamtal, lönepolicy, lönkriterier, lönerevision",
+			"Description" = "",
+			"ListID" = 2
+		},
+		{
+			"Title" = "Komepetensutveckling",
+			"Description" = "",
+			"ListID" = 2
+		},
+		{
+			"Title" = "Sekretessavtal",
+			"Description" = "",
+			"ListID" = 2
+		},
+		{
+			"Title" = "Genomgång personalhandbok samt infoblad till den anställde",
+			"Description" = "",
+			"ListID" = 2
+		},
+		{
+			"Title" = "Körjournal",
+			"Description" = "",
+			"ListID" = 2
+		},
+		{
+			"Title" = "Policy",
+			"Description" = "",
+			"ListID" = 2
+		},
+		{
+			"Title" = "Drivmedelskort",
+			"Description" = "",
+			"ListID" = 2
+		},
+	],
+	"ListItems":
+	[
+		{
+			"Exp" = 10,
+			"Name" = "Inför anställning"
+		},
+		{
+			"Exp" = 15,
+			"Name" = "Onboarding-ticket till IT"
+		},
+		{
+			"Exp" = 25,
+			"Name" = "Vid Start"
+		},
+	]
+}
