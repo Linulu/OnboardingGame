@@ -9,6 +9,8 @@ using System.Reflection;
 using System.Diagnostics;
 using OnboardingGame.Pages;
 using System.Text.RegularExpressions;
+using System.Runtime.InteropServices;
+using Newtonsoft.Json;
 
 namespace OnboardingGame
 {
@@ -39,13 +41,28 @@ namespace OnboardingGame
                 string line;
 
                 var assembly = IntrospectionExtensions.GetTypeInfo(typeof(TasksTab)).Assembly;
-                Stream stream = assembly.GetManifestResourceStream("OnboardingGame.Onboarding.txt");
+                Stream stream = assembly.GetManifestResourceStream("OnboardingGame.Onboarding.json");
 
                 StreamReader file = new StreamReader(stream);
-                while ((line = file.ReadLine()) != null) {
+                line = file.ReadToEnd();
+
+                var list = JsonConvert.DeserializeObject<JSON_Data>(line);
+
+                for (int i = 0; i < list.ListItems.Count; i++) {
+                    Database.SaveItemAsync(list.ListItems[i]);
+
+                    for (int j = 0; j < list.TaskItems.Count; j++) {
+                        if (list.TaskItems[j].ListID == i) {
+                            list.TaskItems[j].ListID = Database.GetLatestSavedList().Result.ID;
+                            await Database.SaveItemAsync(list.TaskItems[j]);
+                        }
+                    }
+                }
+
+                /*while ((line = file.ReadLine()) != null) {
                     if (line.Contains("\t"))
                     {
-                        //Split the line variable at the "/" to get the Title and Description separately
+                        
                         line = line.Replace("\t", "");
                         await Database.SaveItemAsync(new TaskItem()
                         {
@@ -61,7 +78,7 @@ namespace OnboardingGame
                             EXP = 10
                         });
                     }
-                }
+                }*/
             }
         }
 
