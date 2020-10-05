@@ -7,7 +7,7 @@ namespace OnboardingGame.Models
 {
     public class ToDoList
     {
-        [PrimaryKey, AutoIncrement]
+        [PrimaryKey]
         public int ID { get; set; }
         public int EXP { get; set; }
         public string Name { get; set; }

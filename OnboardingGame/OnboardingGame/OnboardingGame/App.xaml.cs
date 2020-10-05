@@ -11,6 +11,7 @@ using OnboardingGame.Pages;
 using System.Text.RegularExpressions;
 using System.Runtime.InteropServices;
 using Newtonsoft.Json;
+using System.Collections.Generic;
 
 namespace OnboardingGame
 {
@@ -46,39 +47,20 @@ namespace OnboardingGame
                 StreamReader file = new StreamReader(stream);
                 line = file.ReadToEnd();
 
-                var list = JsonConvert.DeserializeObject<JSON_Data>(line);
+                JSON_Data list = JsonConvert.DeserializeObject<JSON_Data>(line);
 
                 for (int i = 0; i < list.ListItems.Count; i++) {
-                    Database.SaveItemAsync(list.ListItems[i]);
+                    Database.SaveItemAsync(list.ListItems[i]).Wait();
 
-                    for (int j = 0; j < list.TaskItems.Count; j++) {
-                        if (list.TaskItems[j].ListID == i) {
-                            list.TaskItems[j].ListID = Database.GetLatestSavedList().Result.ID;
-                            await Database.SaveItemAsync(list.TaskItems[j]);
+                    // I don't like this solution....
+                    foreach (TaskItem element in list.TaskItems) {
+                        if (element.ListID == i) {
+                            element.ListID = list.ListItems[i].ID;
+                            element.Status = -1;
+                            await Database.SaveItemAsync(element);
                         }
                     }
                 }
-
-                /*while ((line = file.ReadLine()) != null) {
-                    if (line.Contains("\t"))
-                    {
-                        
-                        line = line.Replace("\t", "");
-                        await Database.SaveItemAsync(new TaskItem()
-                        {
-                            ListID = Database.GetLatestSavedList().Result.ID,
-                            Description = line,
-                            Status = -1
-                        });
-                    }
-                    else {
-                        await Database.SaveItemAsync(new ToDoList()
-                        {
-                            Name = line,
-                            EXP = 10
-                        });
-                    }
-                }*/
             }
         }
 

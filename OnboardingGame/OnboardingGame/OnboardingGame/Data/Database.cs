@@ -55,14 +55,7 @@ namespace OnboardingGame.Data
         }
         public Task<int> SaveItemAsync(ToDoList item)
         {
-            if (item.ID != 0)
-            {
-                return _database.UpdateAsync(item);
-            }
-            else
-            {
-                return _database.InsertAsync(item);
-            }
+            return _database.InsertAsync(item);
         }
         public Task<int> DeleteItemAsync(ToDoList item)
         {

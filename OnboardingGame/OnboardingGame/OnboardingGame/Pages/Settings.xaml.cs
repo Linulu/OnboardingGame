@@ -2,6 +2,7 @@
 using OnboardingGame.Views;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -27,6 +28,7 @@ namespace OnboardingGame.Pages
             {
                 await App.Database.DeletePlayerAsync();
 
+                
                 //Resets the status portion of every TaskItem in the TaskItem table
                 List<TaskItem> items = await App.Database.GetTaskItem();
 
