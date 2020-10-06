@@ -20,7 +20,7 @@
                                     <ColumnDefinition Width="*"/>
                                 </Grid.ColumnDefinitions>
                                 <Label Grid.Column="1"
-                                       Text="{Binding Description}"/>
+                                       Text="{Binding Title}"/>
                                 <Label Grid.Row="1"
                                        Grid.Column="1"
                                        Text="{Binding StatusMessage}"

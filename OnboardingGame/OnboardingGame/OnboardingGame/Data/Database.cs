@@ -19,6 +19,13 @@ namespace OnboardingGame.Data
             _database.CreateTableAsync<PlayerProfile>().Wait();
         }
 
+        public void DeleteDatabase() {
+            _database.DropTableAsync<TaskItem>().Wait();
+            _database.DropTableAsync<ToDoList>().Wait();
+            _database.DropTableAsync<PlayerProfile>().Wait();
+            _database.CloseAsync().Wait();
+        }
+
         //TaskItem_________________________________________________________________
         public Task<List<TaskItem>> GetTaskItem()
         {
@@ -55,14 +62,7 @@ namespace OnboardingGame.Data
         }
         public Task<int> SaveItemAsync(ToDoList item)
         {
-            if (item.ID != 0)
-            {
-                return _database.UpdateAsync(item);
-            }
-            else
-            {
-                return _database.InsertAsync(item);
-            }
+            return _database.InsertAsync(item);
         }
         public Task<int> DeleteItemAsync(ToDoList item)
         {

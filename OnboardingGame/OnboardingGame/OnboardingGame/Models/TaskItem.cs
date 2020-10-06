@@ -14,6 +14,7 @@ namespace OnboardingGame.Models
         public int ID { get; set; }
         
         public int Status { get; set; }
+        public string Title { get; set; }
         public string Description { get; set; }
 
         [ForeignKey(typeof(ToDoList))]

@@ -32,14 +32,14 @@ namespace OnboardingGame.Pages
 
             if ((e.Item as TaskItem).Status < 0)
             {
-                bool response = await DisplayAlert(Title, (e.Item as TaskItem).Description, "Start this task", "Cancel");
+                bool response = await DisplayAlert((e.Item as TaskItem).Title, (e.Item as TaskItem).Description, "Start this task", "Cancel");
                 (e.Item as TaskItem).Status = response.CompareTo(false) - 1;
                 await App.Database.SaveItemAsync(e.Item as TaskItem);
                 listView.ItemsSource = await App.Database.GetTasksFromListAsync(ListID);
             }
             else if ((e.Item as TaskItem).Status == 0)
             {
-                bool response = await DisplayAlert(Title, (e.Item as TaskItem).Description, "Finish this task", "Cancel");
+                bool response = await DisplayAlert((e.Item as TaskItem).Title, (e.Item as TaskItem).Description, "Finish this task", "Cancel");
                 (e.Item as TaskItem).Status = response.CompareTo(false);
                 await App.Database.SaveItemAsync(e.Item as TaskItem);
                 listView.ItemsSource = await App.Database.GetTasksFromListAsync(ListID);
