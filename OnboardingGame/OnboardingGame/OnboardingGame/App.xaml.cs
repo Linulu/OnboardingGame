@@ -18,14 +18,15 @@ namespace OnboardingGame
     public partial class App : Application
     {
         static Database database;
-
         public static Database Database {
             get {
-                if (database == null) {
+                if (database == null)
+                {
                     database = new Database(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "Data.db3"));
                 }
                 return database;
-            }
+            }  
+        
         }
 
         public App()
@@ -36,32 +37,40 @@ namespace OnboardingGame
         }
 
         //Initialize the Database here
-        protected override async void OnStart() {
+        public static async void InitializeDatabase() {
+            string line;
 
-            if (!File.Exists(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "Data.db3"))) {
-                string line;
+            var assembly = IntrospectionExtensions.GetTypeInfo(typeof(TasksTab)).Assembly;
+            Stream stream = assembly.GetManifestResourceStream("OnboardingGame.Onboarding.json");
 
-                var assembly = IntrospectionExtensions.GetTypeInfo(typeof(TasksTab)).Assembly;
-                Stream stream = assembly.GetManifestResourceStream("OnboardingGame.Onboarding.json");
+            StreamReader file = new StreamReader(stream);
+            line = file.ReadToEnd();
 
-                StreamReader file = new StreamReader(stream);
-                line = file.ReadToEnd();
+            JSON_Data list = JsonConvert.DeserializeObject<JSON_Data>(line);
 
-                JSON_Data list = JsonConvert.DeserializeObject<JSON_Data>(line);
+            for (int i = 0; i < list.ListItems.Count; i++)
+            {
+                await Database.SaveItemAsync(list.ListItems[i]);
 
-                for (int i = 0; i < list.ListItems.Count; i++) {
-                    Database.SaveItemAsync(list.ListItems[i]).Wait();
-
-                    // I don't like this solution....
-                    foreach (TaskItem element in list.TaskItems) {
-                        if (element.ListID == i) {
-                            element.ListID = list.ListItems[i].ID;
-                            element.Status = -1;
-                            await Database.SaveItemAsync(element);
-                        }
+                foreach (TaskItem element in list.TaskItems)
+                {
+                    if (element.ListID == i)
+                    {
+                        element.ListID = list.ListItems[i].ID;
+                        element.Status = -1;
+                        await Database.SaveItemAsync(element);
                     }
                 }
             }
+        }
+
+        public static void DeleteDatabase() {
+            Database.DeleteDatabase();
+            database = null;
+            File.Delete(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "Data.db3"));
+        }
+        
+        protected override void OnStart() {
         }
 
         protected override void OnSleep()

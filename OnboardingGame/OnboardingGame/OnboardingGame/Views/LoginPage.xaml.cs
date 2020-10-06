@@ -8,6 +8,7 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using OnboardingGame.Pages;
 using OnboardingGame.Models;
+using System.IO;
 
 namespace OnboardingGame.Views
 {
@@ -28,6 +29,11 @@ namespace OnboardingGame.Views
 
         private async void OnLoginClicked(object obj)
         {
+            if (!(File.Exists(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "Data.db3"))))
+            {
+                App.InitializeDatabase();
+            }
+
             if (await App.Database.GetPlayerProfile() == null)
             {
                 string result = await DisplayPromptAsync("Profile Setup", "What's your name?");

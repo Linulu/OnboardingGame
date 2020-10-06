@@ -9,6 +9,7 @@
             <Label Text="{Binding Name}"
                    FontSize="Large"/>
             <Label x:Name="Lvl"/>
+            <Label x:Name="Exp"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

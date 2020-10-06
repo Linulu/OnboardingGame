@@ -1,6 +1,7 @@
 ﻿using OnboardingGame.Models;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -37,7 +38,8 @@ namespace OnboardingGame.Pages
 
             await App.Database.SavePlayerAsync(pP);
 
-            Lvl.Text = "Level: " + (40+40*(pP.EXP/40))/pP.EXP;
+            Lvl.Text = "Level: " + (1 + (int)Math.Log(1+(EXP/10)));
+            Exp.Text = "Exp: " + EXP;
 
             this.BindingContext = pP;
         }

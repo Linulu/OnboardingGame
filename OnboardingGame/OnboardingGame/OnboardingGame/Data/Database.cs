@@ -19,6 +19,13 @@ namespace OnboardingGame.Data
             _database.CreateTableAsync<PlayerProfile>().Wait();
         }
 
+        public void DeleteDatabase() {
+            _database.DropTableAsync<TaskItem>().Wait();
+            _database.DropTableAsync<ToDoList>().Wait();
+            _database.DropTableAsync<PlayerProfile>().Wait();
+            _database.CloseAsync().Wait();
+        }
+
         //TaskItem_________________________________________________________________
         public Task<List<TaskItem>> GetTaskItem()
         {

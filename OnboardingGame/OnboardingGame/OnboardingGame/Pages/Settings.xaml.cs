@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 using Xamarin.Forms;
@@ -26,17 +27,7 @@ namespace OnboardingGame.Pages
 
             if (answer)
             {
-                await App.Database.DeletePlayerAsync();
-
-                
-                //Resets the status portion of every TaskItem in the TaskItem table
-                List<TaskItem> items = await App.Database.GetTaskItem();
-
-                foreach (var item in items)
-                {
-                    item.Status = -1;
-                    await App.Database.SaveItemAsync(item);
-                }
+                App.DeleteDatabase();
 
                 await Shell.Current.GoToAsync($"//{nameof(LoginPage)}");
             }
