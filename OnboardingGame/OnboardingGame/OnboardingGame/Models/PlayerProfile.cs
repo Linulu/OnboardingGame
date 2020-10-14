@@ -12,5 +12,6 @@ namespace OnboardingGame.Models
         public int ID { get; set; }
         public int EXP { get; set; }
         public string Name { get; set; }
+        public string Password { get; set; }
     }
 }
