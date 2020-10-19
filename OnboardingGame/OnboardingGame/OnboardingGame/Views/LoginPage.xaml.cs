@@ -9,6 +9,7 @@ using Xamarin.Forms.Xaml;
 using OnboardingGame.Pages;
 using OnboardingGame.Models;
 using System.IO;
+using System.Diagnostics;
 
 namespace OnboardingGame.Views
 {
@@ -16,6 +17,8 @@ namespace OnboardingGame.Views
     public partial class LoginPage : ContentPage
     {
         public Command LoginCommand { get; }
+        public String Username { get; set; }
+        public String Password { get; set; }
 
         public LoginPage()
         {
@@ -27,32 +30,49 @@ namespace OnboardingGame.Views
             this.BindingContext = this;
         }
 
-        private async void OnLoginClicked(object obj)
+        protected async override void OnAppearing()
         {
+            base.OnAppearing();
+
             if (!(File.Exists(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "Data.db3"))))
             {
-                await App.InitializeDatabase();
+                bool answer = await DisplayAlert("No Database found", "There seems to be no Database in the app currently.\nWould you like to set it up now","Yes","No");
+                if (answer) {
+                    ProfileSetUp();
+                }
             }
+        }
 
-            if (await App.Database.GetPlayerProfile() == null)
+        private async void OnLoginClicked(object obj)
+        {
+            if(!string.IsNullOrWhiteSpace(Username) || !string.IsNullOrWhiteSpace(Password))
             {
-                string name = await DisplayPromptAsync("Profile Setup", "What's your name?");
-                if (!string.IsNullOrWhiteSpace(name)) {
-                    string password = await DisplayPromptAsync("Password Setup", "Select a password");
-                    if (!string.IsNullOrWhiteSpace(password)) {
-                        await App.Database.SavePlayerAsync(new PlayerProfile()
-                        {
-                            Name = name,
-                            Password = password
-                        });
-                        await Shell.Current.GoToAsync($"//{nameof(TasksTab)}");
-                    }
+                if (App.Database.GetPlayerProfile().Result.Name.CompareTo(Username) == 0 && App.Database.GetPlayerProfile().Result.Password.CompareTo(Password) == 0)
+                {
+                    await Shell.Current.GoToAsync($"//{nameof(TasksTab)}");
+                }
+                else {
+                    await DisplayAlert("Error", "Wrong Username or Password", "Try Agian");
                 }
             }
             else {
-                string result = await DisplayPromptAsync("Current Profile: " + App.Database.GetPlayerProfile().Result.Name, "Password?");
-                if (App.Database.GetPlayerProfile().Result.Password.CompareTo(result) == 0) {
-                    // Prefixing with `//` switches to a different navigation stack instead of pushing to the active one
+                await DisplayAlert("Error","No Username or Password","Try Agian");
+            }
+        }
+
+        private async void ProfileSetUp() {
+            string name = await DisplayPromptAsync("Username", "Choose a Username?");
+            if (!string.IsNullOrWhiteSpace(name))
+            {
+                string password = await DisplayPromptAsync("Password", "Choose a password");
+                if (!string.IsNullOrWhiteSpace(password))
+                {
+                    await App.InitializeDatabase();
+                    await App.Database.SavePlayerAsync(new PlayerProfile()
+                    {
+                        Name = name,
+                        Password = password
+                    });
                     await Shell.Current.GoToAsync($"//{nameof(TasksTab)}");
                 }
             }

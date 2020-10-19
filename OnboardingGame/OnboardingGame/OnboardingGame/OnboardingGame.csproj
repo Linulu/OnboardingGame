@@ -7,6 +7,7 @@
 
   <ItemGroup>
     <None Remove="Onboarding.json" />
+    <None Remove="Phoniro_AssaAbloy.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -21,6 +22,10 @@
     <PackageReference Include="SQLiteNetExtensions" Version="2.1.0" />
     <PackageReference Include="Xamarin.Forms" Version="4.8.0.1364" />  
     <PackageReference Include="Xamarin.Essentials" Version="1.5.3.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Phoniro_AssaAbloy.png" />
   </ItemGroup>
 
   <ItemGroup>

@@ -6,6 +6,13 @@
        Title="OnboardingGame"
        x:Class="OnboardingGame.AppShell">
 
+
+    <Shell.FlyoutHeader>
+        <Grid BackgroundColor="Black">
+            <Image Aspect="Fill"
+                   Source="Phoniro_AssaAbloy.png"/>
+        </Grid>
+    </Shell.FlyoutHeader>
     <!--
         The overall app visual hierarchy is defined here, along with navigation.
     
