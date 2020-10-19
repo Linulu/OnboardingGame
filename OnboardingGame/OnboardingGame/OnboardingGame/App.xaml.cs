@@ -12,6 +12,7 @@ using System.Text.RegularExpressions;
 using System.Runtime.InteropServices;
 using Newtonsoft.Json;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace OnboardingGame
 {
@@ -37,14 +38,12 @@ namespace OnboardingGame
         }
 
         //Initialize the Database here
-        public static async void InitializeDatabase() {
-            string line;
-
+        public static async Task InitializeDatabase() {
             var assembly = IntrospectionExtensions.GetTypeInfo(typeof(TasksTab)).Assembly;
             Stream stream = assembly.GetManifestResourceStream("OnboardingGame.Onboarding.json");
 
             StreamReader file = new StreamReader(stream);
-            line = file.ReadToEnd();
+            string line = file.ReadToEnd();
 
             JSON_Data list = JsonConvert.DeserializeObject<JSON_Data>(line);
 
@@ -70,7 +69,7 @@ namespace OnboardingGame
             File.Delete(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "Data.db3"));
         }
         
-        protected override void OnStart() {
+        protected async override void OnStart() {
         }
 
         protected override void OnSleep()

@@ -11,7 +11,7 @@
     
         https://docs.microsoft.com/xamarin/xamarin-forms/app-fundamentals/shell/
     -->
-    
+
     <Shell.Resources>
         <ResourceDictionary>
             <Style x:Key="BaseStyle" TargetType="Element">
@@ -82,6 +82,7 @@
     -->
     <ShellContent Route="LoginPage" Shell.FlyoutBehavior="Disabled" ContentTemplate="{DataTemplate local:LoginPage}" />
     
+
     <!-- 
         When the Flyout is visible this defines the content to display in the flyout.
         FlyoutDisplayOptions="AsMultipleItems" will create a separate flyout item for each child element    

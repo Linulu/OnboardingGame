@@ -1,6 +1,7 @@
 ﻿using OnboardingGame.Models;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -28,7 +29,7 @@ namespace OnboardingGame.Pages
             listView.ItemsSource = await App.Database.GetTasksFromListAsync(ListID);
         }
 
-        async void OnListViewItemTapped(object sender, ItemTappedEventArgs e) {
+        /*async void OnListViewItemTapped(object sender, ItemTappedEventArgs e) {
 
             if ((e.Item as TaskItem).Status < 0)
             {
@@ -46,6 +47,18 @@ namespace OnboardingGame.Pages
             }
             else {
                 await DisplayAlert("Completed", "Congratulations you've completed this task!", "Next Task");
+            }
+        }*/
+
+        async void OnListItemTapped(object sender, SelectionChangedEventArgs e) {
+
+            if (e.CurrentSelection != null)
+            {
+                await Navigation.PushAsync(new TaskContent()
+                {
+                    Title = App.Database.GetToDoListAsync(ListID).Result.Name,
+                    BindingContext = (e.CurrentSelection.FirstOrDefault() as TaskItem)
+                });
             }
         }
     }

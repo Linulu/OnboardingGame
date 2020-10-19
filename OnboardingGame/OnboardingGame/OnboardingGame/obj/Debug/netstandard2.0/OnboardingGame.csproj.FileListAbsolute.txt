@@ -21,3 +21,4 @@ C:\Users\lcg\Git\OnboardingGame\OnboardingGame\OnboardingGame\OnboardingGame\obj
 C:\Users\lcg\Git\OnboardingGame\OnboardingGame\OnboardingGame\OnboardingGame\obj\Debug\netstandard2.0\OnboardingGame.csproj.CoreCompileInputs.cache
 C:\Users\lcg\Git\OnboardingGame\OnboardingGame\OnboardingGame\OnboardingGame\obj\Debug\netstandard2.0\XamlC.stamp
 C:\Users\lcg\Git\OnboardingGame\OnboardingGame\OnboardingGame\OnboardingGame\bin\Debug\netstandard2.0\Onboarding.json
+C:\Users\lcg\Git\OnboardingGame\OnboardingGame\OnboardingGame\OnboardingGame\obj\Debug\netstandard2.0\Pages\TaskContent.xaml.g.cs

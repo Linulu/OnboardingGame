@@ -31,23 +31,30 @@ namespace OnboardingGame.Views
         {
             if (!(File.Exists(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "Data.db3"))))
             {
-                App.InitializeDatabase();
+                await App.InitializeDatabase();
             }
 
             if (await App.Database.GetPlayerProfile() == null)
             {
-                string result = await DisplayPromptAsync("Profile Setup", "What's your name?");
-                if (result != null) {
-                    await App.Database.SavePlayerAsync(new PlayerProfile()
-                    {
-                        Name = result
-                    });
-                    await Shell.Current.GoToAsync($"//{nameof(TasksTab)}");
+                string name = await DisplayPromptAsync("Profile Setup", "What's your name?");
+                if (!string.IsNullOrWhiteSpace(name)) {
+                    string password = await DisplayPromptAsync("Password Setup", "Select a password");
+                    if (!string.IsNullOrWhiteSpace(password)) {
+                        await App.Database.SavePlayerAsync(new PlayerProfile()
+                        {
+                            Name = name,
+                            Password = password
+                        });
+                        await Shell.Current.GoToAsync($"//{nameof(TasksTab)}");
+                    }
                 }
             }
             else {
-                // Prefixing with `//` switches to a different navigation stack instead of pushing to the active one
-                await Shell.Current.GoToAsync($"//{nameof(TasksTab)}");
+                string result = await DisplayPromptAsync("Current Profile: " + App.Database.GetPlayerProfile().Result.Name, "Password?");
+                if (App.Database.GetPlayerProfile().Result.Password.CompareTo(result) == 0) {
+                    // Prefixing with `//` switches to a different navigation stack instead of pushing to the active one
+                    await Shell.Current.GoToAsync($"//{nameof(TasksTab)}");
+                }
             }
         }
     }

@@ -4,32 +4,30 @@
              x:Class="OnboardingGame.Pages.TasksPage">
     <ContentPage.Content>
         <StackLayout Margin="20, 35, 20, 20">
-            <ListView x:Name="listView"
-                      HasUnevenRows="True"
-                      ItemTapped="OnListViewItemTapped">
-                <ListView.ItemTemplate>
+            <CollectionView x:Name="listView"
+                      SelectionMode="Single"
+                      SelectionChanged="OnListItemTapped">
+                <CollectionView.ItemTemplate>
                     <DataTemplate>
-                        <ViewCell>
-                            <Grid Padding="10">
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="Auto"/>
-                                    <RowDefinition Height="*"/>
-                                </Grid.RowDefinitions>
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="Auto"/>
-                                    <ColumnDefinition Width="*"/>
-                                </Grid.ColumnDefinitions>
-                                <Label Grid.Column="1"
+                        <Grid Padding="10">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Grid.Column="1"
                                        Text="{Binding Title}"/>
-                                <Label Grid.Row="1"
+                            <Label Grid.Row="1"
                                        Grid.Column="1"
                                        Text="{Binding StatusMessage}"
                                        FontAttributes="Bold"/>
-                            </Grid>
-                        </ViewCell>
+                        </Grid>
                     </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

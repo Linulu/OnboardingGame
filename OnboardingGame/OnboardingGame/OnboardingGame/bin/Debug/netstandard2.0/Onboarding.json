@@ -2,213 +2,219 @@
 	"TaskItems":
 	[
 		{
-			"Title" : "Anställningsavtal in för arkivering",
-			"Description" : "Gör klart anställningsavtalet. https://assaabloy.app.box.com/folder/64067259093",
+			"Title" : "Activate position",
+			"Description" : "Activate or create position  - see box folder for instructions https://assaabloy.box.com/s/50y9o0i2b6uy88ugogfjuhktdru2jxl0",
 			"ListID" : 0
 		},
 		{
-			"Title" : "CV",
-			"Description" : "Cv (box)",
+			"Title" : "Inform HR",
+			"Description" : "Inform HR about new employee and provide access to contract and personal information form",
 			"ListID" : 0
 		},
 		{
-			"Title" : "Info nyanställning på intranätet",
-			"Description" : "",
+			"Title" : "HR to Connect",
+			"Description" : "HR to connect new employee to created, activated position",
 			"ListID" : 0
 		},
 		{
-			"Title" : "AD konto, IT (Bilaga 1)",
-			"Description" : "",
+			"Title" : "Internal recruitment inside",
+			"Description" : "For internal recruitment/move of positions within your own organisation - make the amendments in GPS",
 			"ListID" : 0
 		},
 		{
-			"Title" : "Dator (Bilaga 1)",
-			"Description" : "",
+			"Title" : "Internal recruitment outside",
+			"Description" : "For internal recruitment/move of positions outside your own organisation - please contact HR
+			AD account with access as per IT process & policy is automatically activated - see separate tab",
 			"ListID" : 0
 		},
 		{
-			"Title" : "Telefon (Bilaga 1)",
-			"Description" : "",
-			"ListID" : 0
-		},
-		{
-			"Title" : "Arbetesplats (Skrivbord, stol, m.m)",
-			"Description" : "",
-			"ListID" : 0
-		},
-		{
-			"Title" : "Bil (Om akutellt)",
-			"Description" : "",
-			"ListID" : 0
-		},
-		{
-			"Title" : "Blankett personaluppgifter vid nyanställning (Bank, & konto, anhörig)",
-			"Description" : "",
-			"ListID" : 0
-		},
-		{
-			"Title" : "Inloggning till avdelingsspecifika system (Bilaga 1)",
-			"Description" : "",
+			"Title" : "Create box",
+			"Description" : "Create a new employee box folder in your own box folder on HR Department",
 			"ListID" : 1
 		},
 		{
-			"Title" : "Säkerhetställa konto för Service Now blit skapat",
-			"Description" : "",
+			"Title" : "Upload contract",
+			"Description" : "Signed employement contract is uploaded to the new employee folder and email is sent to Payroll - add email address to Payroll",
 			"ListID" : 1
 		},
 		{
-			"Title" : "Säkerhetställa att phoniro.com blir avsändaradress",
-			"Description" : "",
+			"Title" : "Upload confidentiality agreement",
+			"Description" : "Signed confidentiality agreement is uploaded to the new employee folder on Box",
 			"ListID" : 1
 		},
 		{
-			"Title" : "Säkerhetställa att konto får tillgång till Microsoft Teams",
-			"Description" : "",
+			"Title" : "Upload CV",
+			"Description" : "CV is uploaded to the new employee folder on Box",
 			"ListID" : 1
 		},
 		{
-			"Title" : "Be om att vara lokal admin för datorn (Enbart Utvecklare)",
-			"Description" : "",
+			"Title" : "Fill out template",
+			"Description" : "Fill out template 'Personaluppgifter Phoniro' and upload to the new employee folder on Box and send an email to Payroll",
 			"ListID" : 1
 		},
 		{
-			"Title" : "Be om licens för Visual Studio (Enbart SW Devs)",
-			"Description" : "",
+			"Title" : "Original employment contract sent",
+			"Description" : "Original employment contract is sent to XX for archiving",
 			"ListID" : 1
 		},
 		{
-			"Title" : "Maila cloudios@phoniro.com för tillgång till SVN, Git, Azure DevOps and access to the Azure test subscription (Enbart SW Devs)",
-			"Description" : "",
+			"Title" : "New employee Information published",
+			"Description" : "Information about the new employee is published on the Intranet",
 			"ListID" : 1
 		},
 		{
-			"Title" : "Beställ tillägg av mailgrupper enligt vilken gruppering som den anställde jobbar inom",
-			"Description" : "",
+			"Title" : "Laptop/phone order",
+			"Description" : "Laptop and phone order is sent to IT",
 			"ListID" : 1
 		},
 		{
-			"Title" : "Beställ tillägg av korrekt BOX-access",
-			"Description" : "",
+			"Title" : "Workplace organised",
+			"Description" : "Workplace is organised - desk, chair etc",
 			"ListID" : 1
 		},
 		{
-			"Title" : "Rundvandring, lokal kännedom, boka kort möte med skyddsombud",
-			"Description" : "",
+			"Title" : "Access and logs",
+			"Description" : "Access and log in details to department specific platforms and tools",
+			"ListID" : 1
+		},
+		{
+			"Title" : "Company Car",
+			"Description" : "Company car (if in employment contract)",
+			"ListID" : 1
+		},
+		{
+			"Title" : "Tour of the premises",
+			"Description" : "Tour of the premises, health & safety information, skyddsombud",
 			"ListID" : 2
 		},
 		{
-			"Title" : "Arbetesplats, Skrivbord, Skrivbordstol",
-			"Description" : "",
+			"Title" : "Work space",
+			"Description" : "Work space",
 			"ListID" : 2
 		},
 		{
-			"Title" : "Historia, affärsidé, policies, mål, ägare, organisaton",
-			"Description" : "",
+			"Title" : "¨Lunch with colleagues",
+			"Description" : "Lunch with colleagues",
 			"ListID" : 2
 		},
 		{
-			"Title" : "Produkter. Visa videos om våra Produkter och tjänstererbjudande (Safe@Home, DKMCloud, KS03)",
-			"Description" : "",
+			"Title" : "History of the company",
+			"Description" : "History, organisation, vision & mission, strategy, policies",
 			"ListID" : 2
 		},
 		{
-			"Title" : "Intranät och Keypoint",
-			"Description" : "",
+			"Title" : "Company products",
+			"Description" : "Products",
 			"ListID" : 2
 		},
 		{
-			"Title" : "Vett och Etikett, klädsel (se etiska riktlinjer och värderingar)",
-			"Description" : "",
+			"Title" : "Code of Conduct",
+			"Description" : "Code of Conduct",
 			"ListID" : 2
 		},
 		{
-			"Title" : "Kvalitetssystem (ISO)",
-			"Description" : "",
+			"Title" : "Quality system",
+			"Description" : "Quality systems (ISO)",
 			"ListID" : 2
 		},
 		{
-			"Title" : "Säkra upp en plats på introduktionsutbildning (2 dgr)",
-			"Description" : "",
+			"Title" : "Introduction training",
+			"Description" : "Introduction training (2 days)",
 			"ListID" : 2
 		},
 		{
-			"Title" : "Ansvarsområden",
-			"Description" : "",
+			"Title" : "Policies",
+			"Description" : "Policies - global & local",
 			"ListID" : 2
 		},
 		{
-			"Title" : "Gruppens processer och rutiner",
-			"Description" : "",
+			"Title" : "Responsibilities",
+			"Description" : "Areas of responsibility",
 			"ListID" : 2
 		},
 		{
-			"Title" : "Kollegor",
-			"Description" : "",
+			"Title" : "Team",
+			"Description" : "Team and team processess",
 			"ListID" : 2
 		},
 		{
-			"Title" : "Rollbeskrivning",
-			"Description" : "",
+			"Title" : "Colleagues",
+			"Description" : "Colleagues",
 			"ListID" : 2
 		},
 		{
-			"Title" : "Avdelningspecifika program",
-			"Description" : "",
+			"Title" : "Job description",
+			"Description" : "Job description",
 			"ListID" : 2
 		},
 		{
-			"Title" : "Arbetsplats, PC(dataväska 500kr inkl moms), tangentbord, mus, kontorsmaterial, visitkort, namnskylt, postgång",
-			"Description" : "",
+			"Title" : "Routines",
+			"Description" : "Routines",
 			"ListID" : 2
 		},
 		{
-			"Title" : "Telefon, växelsystem SolunoBC, Skärmsydd(400kr inkl moms)",
-			"Description" : "",
+			"Title" : "Departmentspecific programs",
+			"Description" : "Departmentspecific programs",
 			"ListID" : 2
 		},
 		{
-			"Title" : "Företagskort",
-			"Description" : "",
+			"Title" : "Invitation email",
+			"Description" : "Invitation email from manager to employee re GPS",
 			"ListID" : 2
 		},
 		{
-			"Title" : "Larm, nycklar samt genomgång av Phoniro Care",
-			"Description" : "",
+			"Title" : "Workspace, PC",
+			"Description" : "Workspace, PC (laptop bag SEK 500 incl VAT), keyboard, mouse, office material, business card, name badge, mail - internal/external",
 			"ListID" : 2
 		},
 		{
-			"Title" : "Lönesamtal, lönepolicy, lönkriterier, lönerevision",
-			"Description" : "",
+			"Title" : "Phone, switchboard...",
+			"Description" : "Phone, switchboard, screen protection (SEK 400 incl VAT)",
 			"ListID" : 2
 		},
 		{
-			"Title" : "Komepetensutveckling",
-			"Description" : "",
+			"Title" : "Credit card",
+			"Description" : "Credit card as needed (handled by the employee, company pays for annual fee, max SEK 500/year)",
 			"ListID" : 2
 		},
 		{
-			"Title" : "Sekretessavtal",
-			"Description" : "",
+			"Title" : "Alarm systems, keys",
+			"Description" : "Alarm system, keys",
 			"ListID" : 2
 		},
 		{
-			"Title" : "Genomgång personalhandbok samt infoblad till den anställde",
-			"Description" : "",
+			"Title" : "Performance management",
+			"Description" : "Performance management - objectives and development",
 			"ListID" : 2
 		},
 		{
-			"Title" : "Körjournal",
-			"Description" : "",
+			"Title" : "Salary",
+			"Description" : "Salary policy, compensation criteria, annual salary review process",
 			"ListID" : 2
 		},
 		{
-			"Title" : "Policy",
-			"Description" : "",
+			"Title" : "Confidentiality agreement",
+			"Description" : "Confidentiality agreement - upload to employee file on Box",
 			"ListID" : 2
 		},
 		{
-			"Title" : "Drivmedelskort",
-			"Description" : "",
+			"Title" : "Employment Information",
+			"Description" : "Employment information (BOX/Phoniro employees/Employee guide/Administration/HR/Nyanställda/Informationsblad..)",
+			"ListID" : 2
+		},
+		{
+			"Title" : "Driving journal",
+			"Description" : "Driving journal",
+			"ListID" : 2
+		},
+		{
+			"Title" : "Car policy",
+			"Description" : "Company Car policy",
+			"ListID" : 2
+		},
+		{
+			"Title" : "Fuel cards",
+			"Description" : "Fuel cards",
 			"ListID" : 2
 		}
 	],
@@ -217,17 +223,17 @@
 		{
 			"ID" : 298,
 			"Exp" : 10,
-			"Name" : "Inför anställning"
+			"Name" : "Prior to start date - GPS"
 		},
 		{
 			"ID" : 982,
 			"Exp" : 15,
-			"Name" : "Onboarding-ticket till IT"
+			"Name" : "Prior to start date - Payroll"
 		},
 		{
 			"ID" : 829,
 			"Exp" : 25,
-			"Name" : "Vid Start"
+			"Name" : "Welcome to Phoniro"
 		}
 	]
 }

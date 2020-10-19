@@ -6,7 +6,9 @@
              mc:Ignorable="d"
              x:Class="OnboardingGame.Views.LoginPage"
              Title="{Binding Title}"
-             Shell.NavBarIsVisible="True">
+             Shell.NavBarIsVisible="False"
+             Shell.TabBarIsVisible="False"
+             Shell.FlyoutBehavior="Disabled">
     <ContentPage.BindingContext/>
 
     <ContentPage.Content>
