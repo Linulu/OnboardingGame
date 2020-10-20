@@ -31,6 +31,8 @@ namespace OnboardingGame.Pages
 
             task = (TaskItem)BindingContext;
 
+            Title_Label.Text = task.Title + " (" + App.Database.GetToDoListAsync(task.ListID).Result.EXP + ", Points)";
+
             if (linkParser.Match(task.Description).Success)
             {
                 string s = task.Description;

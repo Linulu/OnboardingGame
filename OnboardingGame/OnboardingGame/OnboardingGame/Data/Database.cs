@@ -17,6 +17,7 @@ namespace OnboardingGame.Data
             _database.CreateTableAsync<TaskItem>().Wait();
             _database.CreateTableAsync<ToDoList>().Wait();
             _database.CreateTableAsync<PlayerProfile>().Wait();
+            _database.CreateTableAsync<Catagory>().Wait();
         }
 
         public void DeleteDatabase() {
@@ -88,6 +89,22 @@ namespace OnboardingGame.Data
             return _database.DeleteAllAsync<PlayerProfile>();
         }
 
+        //Catagories________________________________________________________________
+        public Task<List<Catagory>> GetCatagories() {
+            return _database.Table<Catagory>().ToListAsync();
+        }
+        public Task<Catagory> GetCatagory(int id) {
+            return _database.Table<Catagory>().Where(i => i.ID == id).FirstOrDefaultAsync();
+        }
+        public Task<int> SaveCatagoryAsync(Catagory item)
+        {
+            return _database.InsertAsync(item);
+        }
+        public Task<int> DeleteCatagoryAsync(Catagory item)
+        {
+            return _database.DeleteAsync(item);
+        }
+
         //Return a list of TaskItems who's ListID matches that of the given id 
         //parameter. Use this method to get all the TaskItems from a given ToDoList 
         public Task<List<TaskItem>> GetTasksFromListAsync(int id) {
@@ -100,5 +117,10 @@ namespace OnboardingGame.Data
         {
             return _database.Table<TaskItem>().Where(i => i.ListID == id && i.Status >= 1).CountAsync();
         }
+        
+        //Look in your notes for specifics
+        /*public Task<List<List<Catagory>>> GetCatagoryTaskItems(int id) {
+            
+        }*/
     }
 }

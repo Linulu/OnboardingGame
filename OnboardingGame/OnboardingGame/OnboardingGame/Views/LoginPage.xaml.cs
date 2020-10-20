@@ -10,6 +10,7 @@ using OnboardingGame.Pages;
 using OnboardingGame.Models;
 using System.IO;
 using System.Diagnostics;
+using System.Windows.Input;
 
 namespace OnboardingGame.Views
 {
@@ -17,8 +18,8 @@ namespace OnboardingGame.Views
     public partial class LoginPage : ContentPage
     {
         public Command LoginCommand { get; }
-        public String Username { get; set; }
-        public String Password { get; set; }
+        public string Username { get; set; }
+        public string Password { get; set; }
 
         public LoginPage()
         {
@@ -36,7 +37,7 @@ namespace OnboardingGame.Views
 
             if (!(File.Exists(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "Data.db3"))))
             {
-                bool answer = await DisplayAlert("No Database found", "There seems to be no Database in the app currently.\nWould you like to set it up now","Yes","No");
+                bool answer = await DisplayAlert("No Profile found", "There seems to be no Profile in the app currently.\nWould you like to set it up now?","Yes","No");
                 if (answer) {
                     ProfileSetUp();
                 }
@@ -59,6 +60,10 @@ namespace OnboardingGame.Views
                 await DisplayAlert("Error","No Username or Password","Try Agian");
             }
         }
+
+        private ICommand TapCommand = new Command(async () => {
+            Debug.WriteLine("Boom");
+        });
 
         private async void ProfileSetUp() {
             string name = await DisplayPromptAsync("Username", "Choose a Username?");

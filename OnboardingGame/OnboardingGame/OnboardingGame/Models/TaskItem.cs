@@ -20,6 +20,9 @@ namespace OnboardingGame.Models
         [ForeignKey(typeof(ToDoList))]
         public int ListID { get; set; }
 
+        [ForeignKey(typeof(Catagory))]
+        public int CatagoryID { get; set; }
+
         public string StatusMessage {
             get {
                 if (Status < 0)

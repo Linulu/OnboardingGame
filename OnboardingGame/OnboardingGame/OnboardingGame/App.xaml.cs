@@ -69,7 +69,7 @@ namespace OnboardingGame
             File.Delete(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "Data.db3"));
         }
         
-        protected async override void OnStart() {
+        protected override void OnStart() {
         }
 
         protected override void OnSleep()
