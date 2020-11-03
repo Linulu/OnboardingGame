@@ -16,42 +16,69 @@ namespace OnboardingGame.Pages
     {
         private int ListID { get; set; }
 
+        public List<TaskGroup> ListSource { get; private set; }
+
         public TasksPage(int listID)
-        {   
+        {
             InitializeComponent();
             ListID = listID;
             Title = App.Database.GetToDoListAsync(ListID).Result.Name;
+            
         }
 
         protected override async void OnAppearing() {
             base.OnAppearing();
+
+            GroupedList();
+
             
-            listView.ItemsSource = await App.Database.GetTasksFromListAsync(ListID);
+
+            //listView.ItemsSource = await App.Database.GetTasksFromListAsync(ListID);
+            //Debug.WriteLine(App.Database.GetTaskItem().Result[0].CatagoryID);
+
         }
 
-        /*async void OnListViewItemTapped(object sender, ItemTappedEventArgs e) {
+        private async void GroupedList() { 
+            List<TaskItem> tasks = await App.Database.GetTasksFromListAsync(ListID);
+            List<Catagory> catagories = await App.Database.GetCatagories();
 
-            if ((e.Item as TaskItem).Status < 0)
+            ListSource = new List<TaskGroup>();
+
+            for (int j = -1; j < catagories.Count; j++)
             {
-                bool response = await DisplayAlert((e.Item as TaskItem).Title, (e.Item as TaskItem).Description, "Start this task", "Cancel");
-                (e.Item as TaskItem).Status = response.CompareTo(false) - 1;
-                await App.Database.SaveItemAsync(e.Item as TaskItem);
-                listView.ItemsSource = await App.Database.GetTasksFromListAsync(ListID);
+                List<TaskItem> subTask = new List<TaskItem>();
+
+                for (int i = 0; i < tasks.Count; i++)
+                {
+                    if (j == -1)
+                    {
+                        if (tasks[i].CatagoryID == 0)
+                        {
+                            subTask.Add(tasks[i]);
+                        }
+                    }
+                    else if (tasks[i].CatagoryID == catagories[j].ID)
+                    {
+                        subTask.Add(tasks[i]);
+                    }
+                }
+
+                if (subTask.Count > 0) {
+                    if (j == -1)
+                    {
+                        ListSource.Add(new TaskGroup("", subTask));
+                    }
+                    else
+                    {
+                        ListSource.Add(new TaskGroup(catagories[j].Name, subTask));
+                    }
+                }
             }
-            else if ((e.Item as TaskItem).Status == 0)
-            {
-                bool response = await DisplayAlert((e.Item as TaskItem).Title, (e.Item as TaskItem).Description, "Finish this task", "Cancel");
-                (e.Item as TaskItem).Status = response.CompareTo(false);
-                await App.Database.SaveItemAsync(e.Item as TaskItem);
-                listView.ItemsSource = await App.Database.GetTasksFromListAsync(ListID);
-            }
-            else {
-                await DisplayAlert("Completed", "Congratulations you've completed this task!", "Next Task");
-            }
-        }*/
+
+            listView.ItemsSource = ListSource;
+        }
 
         async void OnListItemTapped(object sender, SelectionChangedEventArgs e) {
-
             if (e.CurrentSelection != null)
             {
                 await Navigation.PushAsync(new TaskContent()

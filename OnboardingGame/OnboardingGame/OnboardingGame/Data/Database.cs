@@ -5,6 +5,7 @@ using System.Text;
 using OnboardingGame.Models;
 using System.Threading.Tasks;
 using System.Data.SqlTypes;
+using System.Diagnostics;
 
 namespace OnboardingGame.Data
 {

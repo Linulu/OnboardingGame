@@ -47,6 +47,10 @@ namespace OnboardingGame
 
             JSON_Data list = JsonConvert.DeserializeObject<JSON_Data>(line);
 
+            for (int i = 0; i < list.Catagories.Count; i++) {
+                await Database.SaveCatagoryAsync(list.Catagories[i]);
+            }
+
             for (int i = 0; i < list.ListItems.Count; i++)
             {
                 await Database.SaveItemAsync(list.ListItems[i]);

@@ -8,5 +8,6 @@ namespace OnboardingGame.Models
     {
         public List<TaskItem> TaskItems { get; set; }
         public List<ToDoList> ListItems { get; set; }
+        public List<Catagory> Catagories { get; set; }
     }
 }

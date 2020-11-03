@@ -22,7 +22,7 @@
                     <FormattedString>
                         <Span Text="Profile Setup" TextColor="Blue">
                             <Span.GestureRecognizers>
-                                <TapGestureRecognizer Command="{Binding TapCommand}"/>
+                                <TapGestureRecognizer x:Name="Gesture"/>
                             </Span.GestureRecognizers>
                         </Span>
                     </FormattedString>

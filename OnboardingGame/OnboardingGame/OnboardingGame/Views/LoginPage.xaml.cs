@@ -28,19 +28,17 @@ namespace OnboardingGame.Views
             Title = "Login";
             LoginCommand = new Command(OnLoginClicked);
 
+            Gesture.Command = new Command(async () => ProfileSetUp());
+
             this.BindingContext = this;
         }
 
-        protected async override void OnAppearing()
-        {
+        protected override async void OnAppearing() {
             base.OnAppearing();
 
             if (!(File.Exists(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "Data.db3"))))
             {
-                bool answer = await DisplayAlert("No Profile found", "There seems to be no Profile in the app currently.\nWould you like to set it up now?","Yes","No");
-                if (answer) {
-                    ProfileSetUp();
-                }
+                await DisplayAlert("No Local Profile found","There seems to be no local profile on this device. Tap the Profile Setup button to set it up","Got it");
             }
         }
 
@@ -61,25 +59,32 @@ namespace OnboardingGame.Views
             }
         }
 
-        private ICommand TapCommand = new Command(async () => {
-            Debug.WriteLine("Boom");
-        });
-
         private async void ProfileSetUp() {
-            string name = await DisplayPromptAsync("Username", "Choose a Username?");
-            if (!string.IsNullOrWhiteSpace(name))
+            if (!(File.Exists(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "Data.db3"))))
             {
-                string password = await DisplayPromptAsync("Password", "Choose a password");
-                if (!string.IsNullOrWhiteSpace(password))
+                bool answer = await DisplayAlert("No Profile found", "There seems to be no Profile in the app currently.\nWould you like to set it up now?", "Yes", "No");
+                if (answer)
                 {
-                    await App.InitializeDatabase();
-                    await App.Database.SavePlayerAsync(new PlayerProfile()
+                    string name = await DisplayPromptAsync("Username", "Choose a Username?");
+                    if (!string.IsNullOrWhiteSpace(name))
                     {
-                        Name = name,
-                        Password = password
-                    });
-                    await Shell.Current.GoToAsync($"//{nameof(TasksTab)}");
+                        string password = await DisplayPromptAsync("Password", "Choose a password");
+                        if (!string.IsNullOrWhiteSpace(password))
+                        {
+                            await App.InitializeDatabase();
+                            await App.Database.SavePlayerAsync(new PlayerProfile()
+                            {
+                                Name = name,
+                                Password = password
+                            });
+                            await Shell.Current.GoToAsync($"//{nameof(TasksTab)}");
+                        }
+                    }
                 }
+            }
+            else
+            {
+                await DisplayAlert("Error", "There already exist a profile on this device", "Return");
             }
         }
     }

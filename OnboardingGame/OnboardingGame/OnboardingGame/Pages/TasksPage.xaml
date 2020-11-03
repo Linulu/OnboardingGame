@@ -5,8 +5,17 @@
     <ContentPage.Content>
         <StackLayout Margin="20, 35, 20, 20">
             <CollectionView x:Name="listView"
+                      IsGrouped="True"
                       SelectionMode="Single"
                       SelectionChanged="OnListItemTapped">
+                <CollectionView.GroupHeaderTemplate>
+                    <DataTemplate>
+                        <Label Text="{Binding Name}"
+                               BackgroundColor="LightGray"
+                               FontSize="Large"
+                               FontAttributes="Bold"/>
+                    </DataTemplate>
+                </CollectionView.GroupHeaderTemplate>
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
                         <Grid Padding="10">

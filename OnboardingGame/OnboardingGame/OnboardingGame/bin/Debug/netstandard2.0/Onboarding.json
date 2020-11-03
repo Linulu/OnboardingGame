@@ -85,137 +85,164 @@
 		{
 			"Title" : "Tour of the premises",
 			"Description" : "Tour of the premises, health & safety information, skyddsombud",
-			"ListID" : 2
+			"ListID" : 2,
+			"CatagoryID" : 1
 		},
 		{
 			"Title" : "Work space",
 			"Description" : "Work space",
-			"ListID" : 2
+			"ListID" : 2,
+			"CatagoryID" : 1
 		},
 		{
 			"Title" : "Lunch with colleagues",
 			"Description" : "Lunch with colleagues",
-			"ListID" : 2
+			"ListID" : 2,
+			"CatagoryID" : 1
 		},
 		{
 			"Title" : "History of the company",
 			"Description" : "History, organisation, vision & mission, strategy, policies",
-			"ListID" : 2
+			"ListID" : 2,
+			"CatagoryID" : 2
 		},
 		{
 			"Title" : "Company products",
 			"Description" : "Products",
-			"ListID" : 2
+			"ListID" : 2,
+			"CatagoryID" : 2
 		},
 		{
 			"Title" : "Code of Conduct",
 			"Description" : "Code of Conduct",
-			"ListID" : 2
+			"ListID" : 2,
+			"CatagoryID" : 2
 		},
 		{
 			"Title" : "Quality system",
 			"Description" : "Quality systems (ISO)",
-			"ListID" : 2
+			"ListID" : 2,
+			"CatagoryID" : 2
 		},
 		{
 			"Title" : "Introduction training",
 			"Description" : "Introduction training (2 days)",
-			"ListID" : 2
+			"ListID" : 2,
+			"CatagoryID" : 2
 		},
 		{
 			"Title" : "Policies",
 			"Description" : "Policies - global & local",
-			"ListID" : 2
+			"ListID" : 2,
+			"CatagoryID" : 2
 		},
 		{
 			"Title" : "Responsibilities",
 			"Description" : "Areas of responsibility",
-			"ListID" : 2
+			"ListID" : 2,
+			"CatagoryID" : 3
 		},
 		{
 			"Title" : "Team",
 			"Description" : "Team and team processess",
-			"ListID" : 2
+			"ListID" : 2,
+			"CatagoryID" : 3
 		},
 		{
 			"Title" : "Colleagues",
 			"Description" : "Colleagues",
-			"ListID" : 2
+			"ListID" : 2,
+			"CatagoryID" : 3
 		},
 		{
 			"Title" : "Job description",
 			"Description" : "Job description",
-			"ListID" : 2
+			"ListID" : 2,
+			"CatagoryID" : 3
 		},
 		{
 			"Title" : "Routines",
 			"Description" : "Routines",
-			"ListID" : 2
+			"ListID" : 2,
+			"CatagoryID" : 3
 		},
 		{
 			"Title" : "Departmentspecific programs",
 			"Description" : "Departmentspecific programs",
-			"ListID" : 2
+			"ListID" : 2,
+			"CatagoryID" : 3
 		},
 		{
 			"Title" : "Invitation email",
 			"Description" : "Invitation email from manager to employee re GPS",
-			"ListID" : 2
+			"ListID" : 2,
+			"CatagoryID" : 4
 		},
 		{
 			"Title" : "Workspace, PC",
 			"Description" : "Workspace, PC (laptop bag SEK 500 incl VAT), keyboard, mouse, office material, business card, name badge, mail - internal/external",
-			"ListID" : 2
+			"ListID" : 2,
+			"CatagoryID" : 4
 		},
 		{
 			"Title" : "Phone, switchboard...",
 			"Description" : "Phone, switchboard, screen protection (SEK 400 incl VAT)",
-			"ListID" : 2
+			"ListID" : 2,
+			"CatagoryID" : 4
 		},
 		{
 			"Title" : "Credit card",
 			"Description" : "Credit card as needed (handled by the employee, company pays for annual fee, max SEK 500/year)",
-			"ListID" : 2
+			"ListID" : 2,
+			"CatagoryID" : 4
 		},
 		{
 			"Title" : "Alarm systems, keys",
 			"Description" : "Alarm system, keys",
-			"ListID" : 2
+			"ListID" : 2,
+			"CatagoryID" : 4
 		},
 		{
 			"Title" : "Performance management",
 			"Description" : "Performance management - objectives and development",
-			"ListID" : 2
+			"ListID" : 2,
+			"CatagoryID" : 4
 		},
 		{
 			"Title" : "Salary",
 			"Description" : "Salary policy, compensation criteria, annual salary review process",
-			"ListID" : 2
+			"ListID" : 2,
+			"CatagoryID" : 4
 		},
 		{
 			"Title" : "Confidentiality agreement",
 			"Description" : "Confidentiality agreement - upload to employee file on Box",
-			"ListID" : 2
+			"ListID" : 2,
+			"CatagoryID" : 4
 		},
 		{
 			"Title" : "Employment Information",
 			"Description" : "Employment information (BOX/Phoniro employees/Employee guide/Administration/HR/Nyanställda/Informationsblad..)",
-			"ListID" : 2
+			"ListID" : 2,
+			"CatagoryID" : 4
 		},
 		{
 			"Title" : "Driving journal",
 			"Description" : "Driving journal",
-			"ListID" : 2
+			"ListID" : 2,
+			"CatagoryID" : 5
 		},
 		{
 			"Title" : "Car policy",
 			"Description" : "Company Car policy",
-			"ListID" : 2
+			"ListID" : 2,
+			"CatagoryID" : 5
 		},
 		{
 			"Title" : "Fuel cards",
 			"Description" : "Fuel cards",
-			"ListID" : 2
+			"ListID" : 2,
+			"CatagoryID" : 5
 		}
 	],
 	"ListItems":
@@ -234,6 +261,29 @@
 			"ID" : 829,
 			"Exp" : 25,
 			"Name" : "Welcome to Phoniro"
+		}
+	],
+	"Catagories":
+	[
+		{
+			"ID" : 1,
+			"Name" : "First day in the office"
+		},
+		{
+			"ID" : 2,
+			"Name" : "The Company"
+		},
+		{
+			"ID" : 3,
+			"Name" : "Department/new position"
+		},
+		{
+			"ID" : 4,
+			"Name" : "Admin and practicalities around the office and work space"
+		},
+		{
+			"ID" : 5,
+			"Name" : "Company Car"
 		}
 	]
 }
