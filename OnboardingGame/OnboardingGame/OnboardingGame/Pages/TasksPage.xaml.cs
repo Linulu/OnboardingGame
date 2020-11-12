@@ -30,12 +30,6 @@ namespace OnboardingGame.Pages
             base.OnAppearing();
 
             GroupedList();
-
-            
-
-            //listView.ItemsSource = await App.Database.GetTasksFromListAsync(ListID);
-            //Debug.WriteLine(App.Database.GetTaskItem().Result[0].CatagoryID);
-
         }
 
         private async void GroupedList() { 

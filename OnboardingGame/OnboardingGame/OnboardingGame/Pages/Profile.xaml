@@ -10,6 +10,7 @@
                    FontSize="Large"/>
             <Label x:Name="Lvl"/>
             <Label x:Name="Exp"/>
+            <Label x:Name="Date"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

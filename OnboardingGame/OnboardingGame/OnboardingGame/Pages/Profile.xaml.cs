@@ -42,6 +42,8 @@ namespace OnboardingGame.Pages
             Exp.Text = "Points: " + EXP + "/" + (int)(10* Math.Pow(Math.E,(1 + (int)Math.Log(1 + (EXP / 10)))) -10);
 
             this.BindingContext = pP;
+
+            Date.Text = "Start Date: " + pP.StartDate.ToString();
         }
     }
 }

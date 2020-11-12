@@ -44,18 +44,26 @@ namespace OnboardingGame.Views
 
         private async void OnLoginClicked(object obj)
         {
-            if(!string.IsNullOrWhiteSpace(Username) || !string.IsNullOrWhiteSpace(Password))
+            if (File.Exists(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "Data.db3")))
             {
-                if (App.Database.GetPlayerProfile().Result.Name.CompareTo(Username) == 0 && App.Database.GetPlayerProfile().Result.Password.CompareTo(Password) == 0)
+                if (!string.IsNullOrWhiteSpace(Username) || !string.IsNullOrWhiteSpace(Password))
                 {
-                    await Shell.Current.GoToAsync($"//{nameof(TasksTab)}");
+                    if (App.Database.GetPlayerProfile().Result.Name.CompareTo(Username) == 0 && App.Database.GetPlayerProfile().Result.Password.CompareTo(Password) == 0)
+                    {
+                        await Shell.Current.GoToAsync($"//{nameof(TasksTab)}");
+                    }
+                    else
+                    {
+                        await DisplayAlert("Error", "Wrong Username or Password", "Try Agian");
+                    }
                 }
-                else {
-                    await DisplayAlert("Error", "Wrong Username or Password", "Try Agian");
+                else
+                {
+                    await DisplayAlert("Error", "No Username or Password", "Try Agian");
                 }
             }
             else {
-                await DisplayAlert("Error","No Username or Password","Try Agian");
+                await DisplayAlert("No Data","Their currently exists no data in the app for a profile","Return");
             }
         }
 
@@ -65,21 +73,7 @@ namespace OnboardingGame.Views
                 bool answer = await DisplayAlert("No Profile found", "There seems to be no Profile in the app currently.\nWould you like to set it up now?", "Yes", "No");
                 if (answer)
                 {
-                    string name = await DisplayPromptAsync("Username", "Choose a Username?");
-                    if (!string.IsNullOrWhiteSpace(name))
-                    {
-                        string password = await DisplayPromptAsync("Password", "Choose a password");
-                        if (!string.IsNullOrWhiteSpace(password))
-                        {
-                            await App.InitializeDatabase();
-                            await App.Database.SavePlayerAsync(new PlayerProfile()
-                            {
-                                Name = name,
-                                Password = password
-                            });
-                            await Shell.Current.GoToAsync($"//{nameof(TasksTab)}");
-                        }
-                    }
+                    await Navigation.PushAsync(new LoginSetupPage());
                 }
             }
             else

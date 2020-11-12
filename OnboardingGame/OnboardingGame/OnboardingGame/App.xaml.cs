@@ -38,9 +38,18 @@ namespace OnboardingGame
         }
 
         //Initialize the Database here
-        public static async Task InitializeDatabase() {
+        //Add modularity to it by letting pass arguments that can later be used
+        //to communicate with a database
+        public static async Task InitializeDatabase(bool carBenefits) {
             var assembly = IntrospectionExtensions.GetTypeInfo(typeof(TasksTab)).Assembly;
-            Stream stream = assembly.GetManifestResourceStream("OnboardingGame.Onboarding.json");
+            Stream stream;
+            if (carBenefits)
+            {
+                stream = assembly.GetManifestResourceStream("OnboardingGame.Onboarding.json");
+            }
+            else {
+                stream = assembly.GetManifestResourceStream("OnboardingGame.Onboarding_NoCar.json");
+            }
 
             StreamReader file = new StreamReader(stream);
             string line = file.ReadToEnd();

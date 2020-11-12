@@ -7,11 +7,15 @@
 
   <ItemGroup>
     <None Remove="Onboarding.json" />
+    <None Remove="Onboarding_NoCar.json" />
     <None Remove="Phoniro_AssaAbloy.png" />
   </ItemGroup>
 
   <ItemGroup>
     <EmbeddedResource Include="Onboarding.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Onboarding_NoCar.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
   </ItemGroup>
@@ -35,6 +39,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Update="Pages\LoginSetupPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="Pages\Profile.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
