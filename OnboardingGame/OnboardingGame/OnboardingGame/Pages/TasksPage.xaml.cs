@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,13 +24,14 @@ namespace OnboardingGame.Pages
             InitializeComponent();
             ListID = listID;
             Title = App.Database.GetToDoListAsync(ListID).Result.Name;
-            
         }
 
         protected override async void OnAppearing() {
             base.OnAppearing();
 
             GroupedList();
+
+            await App.Update();
         }
 
         private async void GroupedList() { 
@@ -60,7 +62,7 @@ namespace OnboardingGame.Pages
                 if (subTask.Count > 0) {
                     if (j == -1)
                     {
-                        ListSource.Add(new TaskGroup("", subTask));
+                        ListSource.Add(new TaskGroup("Tasks", subTask));
                     }
                     else
                     {

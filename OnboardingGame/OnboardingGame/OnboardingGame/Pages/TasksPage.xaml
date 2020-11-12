@@ -11,7 +11,8 @@
                 <CollectionView.GroupHeaderTemplate>
                     <DataTemplate>
                         <Label Text="{Binding Name}"
-                               BackgroundColor="LightGray"
+                               TextColor="Black"
+                               BackgroundColor="LightBlue"
                                FontSize="Large"
                                FontAttributes="Bold"/>
                     </DataTemplate>
@@ -27,12 +28,12 @@
                                 <ColumnDefinition Width="Auto"/>
                                 <ColumnDefinition Width="*"/>
                             </Grid.ColumnDefinitions>
-                            <Label Grid.Column="1"
-                                       Text="{Binding Title}"/>
-                            <Label Grid.Row="1"
-                                       Grid.Column="1"
-                                       Text="{Binding StatusMessage}"
-                                       FontAttributes="Bold"/>
+                            <Label Text="{Binding Title}"
+                                   FontAttributes="Bold"
+                                   FontSize="Medium"/>
+                            <BoxView HorizontalOptions="End"
+                                     Grid.Column="1"
+                                     Color="Green"/>
                         </Grid>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>

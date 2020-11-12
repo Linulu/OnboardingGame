@@ -29,6 +29,7 @@ namespace OnboardingGame.Pages
             {
                 App.DeleteDatabase();
 
+                await DisplayAlert("Profile Deleted", "Your profile has been deleted", "Continue");
                 await Shell.Current.GoToAsync($"//{nameof(LoginPage)}");
             }
         }

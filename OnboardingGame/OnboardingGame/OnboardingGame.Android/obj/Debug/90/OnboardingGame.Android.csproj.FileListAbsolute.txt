@@ -506,3 +506,7 @@ C:\Users\lcg\Git\OnboardingGame\OnboardingGame\OnboardingGame\OnboardingGame.And
 C:\Users\lcg\Git\OnboardingGame\OnboardingGame\OnboardingGame\OnboardingGame.Android\bin\Debug\Onboarding.json
 C:\Users\lcg\Git\OnboardingGame\OnboardingGame\OnboardingGame\OnboardingGame.Android\obj\Debug\90\res\drawable\phoniro_assaabloy.png
 C:\Users\lcg\Git\OnboardingGame\OnboardingGame\OnboardingGame\OnboardingGame.Android\bin\Debug\Onboarding_NoCar.json
+C:\Users\lcg\Git\OnboardingGame\OnboardingGame\OnboardingGame\OnboardingGame.Android\obj\Debug\90\android\assets\Rg.Plugins.Popup.dll
+C:\Users\lcg\Git\OnboardingGame\OnboardingGame\OnboardingGame\OnboardingGame.Android\obj\Debug\90\android\assets\Rg.Plugins.Popup.pdb
+C:\Users\lcg\Git\OnboardingGame\OnboardingGame\OnboardingGame\OnboardingGame.Android\obj\Debug\90\android\src\crc643dd37f507f3d9710\PopupPageRenderer.java
+C:\Users\lcg\Git\OnboardingGame\OnboardingGame\OnboardingGame\OnboardingGame.Android\obj\Debug\90\android\src\crc64fdbeeba101bd56dc\RgGestureDetectorListener.java

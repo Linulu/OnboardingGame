@@ -18,9 +18,10 @@ C:\Users\lcg\Git\OnboardingGame\OnboardingGame\OnboardingGame\OnboardingGame\obj
 C:\Users\lcg\Git\OnboardingGame\OnboardingGame\OnboardingGame\OnboardingGame\obj\Debug\netstandard2.0\Pages\TasksTab.xaml.g.cs
 C:\Users\lcg\Git\OnboardingGame\OnboardingGame\OnboardingGame\OnboardingGame\bin\Debug\netstandard2.0\Onboarding.txt
 C:\Users\lcg\Git\OnboardingGame\OnboardingGame\OnboardingGame\OnboardingGame\obj\Debug\netstandard2.0\Pages\Settings.xaml.g.cs
-C:\Users\lcg\Git\OnboardingGame\OnboardingGame\OnboardingGame\OnboardingGame\obj\Debug\netstandard2.0\OnboardingGame.csproj.CoreCompileInputs.cache
-C:\Users\lcg\Git\OnboardingGame\OnboardingGame\OnboardingGame\OnboardingGame\obj\Debug\netstandard2.0\XamlC.stamp
 C:\Users\lcg\Git\OnboardingGame\OnboardingGame\OnboardingGame\OnboardingGame\bin\Debug\netstandard2.0\Onboarding.json
 C:\Users\lcg\Git\OnboardingGame\OnboardingGame\OnboardingGame\OnboardingGame\obj\Debug\netstandard2.0\Pages\TaskContent.xaml.g.cs
 C:\Users\lcg\Git\OnboardingGame\OnboardingGame\OnboardingGame\OnboardingGame\obj\Debug\netstandard2.0\Pages\LoginSetupPage.xaml.g.cs
 C:\Users\lcg\Git\OnboardingGame\OnboardingGame\OnboardingGame\OnboardingGame\bin\Debug\netstandard2.0\Onboarding_NoCar.json
+C:\Users\lcg\Git\OnboardingGame\OnboardingGame\OnboardingGame\OnboardingGame\obj\Debug\netstandard2.0\Pages\PopupView.xaml.g.cs
+C:\Users\lcg\Git\OnboardingGame\OnboardingGame\OnboardingGame\OnboardingGame\obj\Debug\netstandard2.0\OnboardingGame.csproj.CoreCompileInputs.cache
+C:\Users\lcg\Git\OnboardingGame\OnboardingGame\OnboardingGame\OnboardingGame\obj\Debug\netstandard2.0\XamlC.stamp

@@ -38,12 +38,13 @@ namespace OnboardingGame.Pages
 
             await App.Database.SavePlayerAsync(pP);
 
-            Lvl.Text = "Level: " + (1 + (int)Math.Log(1+(EXP/10)));
-            Exp.Text = "Points: " + EXP + "/" + (int)(10* Math.Pow(Math.E,(1 + (int)Math.Log(1 + (EXP / 10)))) -10);
+            Lvl.Text = "Level: " + (1 + (int)Math.Log(1+((double)EXP/10)));
+            Exp.Text = "Points: " + EXP + "/" + (int)(10 * Math.Pow(Math.E, 1 + (int)Math.Log(1 + ((double)EXP / 10))) -10);
 
             this.BindingContext = pP;
 
-            Date.Text = "Start Date: " + pP.StartDate.ToString();
+            Date.Text = "Start Date: " + pP.StartDate.Month + "/" + pP.StartDate.Day + "/" + pP.StartDate.Year;
+            
         }
     }
 }

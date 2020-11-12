@@ -1,12 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "ZUT5/jTz7iCUut6cCbowNw3udi+qyXRuJYHi6YQ98La4ZDsGJaPaT/3xHtEKm8FD6pZpdmMdpkGTBPmiOsP9KA==",
+  "dgSpecHash": "J54KjkFTcd9liPyM10mz6MWjo8yKeQva2Kts7xBOytFh64Tk+QFIKjXUnhtxlAakabluVhQbQjUbYwPhYNevsQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\lcg\\Git\\OnboardingGame\\OnboardingGame\\OnboardingGame\\OnboardingGame\\OnboardingGame.csproj",
   "expectedPackageFiles": [
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
     "C:\\Users\\lcg\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512",
+    "C:\\Users\\lcg\\.nuget\\packages\\rg.plugins.popup\\2.0.0.6\\rg.plugins.popup.2.0.0.6.nupkg.sha512",
     "C:\\Users\\lcg\\.nuget\\packages\\sqlite-net-pcl\\1.7.335\\sqlite-net-pcl.1.7.335.nupkg.sha512",
     "C:\\Users\\lcg\\.nuget\\packages\\sqlitenetextensions\\2.1.0\\sqlitenetextensions.2.1.0.nupkg.sha512",
     "C:\\Users\\lcg\\.nuget\\packages\\sqlitepclraw.bundle_green\\2.0.3\\sqlitepclraw.bundle_green.2.0.3.nupkg.sha512",

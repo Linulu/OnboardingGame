@@ -13,6 +13,7 @@ using System.Runtime.InteropServices;
 using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using Rg.Plugins.Popup.Services;
 
 namespace OnboardingGame
 {
@@ -35,6 +36,12 @@ namespace OnboardingGame
             InitializeComponent();
 
             MainPage = new AppShell();
+        }
+
+        public static async Task Update() {
+            /* Use this for creating pop-ups
+            await PopupNavigation.Instance.PushAsync(new PopupView());
+            */
         }
 
         //Initialize the Database here
