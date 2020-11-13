@@ -31,12 +31,13 @@ namespace OnboardingGame.Pages
 
             task = (TaskItem)BindingContext;
 
-            Title_Label.Text = task.Title + " (" + App.Database.GetToDoListAsync(task.ListID).Result.EXP + ", Points)";
+            Title_Label.Text = task.Title + " (" + App.Database.GetToDoListAsync(task.ListID).Result.EXP + ": Points)";
 
             if (linkParser.Match(task.Description).Success)
             {
                 string s = task.Description;
-                Description_Label.FormattedText = s.Replace(linkParser.Match(task.Description).Value, "");
+                Description_Label.FormattedText = s.Replace(linkParser.Match(task.Description).Value, "") + "\n\nHere are some usefull links:\n";
+
                 Description_Label.FormattedText.Spans.Add(CreateSpan(linkParser.Match(task.Description).Value));
             }
             else {
@@ -57,15 +58,35 @@ namespace OnboardingGame.Pages
         }
 
         async void OnStartButtonClicked(object sender, EventArgs e) {
-            task.Status = 0;
-            await App.Database.SaveItemAsync(task);
-            await Navigation.PopAsync();
+
+            if (task.Status < 0) {
+                bool answer = await DisplayAlert("Attention", "Once a task has been started it can not be undone. Do you whish to continue?", "Yes", "No");
+                if (answer) {
+                    task.Status = 0;
+                    await App.Database.SaveItemAsync(task);
+                    await Navigation.PopAsync();
+                }
+            }
+            else if (task.Status > 0) {
+                await DisplayAlert("Finished","You've already finished this task","Return");
+            }
+            
         }
         async void OnFinishButtonClicked(object sender, EventArgs e)
         {
-            task.Status = 1;
-            await App.Database.SaveItemAsync(task);
-            await Navigation.PopAsync();
+            if (task.Status <= 0) {
+                bool answer = await DisplayAlert("Attention", "Once a task has been finished it can not be undone. Do you whish to continue?", "Yes", "No");
+                if (answer) {
+                    task.Status = 1;
+                    await App.Database.SaveItemAsync(task);
+                    await Navigation.PopAsync();
+                }
+            }
+            else if (task.Status > 0)
+            {
+                await DisplayAlert("Finished", "You've already comepleted this task", "Return");
+            }
+
         }
 
         private Span CreateSpan(string url) {

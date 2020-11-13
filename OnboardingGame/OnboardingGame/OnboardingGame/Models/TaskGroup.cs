@@ -8,6 +8,8 @@ namespace OnboardingGame.Models
     {
         public string Name { get; private set; }
 
+        public List<TaskItem> Items { get{ return this;} }
+
         public TaskGroup(string name, List<TaskItem> items) : base(items) {
             Name = name;
         }

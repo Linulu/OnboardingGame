@@ -16,6 +16,10 @@
             <Entry x:Name="Password"
                    Placeholder="Password"
                    IsPassword="True"/>
+            <Label Text="Title/Position"
+                   FontSize="Large"/>
+            <Entry x:Name="Title"
+                   Placeholder="Title/Position"/>
             <Label Text="Car Benifits"
                    FontSize="Large"/>
             <CheckBox x:Name="CarBenifit"/>

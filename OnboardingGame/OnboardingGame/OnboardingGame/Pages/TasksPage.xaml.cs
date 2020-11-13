@@ -66,7 +66,7 @@ namespace OnboardingGame.Pages
                     }
                     else
                     {
-                        ListSource.Add(new TaskGroup(catagories[j].Name, subTask));
+                        ListSource.Add(new TaskGroup(catagories[j].Name , subTask));
                     }
                 }
             }

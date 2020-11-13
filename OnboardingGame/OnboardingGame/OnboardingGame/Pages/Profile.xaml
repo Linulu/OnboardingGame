@@ -7,10 +7,17 @@
     <ContentPage.Content>
         <StackLayout Margin="20,35,20,20">
             <Label Text="{Binding Name}"
-                   FontSize="Large"/>
-            <Label x:Name="Lvl"/>
-            <Label x:Name="Exp"/>
-            <Label x:Name="Date"/>
+                   FontSize="Title"/>
+            <Label Text="{Binding Title}"
+                   FontSize="Subtitle"/>
+            <Label x:Name="Lvl"
+                   FontSize="Medium"/>
+            <Label x:Name="Exp"
+                   FontSize="Medium"/>
+            <ProgressBar x:Name="ExpBar"
+                         ProgressColor="Blue"/>
+            <Label x:Name="Date"
+                   FontSize="Medium"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

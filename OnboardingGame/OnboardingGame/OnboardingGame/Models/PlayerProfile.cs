@@ -14,5 +14,6 @@ namespace OnboardingGame.Models
         public string Name { get; set; }
         public string Password { get; set; }
         public DateTime StartDate { get; set; }
+        public string Title { get; set; }
     }
 }

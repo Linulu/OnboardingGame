@@ -31,7 +31,7 @@ namespace OnboardingGame.Models
                 }
                 else if (Status > 0)
                 {
-                    return "Completed";
+                    return "Finished";
                 }
                 else if (Status == 0)
                 {

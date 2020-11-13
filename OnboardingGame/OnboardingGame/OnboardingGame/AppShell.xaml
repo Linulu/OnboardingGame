@@ -100,7 +100,7 @@
 
     <FlyoutItem FlyoutDisplayOptions="AsMultipleItems" >
         <ShellContent Title="Profile" Route="Profile" ContentTemplate="{DataTemplate pages:Profile}"/>
-        <ShellContent Title="Tasks" Route="TasksTab" ContentTemplate="{DataTemplate pages:TasksTab}"/>
+        <ShellContent Title="To Do Lists" Route="TasksTab" ContentTemplate="{DataTemplate pages:TasksTab}"/>
         <ShellContent Title="About" Icon="tab_about.png" Route="AboutPage" ContentTemplate="{DataTemplate local:AboutPage}" />
         <ShellContent Title="Settings" Route="Settings" ContentTemplate="{DataTemplate pages:Settings}"/>
     </FlyoutItem>

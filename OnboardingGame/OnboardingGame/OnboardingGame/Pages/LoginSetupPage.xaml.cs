@@ -31,7 +31,8 @@ namespace OnboardingGame.Pages
                     {
                         Name = Username.Text,
                         Password = Password.Text,
-                        StartDate = Start_Date.Date
+                        StartDate = Start_Date.Date,
+                        Title = Title.Text
                     });
                     await Navigation.PopAsync();
                     await Shell.Current.GoToAsync($"//{nameof(TasksTab)}");

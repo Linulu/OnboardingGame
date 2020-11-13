@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Diagnostics.SymbolStore;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -35,11 +36,14 @@ namespace OnboardingGame.Pages
                EXP += (await App.Database.GetAllDoneTasks(list[i].ID)) * list[i].EXP;
             }
             pP.EXP = EXP;
+            int level = 1 + (int)Math.Log(1 + ((double)EXP / 3));
+            int toNextLVL = (int)(3 * Math.Pow(Math.E, level) - 3);
 
             await App.Database.SavePlayerAsync(pP);
 
-            Lvl.Text = "Level: " + (1 + (int)Math.Log(1+((double)EXP/10)));
-            Exp.Text = "Points: " + EXP + "/" + (int)(10 * Math.Pow(Math.E, 1 + (int)Math.Log(1 + ((double)EXP / 10))) -10);
+            Lvl.Text = "Level: " + level;
+            Exp.Text = "Points: " + EXP + "/" + toNextLVL;
+            ExpBar.Progress = (double)EXP / toNextLVL;
 
             this.BindingContext = pP;
 

@@ -8,6 +8,8 @@
         <StackLayout Margin="20,35,20,20">
             <Button Text="Change Profile Name"
                     Clicked="ProfileButtonPress"/>
+            <Button Text="Change Title"
+                    Clicked="OnTitlePress"/>
             <Button Text="Reset Data"
                     Clicked="OnButtonPress"
                     BackgroundColor="Red"/>

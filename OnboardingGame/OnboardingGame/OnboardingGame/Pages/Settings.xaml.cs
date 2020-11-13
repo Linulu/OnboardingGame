@@ -34,6 +34,16 @@ namespace OnboardingGame.Pages
             }
         }
 
+        async void OnTitlePress(object sender, EventArgs e) {
+            string result = await DisplayPromptAsync("Change title", "New title");
+            if (result != null)
+            {
+                PlayerProfile pP = await App.Database.GetPlayerProfile();
+                pP.Title = result;
+                await App.Database.SavePlayerAsync(pP);
+            }
+        }
+
         async void ProfileButtonPress(object sender, EventArgs e) {
             string result = await DisplayPromptAsync("Change name","New name");
             if (result != null) {

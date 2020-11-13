@@ -1,7 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:converters="clr-namespace:OnboardingGame.Converters"
              x:Class="OnboardingGame.Pages.TasksPage">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converters:StatusToColorConverter x:Key="colorConverter"/>
+            <converters:CompletionToProgressConverted x:Key="completionConverter"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    
     <ContentPage.Content>
         <StackLayout Margin="20, 35, 20, 20">
             <CollectionView x:Name="listView"
@@ -10,16 +18,21 @@
                       SelectionChanged="OnListItemTapped">
                 <CollectionView.GroupHeaderTemplate>
                     <DataTemplate>
-                        <Label Text="{Binding Name}"
-                               TextColor="Black"
-                               BackgroundColor="LightBlue"
-                               FontSize="Large"
-                               FontAttributes="Bold"/>
+                        <Grid>
+                            <ProgressBar Progress="{Binding Items, Converter={StaticResource completionConverter}}"
+                                         ScaleY="10"
+                                         ProgressColor="Green"/>
+                            <Label Text="{Binding Name}"
+                                   Margin="3"
+                                   FontSize="Large"
+                                   FontAttributes="Bold"/>
+                        </Grid>
                     </DataTemplate>
                 </CollectionView.GroupHeaderTemplate>
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
-                        <Grid Padding="10">
+                        <Grid Padding="10"
+                              Margin="5">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="Auto"/>
                                 <RowDefinition Height="*"/>
@@ -28,12 +41,27 @@
                                 <ColumnDefinition Width="Auto"/>
                                 <ColumnDefinition Width="*"/>
                             </Grid.ColumnDefinitions>
+                            <Frame BorderColor="Black"
+                                   Grid.ColumnSpan="2"
+                                   Grid.RowSpan="2"
+                                   HorizontalOptions="Fill"
+                                   VerticalOptions="Fill"/>
                             <Label Text="{Binding Title}"
-                                   FontAttributes="Bold"
-                                   FontSize="Medium"/>
+                                   TextColor="Black"
+                                   Margin="5,0,0,0"
+                                   FontSize="Medium"
+                                   FontAttributes="Bold"/>
+                            <Label Text="{Binding StatusMessage}"
+                                   TextColor="Black"
+                                   Margin="5,0,0,0"
+                                   FontSize="Small"
+                                   Grid.Row="1"/>
                             <BoxView HorizontalOptions="End"
+                                     VerticalOptions="Center"
+                                     Margin="5"
+                                     Grid.RowSpan="2"
                                      Grid.Column="1"
-                                     Color="Green"/>
+                                     Color="{Binding Status, Converter={StaticResource colorConverter}}"/>
                         </Grid>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
