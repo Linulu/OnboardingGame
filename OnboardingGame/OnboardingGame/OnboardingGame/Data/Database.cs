@@ -62,9 +62,12 @@ namespace OnboardingGame.Data
         {
             return _database.Table<ToDoList>().Where(i => i.ID == id).FirstOrDefaultAsync();
         }
-        public Task<int> SaveItemAsync(ToDoList item)
+        public Task<int> InsertListAsync(ToDoList item)
         {
             return _database.InsertAsync(item);
+        }
+        public Task<int> UpdateListAsync(ToDoList item) {
+            return _database.UpdateAsync(item);
         }
         public Task<int> DeleteItemAsync(ToDoList item)
         {

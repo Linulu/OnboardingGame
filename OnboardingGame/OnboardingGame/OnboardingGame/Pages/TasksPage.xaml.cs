@@ -29,7 +29,25 @@ namespace OnboardingGame.Pages
         protected override async void OnAppearing() {
             base.OnAppearing();
 
-            GroupedList();
+            ToDoList l = await App.Database.GetToDoListAsync(ListID);
+
+            if (l.RestrictionDate)
+            {
+                if (CheckDate())
+                {
+                    l.RestrictionDate = false;
+                    await App.Database.UpdateListAsync(l);
+                    GroupedList();
+                }
+                else
+                {
+                    await DisplayAlert("Page not available yet", "Seems like this page won't be able just yet wait until your start date to unlock it", "Return");
+                }
+            }
+            else {
+                GroupedList();
+            }
+            
 
             await App.Update();
         }
@@ -74,6 +92,13 @@ namespace OnboardingGame.Pages
             listView.ItemsSource = ListSource;
         }
 
+        private bool CheckDate() {
+            DateTime startDate = App.Database.GetPlayerProfile().Result.StartDate;
+            if (startDate.Date.CompareTo(DateTime.Now.Date) > -1) {
+                return true;
+            }
+            return false;
+        }
         async void OnListItemTapped(object sender, SelectionChangedEventArgs e) {
             if (e.CurrentSelection != null)
             {

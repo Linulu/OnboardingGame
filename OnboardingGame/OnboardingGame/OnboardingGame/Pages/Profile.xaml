@@ -6,10 +6,25 @@
              x:Class="OnboardingGame.Pages.Profile">
     <ContentPage.Content>
         <StackLayout Margin="20,35,20,20">
-            <Label Text="{Binding Name}"
-                   FontSize="Title"/>
-            <Label Text="{Binding Title}"
-                   FontSize="Subtitle"/>
+            <Grid>
+                <Frame HorizontalOptions="Fill"
+                       VerticalOptions="Fill"
+                       Grid.RowSpan="2"/>
+                <Label Text="{Binding Name}"
+                       Margin="5"
+                       FontSize="Title"/>
+                <Label Text="{Binding Title}"
+                       Margin="5"
+                       FontSize="Subtitle"
+                       Grid.Row="1"/>
+                <Grid HorizontalOptions="End"
+                      VerticalOptions="Center"
+                      Grid.RowSpan="2"
+                      Margin="5">
+                    <Image Source="Heart.png"
+                           BackgroundColor="Red"/>
+                </Grid>
+            </Grid>
             <Label x:Name="Lvl"
                    FontSize="Medium"/>
             <Label x:Name="Exp"

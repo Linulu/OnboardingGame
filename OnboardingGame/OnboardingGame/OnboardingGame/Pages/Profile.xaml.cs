@@ -47,8 +47,9 @@ namespace OnboardingGame.Pages
 
             this.BindingContext = pP;
 
-            Date.Text = "Start Date: " + pP.StartDate.Month + "/" + pP.StartDate.Day + "/" + pP.StartDate.Year;
-            
+            //Date.Text = "Start Date: " + pP.StartDate.Month + "/" + pP.StartDate.Day + "/" + pP.StartDate.Year;
+            Date.Text = "Start Date: " + pP.StartDate.Date.ToString("MMMM/dd/yyyy");
+
         }
     }
 }
