@@ -17,6 +17,10 @@ namespace OnboardingGame.Pages
     {
         PlayerProfile pP;
 
+        int EXP = 0;
+        int level = 0;
+        int toNextLVL = 0;
+
         public Profile()
         {
             InitializeComponent();
@@ -30,26 +34,46 @@ namespace OnboardingGame.Pages
 
             List<ToDoList> list = await App.Database.GetToDoListAsync();
 
-            int EXP = 0;
+            EXP = 0;
 
             for (int i = 0; i < list.Count; i++) {
                EXP += (await App.Database.GetAllDoneTasks(list[i].ID)) * list[i].EXP;
             }
             pP.EXP = EXP;
-            int level = 1 + (int)Math.Log(1 + ((double)EXP / 3));
-            int toNextLVL = (int)(3 * Math.Pow(Math.E, level) - 3);
+            level = 1 + (int)Math.Log(1 + ((double)EXP / 3));
+            toNextLVL = (int)(3 * Math.Pow(Math.E, level) - 3);
 
             await App.Database.SavePlayerAsync(pP);
 
             Lvl.Text = "Level: " + level;
-            Exp.Text = "Points: " + EXP + "/" + toNextLVL;
+            NextLevel.Text = "To next level: " + (toNextLVL - EXP);
             ExpBar.Progress = (double)EXP / toNextLVL;
 
             this.BindingContext = pP;
 
-            //Date.Text = "Start Date: " + pP.StartDate.Month + "/" + pP.StartDate.Day + "/" + pP.StartDate.Year;
             Date.Text = "Start Date: " + pP.StartDate.Date.ToString("MMMM/dd/yyyy");
+            ExpSize();
+            await App.Update();
+        }
 
+        private void ExpSize()
+        {
+            int length = Exp.Text.Length;
+            if (length > 11)
+            {
+                Exp.FontSize = Device.GetNamedSize(NamedSize.Micro, Exp);
+            }
+            else if (length > 8)
+            {
+                Exp.FontSize = Device.GetNamedSize(NamedSize.Small, Exp);
+            }
+            else if (length > 6)
+            {
+                Exp.FontSize = Device.GetNamedSize(NamedSize.Medium, Exp);
+            }
+            else if (length > 0) {
+                Exp.FontSize = Device.GetNamedSize(NamedSize.Large, Exp);
+            }
         }
     }
 }

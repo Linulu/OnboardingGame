@@ -42,6 +42,7 @@ namespace OnboardingGame
             /* Use this for creating pop-ups
             await PopupNavigation.Instance.PushAsync(new PopupView());
             */
+            Console.WriteLine("Updated");
         }
 
         //Initialize the Database here

@@ -26,5 +26,11 @@ namespace OnboardingGame.Pages
                 Children.Add(new TasksPage(Lists[i].ID));
             }
         }
+
+        protected async override void OnAppearing()
+        {
+            base.OnAppearing();
+            await App.Update();
+        }
     }
 }

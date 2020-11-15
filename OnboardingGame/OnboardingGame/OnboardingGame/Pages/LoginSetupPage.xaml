@@ -19,7 +19,7 @@
             <Label Text="Title/Position"
                    FontSize="Large"/>
             <Entry x:Name="Title"
-                   Placeholder="Title/Position"/>
+                   Placeholder="Ex: SW Developer"/>
             <Label Text="Car Benifits"
                    FontSize="Large"/>
             <CheckBox x:Name="CarBenifit"/>

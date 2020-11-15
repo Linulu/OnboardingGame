@@ -47,9 +47,6 @@ namespace OnboardingGame.Pages
             else {
                 GroupedList();
             }
-            
-
-            await App.Update();
         }
 
         private async void GroupedList() { 
