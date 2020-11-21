@@ -11,10 +11,10 @@
         "dependencies": {
           "NETStandard.Library": "2.0.3",
           "Newtonsoft.Json": "12.0.3",
-          "Rg.Plugins.Popup": "2.0.0.6",
+          "Rg.Plugins.Popup": "2.0.0.7",
           "SQLiteNetExtensions": "2.1.0",
           "Xamarin.Essentials": "1.5.3.2",
-          "Xamarin.Forms": "4.8.0.1364",
+          "Xamarin.Forms": "4.8.0.1687",
           "sqlite-net-pcl": "1.7.335"
         },
         "runtime": {
@@ -35,14 +35,14 @@
           }
         }
       },
-      "Rg.Plugins.Popup/2.0.0.6": {
+      "Rg.Plugins.Popup/2.0.0.7": {
         "dependencies": {
-          "Xamarin.Forms": "4.8.0.1364"
+          "Xamarin.Forms": "4.8.0.1687"
         },
         "runtime": {
           "lib/netstandard2.0/Rg.Plugins.Popup.dll": {
-            "assemblyVersion": "2.0.0.6",
-            "fileVersion": "2.0.0.6"
+            "assemblyVersion": "2.0.0.7",
+            "fileVersion": "2.0.0.7"
           }
         }
       },
@@ -153,19 +153,19 @@
           }
         }
       },
-      "Xamarin.Forms/4.8.0.1364": {
+      "Xamarin.Forms/4.8.0.1687": {
         "runtime": {
           "lib/netstandard2.0/Xamarin.Forms.Core.dll": {
             "assemblyVersion": "2.0.0.0",
-            "fileVersion": "4.8.0.352"
+            "fileVersion": "4.8.0.400"
           },
           "lib/netstandard2.0/Xamarin.Forms.Platform.dll": {
             "assemblyVersion": "2.0.0.0",
-            "fileVersion": "4.8.0.352"
+            "fileVersion": "4.8.0.400"
           },
           "lib/netstandard2.0/Xamarin.Forms.Xaml.dll": {
             "assemblyVersion": "2.0.0.0",
-            "fileVersion": "4.8.0.352"
+            "fileVersion": "4.8.0.400"
           }
         }
       }
@@ -198,12 +198,12 @@
       "path": "newtonsoft.json/12.0.3",
       "hashPath": "newtonsoft.json.12.0.3.nupkg.sha512"
     },
-    "Rg.Plugins.Popup/2.0.0.6": {
+    "Rg.Plugins.Popup/2.0.0.7": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-TQ0VKcq19Tv7XS/QrQTs/B2SkQCtIIkVwRpe1N6Gz6mwqNykEyRFLLGcgee7C9w4Q26bjG4Dsif4BzrWoIrw1A==",
-      "path": "rg.plugins.popup/2.0.0.6",
-      "hashPath": "rg.plugins.popup.2.0.0.6.nupkg.sha512"
+      "sha512": "sha512-tIq0elo2zHSGjF2ARKSrBeI2W+HaQhWy5oOf1jikKEpzm2tDvDTCYWecqGVrn/Glly3BhW4A3NdEiBBjbB78Eg==",
+      "path": "rg.plugins.popup/2.0.0.7",
+      "hashPath": "rg.plugins.popup.2.0.0.7.nupkg.sha512"
     },
     "sqlite-net-pcl/1.7.335": {
       "type": "package",
@@ -282,12 +282,12 @@
       "path": "xamarin.essentials/1.5.3.2",
       "hashPath": "xamarin.essentials.1.5.3.2.nupkg.sha512"
     },
-    "Xamarin.Forms/4.8.0.1364": {
+    "Xamarin.Forms/4.8.0.1687": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-BZLQDhxXPSu3MbyL4izhGkM2qu0nPaPVEoNZps+cHlgcpA4S5y6f/Kieb6z4S1tyZF1k4a2VPXnyEAFFF78dVA==",
-      "path": "xamarin.forms/4.8.0.1364",
-      "hashPath": "xamarin.forms.4.8.0.1364.nupkg.sha512"
+      "sha512": "sha512-o9ACAbleXxorZzIHRBzIloPollwVC7+YTfxE8r3L2frArCHUkrHIy+K+azQag/Un4h2u88DS01HqR16/lMD8zQ==",
+      "path": "xamarin.forms/4.8.0.1687",
+      "hashPath": "xamarin.forms.4.8.0.1687.nupkg.sha512"
     }
   }
 }

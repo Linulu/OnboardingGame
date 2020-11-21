@@ -1,4 +1,5 @@
 ﻿using SQLite;
+using SQLiteNetExtensions;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -14,11 +15,12 @@ namespace OnboardingGame.Data
         readonly SQLiteAsyncConnection _database;
 
         public Database(string dbPath) {
-            _database = new SQLiteAsyncConnection(dbPath);
+            _database = new SQLiteAsyncConnection(dbPath, true);
             _database.CreateTableAsync<TaskItem>().Wait();
             _database.CreateTableAsync<ToDoList>().Wait();
             _database.CreateTableAsync<PlayerProfile>().Wait();
             _database.CreateTableAsync<Catagory>().Wait();
+            _database.CreateTableAsync<Achievement>().Wait();
         }
 
         public void DeleteDatabase() {
@@ -109,6 +111,28 @@ namespace OnboardingGame.Data
             return _database.DeleteAsync(item);
         }
 
+        //Achievements______________________________________________________________
+        public Task<List<Achievement>> GetAchievement() {
+            return _database.Table<Achievement>().ToListAsync();
+        }
+        public Task<Achievement> GetAchievement(int id) {
+            return _database.Table<Achievement>().Where(i => i.ID == id).FirstOrDefaultAsync();
+        }
+        public Task<int> SaveAchievement(Achievement item) {
+            if (item.ID != 0)
+            {
+                return _database.UpdateAsync(item);
+            }
+            else
+            {
+                return _database.InsertAsync(item);
+            }
+        }
+        public Task<int> DeleteAchievement(Achievement item) {
+
+            return _database.DeleteAsync(item);
+        }
+
         //Return a list of TaskItems who's ListID matches that of the given id 
         //parameter. Use this method to get all the TaskItems from a given ToDoList 
         public Task<List<TaskItem>> GetTasksFromListAsync(int id) {
@@ -121,10 +145,8 @@ namespace OnboardingGame.Data
         {
             return _database.Table<TaskItem>().Where(i => i.ListID == id && i.Status >= 1).CountAsync();
         }
-        
-        //Look in your notes for specifics
-        /*public Task<List<List<Catagory>>> GetCatagoryTaskItems(int id) {
-            
-        }*/
+        public Task<int> GetAllDoneTasks() {
+            return _database.Table<TaskItem>().Where(i => i.Status >= 1).CountAsync();
+        }
     }
 }

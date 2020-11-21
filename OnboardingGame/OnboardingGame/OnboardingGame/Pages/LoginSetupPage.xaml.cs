@@ -26,7 +26,6 @@ namespace OnboardingGame.Pages
                 bool answer = await DisplayAlert("Continue?", "Do you want this username and password?", "Yes", "No");
 
                 if (answer) {
-                    await App.InitializeDatabase(CarBenifit.IsChecked);
                     await App.Database.SavePlayerAsync(new PlayerProfile()
                     {
                         Name = Username.Text,
@@ -34,6 +33,7 @@ namespace OnboardingGame.Pages
                         StartDate = Start_Date.Date,
                         Title = Title.Text
                     });
+                    await App.InitializeDatabase(CarBenifit.IsChecked);
                     await Navigation.PopAsync();
                     await Shell.Current.GoToAsync($"//{nameof(TasksTab)}");
                 }

@@ -41,18 +41,15 @@
                                 <ColumnDefinition Width="Auto"/>
                                 <ColumnDefinition Width="*"/>
                             </Grid.ColumnDefinitions>
-                            <Frame BorderColor="Black"
-                                   Grid.ColumnSpan="2"
+                            <Frame Grid.ColumnSpan="2"
                                    Grid.RowSpan="2"
                                    HorizontalOptions="Fill"
                                    VerticalOptions="Fill"/>
                             <Label Text="{Binding Title}"
-                                   TextColor="Black"
                                    Margin="5,0,0,0"
                                    FontSize="Medium"
                                    FontAttributes="Bold"/>
                             <Label Text="{Binding StatusMessage}"
-                                   TextColor="Black"
                                    Margin="5,0,0,0"
                                    FontSize="Small"
                                    Grid.Row="1"/>

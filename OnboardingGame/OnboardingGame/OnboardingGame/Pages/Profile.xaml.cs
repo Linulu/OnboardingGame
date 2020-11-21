@@ -51,8 +51,11 @@ namespace OnboardingGame.Pages
 
             this.BindingContext = pP;
 
-            Date.Text = "Start Date: " + pP.StartDate.Date.ToString("MMMM/dd/yyyy");
+            //Date.Text = "Start Date: " + pP.StartDate.Date.ToString("MMMM/dd/yyyy");
             ExpSize();
+
+            Achievements.ItemsSource = await App.Database.GetAchievement();
+
             await App.Update();
         }
 

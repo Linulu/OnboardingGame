@@ -11,7 +11,7 @@
           "lib/netstandard2.0/Newtonsoft.Json.dll": {}
         }
       },
-      "Rg.Plugins.Popup/2.0.0.6": {
+      "Rg.Plugins.Popup/2.0.0.7": {
         "type": "package",
         "dependencies": {
           "Xamarin.Forms": "4.5.0.657"
@@ -131,7 +131,7 @@
           "lib/xamarinios10/Xamarin.Essentials.dll": {}
         }
       },
-      "Xamarin.Forms/4.8.0.1364": {
+      "Xamarin.Forms/4.8.0.1687": {
         "type": "package",
         "compile": {
           "lib/Xamarin.iOS10/Xamarin.Forms.Core.dll": {},
@@ -257,10 +257,10 @@
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
           "Newtonsoft.Json": "12.0.3",
-          "Rg.Plugins.Popup": "2.0.0.6",
+          "Rg.Plugins.Popup": "2.0.0.7",
           "SQLiteNetExtensions": "2.1.0",
           "Xamarin.Essentials": "1.5.3.2",
-          "Xamarin.Forms": "4.8.0.1364",
+          "Xamarin.Forms": "4.8.0.1687",
           "sqlite-net-pcl": "1.7.335"
         },
         "compile": {
@@ -281,7 +281,7 @@
           "lib/netstandard2.0/Newtonsoft.Json.dll": {}
         }
       },
-      "Rg.Plugins.Popup/2.0.0.6": {
+      "Rg.Plugins.Popup/2.0.0.7": {
         "type": "package",
         "dependencies": {
           "Xamarin.Forms": "4.5.0.657"
@@ -401,7 +401,7 @@
           "lib/xamarinios10/Xamarin.Essentials.dll": {}
         }
       },
-      "Xamarin.Forms/4.8.0.1364": {
+      "Xamarin.Forms/4.8.0.1687": {
         "type": "package",
         "compile": {
           "lib/Xamarin.iOS10/Xamarin.Forms.Core.dll": {},
@@ -527,10 +527,10 @@
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
           "Newtonsoft.Json": "12.0.3",
-          "Rg.Plugins.Popup": "2.0.0.6",
+          "Rg.Plugins.Popup": "2.0.0.7",
           "SQLiteNetExtensions": "2.1.0",
           "Xamarin.Essentials": "1.5.3.2",
-          "Xamarin.Forms": "4.8.0.1364",
+          "Xamarin.Forms": "4.8.0.1687",
           "sqlite-net-pcl": "1.7.335"
         },
         "compile": {
@@ -551,7 +551,7 @@
           "lib/netstandard2.0/Newtonsoft.Json.dll": {}
         }
       },
-      "Rg.Plugins.Popup/2.0.0.6": {
+      "Rg.Plugins.Popup/2.0.0.7": {
         "type": "package",
         "dependencies": {
           "Xamarin.Forms": "4.5.0.657"
@@ -671,7 +671,7 @@
           "lib/xamarinios10/Xamarin.Essentials.dll": {}
         }
       },
-      "Xamarin.Forms/4.8.0.1364": {
+      "Xamarin.Forms/4.8.0.1687": {
         "type": "package",
         "compile": {
           "lib/Xamarin.iOS10/Xamarin.Forms.Core.dll": {},
@@ -797,10 +797,10 @@
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
           "Newtonsoft.Json": "12.0.3",
-          "Rg.Plugins.Popup": "2.0.0.6",
+          "Rg.Plugins.Popup": "2.0.0.7",
           "SQLiteNetExtensions": "2.1.0",
           "Xamarin.Essentials": "1.5.3.2",
-          "Xamarin.Forms": "4.8.0.1364",
+          "Xamarin.Forms": "4.8.0.1687",
           "sqlite-net-pcl": "1.7.335"
         },
         "compile": {
@@ -821,7 +821,7 @@
           "lib/netstandard2.0/Newtonsoft.Json.dll": {}
         }
       },
-      "Rg.Plugins.Popup/2.0.0.6": {
+      "Rg.Plugins.Popup/2.0.0.7": {
         "type": "package",
         "dependencies": {
           "Xamarin.Forms": "4.5.0.657"
@@ -941,7 +941,7 @@
           "lib/xamarinios10/Xamarin.Essentials.dll": {}
         }
       },
-      "Xamarin.Forms/4.8.0.1364": {
+      "Xamarin.Forms/4.8.0.1687": {
         "type": "package",
         "compile": {
           "lib/Xamarin.iOS10/Xamarin.Forms.Core.dll": {},
@@ -1067,10 +1067,10 @@
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
           "Newtonsoft.Json": "12.0.3",
-          "Rg.Plugins.Popup": "2.0.0.6",
+          "Rg.Plugins.Popup": "2.0.0.7",
           "SQLiteNetExtensions": "2.1.0",
           "Xamarin.Essentials": "1.5.3.2",
-          "Xamarin.Forms": "4.8.0.1364",
+          "Xamarin.Forms": "4.8.0.1687",
           "sqlite-net-pcl": "1.7.335"
         },
         "compile": {
@@ -1114,10 +1114,10 @@
         "packageIcon.png"
       ]
     },
-    "Rg.Plugins.Popup/2.0.0.6": {
-      "sha512": "TQ0VKcq19Tv7XS/QrQTs/B2SkQCtIIkVwRpe1N6Gz6mwqNykEyRFLLGcgee7C9w4Q26bjG4Dsif4BzrWoIrw1A==",
+    "Rg.Plugins.Popup/2.0.0.7": {
+      "sha512": "tIq0elo2zHSGjF2ARKSrBeI2W+HaQhWy5oOf1jikKEpzm2tDvDTCYWecqGVrn/Glly3BhW4A3NdEiBBjbB78Eg==",
       "type": "package",
-      "path": "rg.plugins.popup/2.0.0.6",
+      "path": "rg.plugins.popup/2.0.0.7",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -1158,7 +1158,7 @@
         "lib/xamarinwatchos10/Rg.Plugins.Popup.pdb",
         "lib/xamarinwatchos10/Rg.Plugins.Popup.xml",
         "readme.txt",
-        "rg.plugins.popup.2.0.0.6.nupkg.sha512",
+        "rg.plugins.popup.2.0.0.7.nupkg.sha512",
         "rg.plugins.popup.nuspec"
       ]
     },
@@ -1366,10 +1366,10 @@
         "xamarin.essentials.nuspec"
       ]
     },
-    "Xamarin.Forms/4.8.0.1364": {
-      "sha512": "BZLQDhxXPSu3MbyL4izhGkM2qu0nPaPVEoNZps+cHlgcpA4S5y6f/Kieb6z4S1tyZF1k4a2VPXnyEAFFF78dVA==",
+    "Xamarin.Forms/4.8.0.1687": {
+      "sha512": "o9ACAbleXxorZzIHRBzIloPollwVC7+YTfxE8r3L2frArCHUkrHIy+K+azQag/Un4h2u88DS01HqR16/lMD8zQ==",
       "type": "package",
-      "path": "xamarin.forms/4.8.0.1364",
+      "path": "xamarin.forms/4.8.0.1687",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -1678,7 +1678,7 @@
         "lib/uap10.0.16299/Xamarin.Forms.Xaml.dll",
         "lib/uap10.0.16299/Xamarin.Forms.Xaml.pdb",
         "lib/uap10.0.16299/Xamarin.Forms.Xaml.xml",
-        "xamarin.forms.4.8.0.1364.nupkg.sha512",
+        "xamarin.forms.4.8.0.1687.nupkg.sha512",
         "xamarin.forms.nuspec"
       ]
     },
@@ -1693,7 +1693,7 @@
       "OnboardingGame >= 1.0.0",
       "SQLiteNetExtensions >= 2.1.0",
       "Xamarin.Essentials >= 1.5.3.2",
-      "Xamarin.Forms >= 4.8.0.1364",
+      "Xamarin.Forms >= 4.8.0.1687",
       "sqlite-net-pcl >= 1.7.335"
     ]
   },
@@ -1749,7 +1749,7 @@
           },
           "Xamarin.Forms": {
             "target": "Package",
-            "version": "[4.8.0.1364, )"
+            "version": "[4.8.0.1687, )"
           },
           "sqlite-net-pcl": {
             "target": "Package",

@@ -511,3 +511,14 @@ C:\Users\lcg\Git\OnboardingGame\OnboardingGame\OnboardingGame\OnboardingGame.And
 C:\Users\lcg\Git\OnboardingGame\OnboardingGame\OnboardingGame\OnboardingGame.Android\obj\Debug\90\android\src\crc643dd37f507f3d9710\PopupPageRenderer.java
 C:\Users\lcg\Git\OnboardingGame\OnboardingGame\OnboardingGame\OnboardingGame.Android\obj\Debug\90\android\src\crc64fdbeeba101bd56dc\RgGestureDetectorListener.java
 C:\Users\lcg\Git\OnboardingGame\OnboardingGame\OnboardingGame\OnboardingGame.Android\obj\Debug\90\res\drawable\heart.png
+C:\Users\lcg\Git\OnboardingGame\OnboardingGame\OnboardingGame\OnboardingGame.Android\obj\Debug\90\lp\14\jl\files.cache
+C:\Users\lcg\Git\OnboardingGame\OnboardingGame\OnboardingGame\OnboardingGame.Android\obj\Debug\90\lp\15\jl\files.cache
+C:\Users\lcg\Git\OnboardingGame\OnboardingGame\OnboardingGame\OnboardingGame.Android\obj\Debug\90\lp\19\jl\files.cache
+C:\Users\lcg\Git\OnboardingGame\OnboardingGame\OnboardingGame\OnboardingGame.Android\obj\Debug\90\lp\21\jl\files.cache
+C:\Users\lcg\Git\OnboardingGame\OnboardingGame\OnboardingGame\OnboardingGame.Android\obj\Debug\90\lp\28\jl\files.cache
+C:\Users\lcg\Git\OnboardingGame\OnboardingGame\OnboardingGame\OnboardingGame.Android\obj\Debug\90\lp\32\jl\files.cache
+C:\Users\lcg\Git\OnboardingGame\OnboardingGame\OnboardingGame\OnboardingGame.Android\obj\Debug\90\lp\34\jl\files.cache
+C:\Users\lcg\Git\OnboardingGame\OnboardingGame\OnboardingGame\OnboardingGame.Android\obj\Debug\90\lp\35\jl\files.cache
+C:\Users\lcg\Git\OnboardingGame\OnboardingGame\OnboardingGame\OnboardingGame.Android\obj\Debug\90\lp\36\jl\files.cache
+C:\Users\lcg\Git\OnboardingGame\OnboardingGame\OnboardingGame\OnboardingGame.Android\obj\Debug\90\lp\40\jl\files.cache
+C:\Users\lcg\Git\OnboardingGame\OnboardingGame\OnboardingGame\OnboardingGame.Android\obj\Debug\90\lp\41\jl\files.cache

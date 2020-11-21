@@ -43,6 +43,47 @@
                        x:Name="NextLevel"
                        FontSize="Medium"/>
             </Grid>
+
+            <Grid Margin="0,25">
+                <Frame HorizontalOptions="Fill"
+                       VerticalOptions="Fill"
+                       Grid.RowSpan="2"/>
+                <Label Text="Achievements"
+                       Margin="5"
+                       FontSize="Title"
+                       FontAttributes="Bold"
+                       HeightRequest="0.01"
+                       HorizontalOptions="Center"/>
+                <CollectionView x:Name="Achievements"
+                                Margin="5,-30,0,0"
+                                Grid.Row="1"
+                                HeightRequest="200"
+                                VerticalOptions="Fill">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <Label Text="{Binding Name}"
+                                       FontSize="Large"
+                                       FontAttributes="Bold"/>
+                                <Label Text="{Binding Description}"
+                                       Grid.Row="1"
+                                       FontSize="Caption"/>
+                            </Grid>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </Grid>
+                
+            <Label Text="Date"></Label>
+
             <!--
             <ListView/CollectionView>
                 Show achievment list
@@ -50,9 +91,6 @@
                 - Milestones 
             </ListView/CollectionView>
             -->
-            
-            <Label x:Name="Date"
-                   FontSize="Medium"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

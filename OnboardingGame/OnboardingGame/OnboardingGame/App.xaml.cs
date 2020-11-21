@@ -46,8 +46,6 @@ namespace OnboardingGame
         }
 
         //Initialize the Database here
-        //Add modularity to it by letting pass arguments that can later be used
-        //to communicate with a database
         public static async Task InitializeDatabase(bool carBenefits) {
             var assembly = IntrospectionExtensions.GetTypeInfo(typeof(TasksTab)).Assembly;
             Stream stream;
@@ -81,6 +79,11 @@ namespace OnboardingGame
                         await Database.SaveItemAsync(element);
                     }
                 }
+            }
+
+            List<Achievement> aList = await AchievmentList.GetAchievementsAsync();
+            foreach (Achievement a in aList) {
+                await Database.SaveAchievement(a);
             }
         }
 
