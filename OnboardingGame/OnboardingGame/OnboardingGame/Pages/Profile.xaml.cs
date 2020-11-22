@@ -46,6 +46,14 @@ namespace OnboardingGame.Pages
             ExpSize();
 
             Achievements.ItemsSource = await App.Database.GetAchievement();
+            Date.Text = "Start date: " + pP.StartDate.ToString("MMMM/dd/yyyy");
+        }
+
+        async void OnAchievementTapped(object sender, SelectionChangedEventArgs e) {
+            if (e.CurrentSelection != null) {
+                Achievement a = e.CurrentSelection.FirstOrDefault() as Achievement;
+                await DisplayAlert(a.Name,"Description:\n"+a.Description,"Return");
+            }
         }
 
         private void ExpSize()

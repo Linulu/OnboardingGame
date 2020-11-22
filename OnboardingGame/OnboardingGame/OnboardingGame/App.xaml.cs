@@ -50,33 +50,49 @@ namespace OnboardingGame
             */
             switch (t) {
                 case AchievementType.List:
-                    await ListUpdate();
+                    List<string> listList = await ListUpdate();
+                    foreach (string el in listList)
+                    {
+                        Console.WriteLine(el);
+                    }
                     break;
                 case AchievementType.EXP:
-                    await EXPUpdate();
+                    List<string> expList = await EXPUpdate();
+                    foreach (string el in expList)
+                    {
+                        Console.WriteLine(el);
+                    }
                     break;
                 case AchievementType.Date:
-                    await DateUpdate();
+                    List<string> dateList = await DateUpdate();
+                    foreach (string el in dateList) {
+                        Console.WriteLine(el);
+                    }
                     break;
             }
         }
-        private static async Task ListUpdate() {
+        private static async Task<List<string>> ListUpdate() {
+            List<string> rV = new List<string>();
             List<Achievement> aList = await Database.GetAchievementByType(AchievementType.List);
             foreach(Achievement element in aList)
             {
                 if (element.TargetID != 0)
                 {
                     element.CurrentAmount = await Database.GetAllDoneTasks(element.TargetID);
-                    element.Status = (element.CurrentAmount >= element.RequiredAmount);
                 }
                 else {
                     element.CurrentAmount = await Database.GetAllDoneTasks();
-                    element.Status = (element.CurrentAmount >= element.RequiredAmount);
+                }
+                element.Status = (element.CurrentAmount >= element.RequiredAmount);
+                if (element.Status) {
+                    rV.Add(element.Name);
                 }
                 await Database.SaveAchievement(element);
             }
+            return rV;
         }
-        private static async Task EXPUpdate() {
+        private static async Task<List<string>> EXPUpdate() {
+            List<string> rV = new List<string>();
             List<Achievement> aList = await Database.GetAchievementByType(AchievementType.EXP);
 
             PlayerProfile pP = await App.Database.GetPlayerProfile();
@@ -93,17 +109,26 @@ namespace OnboardingGame
             {
                 element.CurrentAmount = pP.EXP;
                 element.Status = (element.CurrentAmount >= element.RequiredAmount);
+                if (element.Status) {
+                    rV.Add(element.Name);
+                }
                 await Database.SaveAchievement(element);
             }
+            return rV;
         }
-        private static async Task DateUpdate() {
+        private static async Task<List<string>> DateUpdate() {
+            List<string> rV = new List<string>();
             List<Achievement> aList = await Database.GetAchievementByType(AchievementType.Date);
             foreach (Achievement element in aList)
             {
                 element.CurrentAmount = DateTime.Now.Ticks;
                 element.Status = (element.CurrentAmount >= element.RequiredAmount);
+                if (element.Status) {
+                    rV.Add(element.Name);
+                }
                 await Database.SaveAchievement(element);
             }
+            return rV;
         }
 
         //Initialize the Database here

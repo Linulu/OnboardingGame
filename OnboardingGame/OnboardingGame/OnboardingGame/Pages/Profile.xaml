@@ -56,6 +56,8 @@
                        HorizontalOptions="Center"/>
                 <CollectionView x:Name="Achievements"
                                 Margin="5,-60,0,0"
+                                SelectionMode="Single"
+                                SelectionChanged="OnAchievementTapped"
                                 Grid.Row="1"
                                 HeightRequest="300"
                                 VerticalOptions="Fill">
@@ -71,7 +73,7 @@
                                     <ColumnDefinition Width="*"/>
                                 </Grid.ColumnDefinitions>
                                 <Label Text="{Binding Name}"
-                                       FontSize="Large"
+                                       FontSize="Medium"
                                        FontAttributes="Bold"/>
                                 <Label Text="{Binding Status}"
                                        Grid.Row="1"
@@ -81,8 +83,9 @@
                     </CollectionView.ItemTemplate>
                 </CollectionView>
             </Grid>
-                
-            <Label Text="Date"></Label>
+
+            <Label x:Name="Date"
+                   FontAttributes="Bold"/>
 
             <!--
             <ListView/CollectionView>

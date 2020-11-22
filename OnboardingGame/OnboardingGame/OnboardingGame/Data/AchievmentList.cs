@@ -13,7 +13,7 @@ namespace OnboardingGame.Data
             List<Achievement> aList = new List<Achievement> {
                 new Achievement{
                     Name = "Reach Level 2",
-                    Description = "Reach Level 2",
+                    Description = "Earn enought points to reach level 2",
                     AchievementType = App.AchievementType.EXP,
                     CurrentAmount = (await App.Database.GetPlayerProfile()).EXP,
                     RequiredAmount = 5,
@@ -21,7 +21,7 @@ namespace OnboardingGame.Data
                 },
                 new Achievement{
                     Name = "Start at Phoniro",
-                    Description = "Start at Phoniro",
+                    Description = "Reach your start date",
                     AchievementType = App.AchievementType.Date,
                     CurrentAmount = DateTime.Now.Ticks,
                     RequiredAmount = (await App.Database.GetPlayerProfile()).StartDate.Ticks,
@@ -42,7 +42,7 @@ namespace OnboardingGame.Data
                 aList.Add(new Achievement
                 {
                     Name = "Complete " + element.Name,
-                    Description = "Finish all task in the " + element.Name + " list",
+                    Description = "Finish all tasks in the " + element.Name + " list",
                     AchievementType = App.AchievementType.List,
                     TargetID = element.ID,
                     CurrentAmount = await App.Database.GetAllDoneTasks(element.ID),
