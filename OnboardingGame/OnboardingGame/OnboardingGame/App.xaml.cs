@@ -38,11 +38,72 @@ namespace OnboardingGame
             MainPage = new AppShell();
         }
 
-        public static async Task Update() {
+        public enum AchievementType {
+            List,
+            EXP,
+            Date
+        }
+
+        public static async Task Update(AchievementType t) {
             /* Use this for creating pop-ups
             await PopupNavigation.Instance.PushAsync(new PopupView());
             */
-            Console.WriteLine("Updated");
+            switch (t) {
+                case AchievementType.List:
+                    await ListUpdate();
+                    break;
+                case AchievementType.EXP:
+                    await EXPUpdate();
+                    break;
+                case AchievementType.Date:
+                    await DateUpdate();
+                    break;
+            }
+        }
+        private static async Task ListUpdate() {
+            List<Achievement> aList = await Database.GetAchievementByType(AchievementType.List);
+            foreach(Achievement element in aList)
+            {
+                if (element.TargetID != 0)
+                {
+                    element.CurrentAmount = await Database.GetAllDoneTasks(element.TargetID);
+                    element.Status = (element.CurrentAmount >= element.RequiredAmount);
+                }
+                else {
+                    element.CurrentAmount = await Database.GetAllDoneTasks();
+                    element.Status = (element.CurrentAmount >= element.RequiredAmount);
+                }
+                await Database.SaveAchievement(element);
+            }
+        }
+        private static async Task EXPUpdate() {
+            List<Achievement> aList = await Database.GetAchievementByType(AchievementType.EXP);
+
+            PlayerProfile pP = await App.Database.GetPlayerProfile();
+            List<ToDoList> list = await App.Database.GetToDoListAsync();
+            int EXP = 0;
+            for (int i = 0; i < list.Count; i++)
+            {
+                EXP += (await App.Database.GetAllDoneTasks(list[i].ID)) * list[i].EXP;
+            }
+            pP.EXP = EXP;
+            await App.Database.SavePlayerAsync(pP);
+
+            foreach (Achievement element in aList)
+            {
+                element.CurrentAmount = pP.EXP;
+                element.Status = (element.CurrentAmount >= element.RequiredAmount);
+                await Database.SaveAchievement(element);
+            }
+        }
+        private static async Task DateUpdate() {
+            List<Achievement> aList = await Database.GetAchievementByType(AchievementType.Date);
+            foreach (Achievement element in aList)
+            {
+                element.CurrentAmount = DateTime.Now.Ticks;
+                element.Status = (element.CurrentAmount >= element.RequiredAmount);
+                await Database.SaveAchievement(element);
+            }
         }
 
         //Initialize the Database here
@@ -86,22 +147,10 @@ namespace OnboardingGame
                 await Database.SaveAchievement(a);
             }
         }
-
         public static void DeleteDatabase() {
             Database.DeleteDatabase();
             database = null;
             File.Delete(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "Data.db3"));
-        }
-        
-        protected override void OnStart() {
-        }
-
-        protected override void OnSleep()
-        {
-        }
-
-        protected override void OnResume()
-        {
         }
     }
 }

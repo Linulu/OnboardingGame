@@ -32,18 +32,9 @@ namespace OnboardingGame.Pages
 
             pP = await App.Database.GetPlayerProfile();
 
-            List<ToDoList> list = await App.Database.GetToDoListAsync();
-
-            EXP = 0;
-
-            for (int i = 0; i < list.Count; i++) {
-               EXP += (await App.Database.GetAllDoneTasks(list[i].ID)) * list[i].EXP;
-            }
-            pP.EXP = EXP;
+            EXP = pP.EXP;
             level = 1 + (int)Math.Log(1 + ((double)EXP / 3));
             toNextLVL = (int)(3 * Math.Pow(Math.E, level) - 3);
-
-            await App.Database.SavePlayerAsync(pP);
 
             Lvl.Text = "Level: " + level;
             NextLevel.Text = "To next level: " + (toNextLVL - EXP);
@@ -55,8 +46,6 @@ namespace OnboardingGame.Pages
             ExpSize();
 
             Achievements.ItemsSource = await App.Database.GetAchievement();
-
-            await App.Update();
         }
 
         private void ExpSize()

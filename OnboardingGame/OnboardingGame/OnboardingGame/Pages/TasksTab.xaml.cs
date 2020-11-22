@@ -30,7 +30,7 @@ namespace OnboardingGame.Pages
         protected async override void OnAppearing()
         {
             base.OnAppearing();
-            await App.Update();
+            await App.Update(App.AchievementType.Date);
         }
     }
 }

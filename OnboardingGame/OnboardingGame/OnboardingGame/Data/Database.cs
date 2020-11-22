@@ -148,5 +148,8 @@ namespace OnboardingGame.Data
         public Task<int> GetAllDoneTasks() {
             return _database.Table<TaskItem>().Where(i => i.Status >= 1).CountAsync();
         }
+        public Task<List<Achievement>> GetAchievementByType(App.AchievementType t) {
+            return _database.Table<Achievement>().Where(i => i.AchievementType == t && i.Status == false).ToListAsync();
+        }
     }
 }

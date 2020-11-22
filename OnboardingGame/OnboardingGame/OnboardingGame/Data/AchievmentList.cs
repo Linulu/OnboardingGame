@@ -14,73 +14,43 @@ namespace OnboardingGame.Data
                 new Achievement{
                     Name = "Reach Level 2",
                     Description = "Reach Level 2",
+                    AchievementType = App.AchievementType.EXP,
                     CurrentAmount = (await App.Database.GetPlayerProfile()).EXP,
-                    RequiredAmount = 5
+                    RequiredAmount = 5,
+                    Status = false
                 },
                 new Achievement{
                     Name = "Start at Phoniro",
                     Description = "Start at Phoniro",
+                    AchievementType = App.AchievementType.Date,
                     CurrentAmount = DateTime.Now.Ticks,
-                    RequiredAmount = (await App.Database.GetPlayerProfile()).StartDate.Ticks
+                    RequiredAmount = (await App.Database.GetPlayerProfile()).StartDate.Ticks,
+                    Status = false
                 },
                 new Achievement{
                     Name = "Finish a task",
                     Description = "Finish a task in any list",
+                    AchievementType = App.AchievementType.List,
                     CurrentAmount = await App.Database.GetAllDoneTasks(),
-                    RequiredAmount = 1
+                    RequiredAmount = 1,
+                    Status = false
                 }
             };
 
-            /*
-            List<ToDoList> list = await App.Database.GetToDoListAsync();
-
-            foreach (ToDoList i in list) {
-                int nrOfTasks = (await App.Database.GetTasksFromListAsync(i.ID)).Count;
+            List<ToDoList> tList = await App.Database.GetToDoListAsync();
+            foreach (ToDoList element in tList) {
                 aList.Add(new Achievement
                 {
-                    Name = "Finished a task in " + i.Name,
-                    Description = "Finish at least one task in " + i.Name + " list.",
-                    AchievementType = (int)App.AchievementType.List,
-                    TargetID = i.ID,
-                    CurrentAmount = 0,
-                    RequiredAmount = 1,
-                    Status = false
-                });
-                aList.Add(new Achievement
-                {
-                    Name = "Completly finish " + i.Name,
-                    Description = "Completely finish all tasks in " + i.Name + " list.",
-                    AchievementType = (int)App.AchievementType.List,
-                    TargetID = i.ID,
-                    CurrentAmount = 0,
-                    RequiredAmount = nrOfTasks,
+                    Name = "Complete " + element.Name,
+                    Description = "Finish all task in the " + element.Name + " list",
+                    AchievementType = App.AchievementType.List,
+                    TargetID = element.ID,
+                    CurrentAmount = await App.Database.GetAllDoneTasks(element.ID),
+                    RequiredAmount = (await App.Database.GetTasksFromListAsync(element.ID)).Count,
                     Status = false
                 });
             }
 
-            int pID = (await App.Database.GetPlayerProfile()).ID;
-            long ticks = (await App.Database.GetPlayerProfile()).StartDate.Ticks;
-            aList.Add(new Achievement
-            {
-                Name = "Reach Level 2",
-                Description = "Earn enought hearts to reach Level 2",
-                AchievementType = (int)App.AchievementType.PlayerEXP,
-                TargetID = pID,
-                CurrentAmount = 0,
-                RequiredAmount = 5,
-                Status = false
-            });
-            aList.Add(new Achievement
-            {
-                Name = "Start at Phoniro",
-                Description = "Start at Phoniro",
-                AchievementType = (int)App.AchievementType.Date,
-                TargetID = pID,
-                CurrentAmount = 0,
-                RequiredAmount = ticks,
-                Status = false
-            });
-            */
             return aList;
         }
     }

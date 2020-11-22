@@ -80,6 +80,8 @@ namespace OnboardingGame.Pages
                     task.Status = 1;
                     await App.Database.SaveItemAsync(task);
                     await Navigation.PopAsync();
+                    await App.Update(App.AchievementType.EXP);
+                    await App.Update(App.AchievementType.List);
                 }
             }
             else if (task.Status > 0)

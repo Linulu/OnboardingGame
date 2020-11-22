@@ -11,11 +11,10 @@ namespace OnboardingGame.Models
         public int ID { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
-        public int AchievementType { get; set; }
+        public App.AchievementType AchievementType { get; set; }
+        public int TargetID { get; set; }
         public long CurrentAmount { get; set; }
         public long RequiredAmount { get; set; }
-        public bool Status (){
-            return (CurrentAmount >= RequiredAmount);
-        }
+        public bool Status{ get; set; }
     }
 }
