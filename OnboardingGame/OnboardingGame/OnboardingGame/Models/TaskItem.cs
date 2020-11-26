@@ -20,6 +20,9 @@ namespace OnboardingGame.Models
         [ForeignKey(typeof(ToDoList))]
         public int ListID { get; set; }
 
+        [ForeignKey(typeof(Catagory))]
+        public int CatagoryID { get; set; }
+
         public string StatusMessage {
             get {
                 if (Status < 0)
@@ -28,7 +31,7 @@ namespace OnboardingGame.Models
                 }
                 else if (Status > 0)
                 {
-                    return "Completed";
+                    return "Finished";
                 }
                 else if (Status == 0)
                 {

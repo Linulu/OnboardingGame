@@ -1,10 +1,12 @@
 ﻿using SQLite;
+using SQLiteNetExtensions;
 using System;
 using System.Collections.Generic;
 using System.Text;
 using OnboardingGame.Models;
 using System.Threading.Tasks;
 using System.Data.SqlTypes;
+using System.Diagnostics;
 
 namespace OnboardingGame.Data
 {
@@ -13,10 +15,12 @@ namespace OnboardingGame.Data
         readonly SQLiteAsyncConnection _database;
 
         public Database(string dbPath) {
-            _database = new SQLiteAsyncConnection(dbPath);
+            _database = new SQLiteAsyncConnection(dbPath, true);
             _database.CreateTableAsync<TaskItem>().Wait();
             _database.CreateTableAsync<ToDoList>().Wait();
             _database.CreateTableAsync<PlayerProfile>().Wait();
+            _database.CreateTableAsync<Catagory>().Wait();
+            _database.CreateTableAsync<Achievement>().Wait();
         }
 
         public void DeleteDatabase() {
@@ -60,9 +64,12 @@ namespace OnboardingGame.Data
         {
             return _database.Table<ToDoList>().Where(i => i.ID == id).FirstOrDefaultAsync();
         }
-        public Task<int> SaveItemAsync(ToDoList item)
+        public Task<int> InsertListAsync(ToDoList item)
         {
             return _database.InsertAsync(item);
+        }
+        public Task<int> UpdateListAsync(ToDoList item) {
+            return _database.UpdateAsync(item);
         }
         public Task<int> DeleteItemAsync(ToDoList item)
         {
@@ -88,6 +95,44 @@ namespace OnboardingGame.Data
             return _database.DeleteAllAsync<PlayerProfile>();
         }
 
+        //Catagories________________________________________________________________
+        public Task<List<Catagory>> GetCatagories() {
+            return _database.Table<Catagory>().ToListAsync();
+        }
+        public Task<Catagory> GetCatagory(int id) {
+            return _database.Table<Catagory>().Where(i => i.ID == id).FirstOrDefaultAsync();
+        }
+        public Task<int> SaveCatagoryAsync(Catagory item)
+        {
+            return _database.InsertAsync(item);
+        }
+        public Task<int> DeleteCatagoryAsync(Catagory item)
+        {
+            return _database.DeleteAsync(item);
+        }
+
+        //Achievements______________________________________________________________
+        public Task<List<Achievement>> GetAchievement() {
+            return _database.Table<Achievement>().ToListAsync();
+        }
+        public Task<Achievement> GetAchievement(int id) {
+            return _database.Table<Achievement>().Where(i => i.ID == id).FirstOrDefaultAsync();
+        }
+        public Task<int> SaveAchievement(Achievement item) {
+            if (item.ID != 0)
+            {
+                return _database.UpdateAsync(item);
+            }
+            else
+            {
+                return _database.InsertAsync(item);
+            }
+        }
+        public Task<int> DeleteAchievement(Achievement item) {
+
+            return _database.DeleteAsync(item);
+        }
+
         //Return a list of TaskItems who's ListID matches that of the given id 
         //parameter. Use this method to get all the TaskItems from a given ToDoList 
         public Task<List<TaskItem>> GetTasksFromListAsync(int id) {
@@ -99,6 +144,12 @@ namespace OnboardingGame.Data
         public Task<int> GetAllDoneTasks(int id)
         {
             return _database.Table<TaskItem>().Where(i => i.ListID == id && i.Status >= 1).CountAsync();
+        }
+        public Task<int> GetAllDoneTasks() {
+            return _database.Table<TaskItem>().Where(i => i.Status >= 1).CountAsync();
+        }
+        public Task<List<Achievement>> GetAchievementByType(App.AchievementType t) {
+            return _database.Table<Achievement>().Where(i => i.AchievementType == t && i.Status == false).ToListAsync();
         }
     }
 }

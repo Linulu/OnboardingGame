@@ -1,12 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "ZZdayDcxaUzFR1W4yN39lJyr620O75+Pc8+QLONl3wWtdVoVZ1Jq0V/ecLE6NCIPAdsVfjxZRIbQQiEgVbBERw==",
+  "dgSpecHash": "XUagljsmLD0/6HGUhX9znbjd2+3ojpA9TWV4UnxUUvL68mGaoiuMI/ciDYFJqNW1QRw13o5o9I//jQt5wtl/uA==",
   "success": true,
   "projectFilePath": "C:\\Users\\lcg\\Git\\OnboardingGame\\OnboardingGame\\OnboardingGame\\OnboardingGame\\OnboardingGame.csproj",
   "expectedPackageFiles": [
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
     "C:\\Users\\lcg\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512",
+    "C:\\Users\\lcg\\.nuget\\packages\\rg.plugins.popup\\2.0.0.7\\rg.plugins.popup.2.0.0.7.nupkg.sha512",
     "C:\\Users\\lcg\\.nuget\\packages\\sqlite-net-pcl\\1.7.335\\sqlite-net-pcl.1.7.335.nupkg.sha512",
     "C:\\Users\\lcg\\.nuget\\packages\\sqlitenetextensions\\2.1.0\\sqlitenetextensions.2.1.0.nupkg.sha512",
     "C:\\Users\\lcg\\.nuget\\packages\\sqlitepclraw.bundle_green\\2.0.3\\sqlitepclraw.bundle_green.2.0.3.nupkg.sha512",
@@ -18,7 +19,7 @@
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
     "C:\\Users\\lcg\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\4.5.2\\system.runtime.compilerservices.unsafe.4.5.2.nupkg.sha512",
     "C:\\Microsoft\\Xamarin\\NuGet\\xamarin.essentials\\1.5.3.2\\xamarin.essentials.1.5.3.2.nupkg.sha512",
-    "C:\\Users\\lcg\\.nuget\\packages\\xamarin.forms\\4.8.0.1364\\xamarin.forms.4.8.0.1364.nupkg.sha512"
+    "C:\\Users\\lcg\\.nuget\\packages\\xamarin.forms\\4.8.0.1687\\xamarin.forms.4.8.0.1687.nupkg.sha512"
   ],
   "logs": []
 }

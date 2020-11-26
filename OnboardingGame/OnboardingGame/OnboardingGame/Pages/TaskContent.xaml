@@ -17,11 +17,18 @@
                 <ColumnDefinition />
             </Grid.ColumnDefinitions>
 
-            <Label Margin="10,20,10,10"
+            <Label x:Name="Title_Label"
+                   Margin="10,20,10,10"
                    FontAttributes="Bold"
-                   FontSize="Medium"
-                   Text="{Binding Title}"
+                   FontSize="Large"
                    Grid.ColumnSpan="2"/>
+
+            <Frame BorderColor="Black"
+                   Margin="5"
+                   Grid.Row="1"
+                   Grid.ColumnSpan="2"
+                   HorizontalOptions="Fill"
+                   VerticalOptions="Fill"/>
             <Label Margin="10"
                    Grid.Row="1"
                    Grid.ColumnSpan="2"

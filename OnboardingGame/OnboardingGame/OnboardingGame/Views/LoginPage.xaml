@@ -13,7 +13,21 @@
 
     <ContentPage.Content>
         <StackLayout Padding="10,0,10,0" VerticalOptions="Center">
+            <Image Source="phoniro_assaabloy.png"/>
+            <Entry VerticalOptions="Center" Placeholder="Username" Text="{Binding Username}"/>
+            <Entry VerticalOptions="Center" IsPassword="True" Placeholder="Password" Text="{Binding Password}"/>
             <Button VerticalOptions="Center" Text="Login" Command="{Binding LoginCommand}"/>
+            <Label VerticalOptions="End" HorizontalOptions="End">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="Profile Setup" TextColor="Blue">
+                            <Span.GestureRecognizers>
+                                <TapGestureRecognizer x:Name="Gesture"/>
+                            </Span.GestureRecognizers>
+                        </Span>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label> 
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

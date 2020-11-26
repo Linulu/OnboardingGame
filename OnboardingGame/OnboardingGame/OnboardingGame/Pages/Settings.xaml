@@ -7,7 +7,17 @@
     <ContentPage.Content>
         <StackLayout Margin="20,35,20,20">
             <Button Text="Change Profile Name"
+                    BackgroundColor="LightSeaGreen"
                     Clicked="ProfileButtonPress"/>
+            <Button Text="Change Title"
+                    Background="LightSeaGreen"
+                    Clicked="OnTitlePress"/>
+            <Button Text="About this app"
+                    BackgroundColor="LightSeaGreen"
+                    Clicked="AboutButtonPress"/>
+            <Button Text="How to use this app"
+                    BackgroundColor="LightSeaGreen"
+                    Clicked="HowToButtonPress"/>
             <Button Text="Reset Data"
                     Clicked="OnButtonPress"
                     BackgroundColor="Red"/>

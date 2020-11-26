@@ -1,15 +1,109 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:converters="clr-namespace:OnboardingGame.Converters"
              Shell.TabBarIsVisible="False"
              Title="Profile"
              x:Class="OnboardingGame.Pages.Profile">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converters:BooleanToColorConverter x:Key="colorConverter"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    
     <ContentPage.Content>
         <StackLayout Margin="20,35,20,20">
-            <Label Text="{Binding Name}"
-                   FontSize="Large"/>
-            <Label x:Name="Lvl"/>
-            <Label x:Name="Exp"/>
+            <Grid>
+                <Frame HorizontalOptions="Fill"
+                       VerticalOptions="Fill"
+                       Grid.RowSpan="2"/>
+                <Label Text="{Binding Name}"
+                       Margin="5"
+                       FontSize="Title"/>
+                <Label Text="{Binding Title}"
+                       Margin="5"
+                       FontSize="Subtitle"
+                       Grid.Row="1"/>
+                
+                <Grid HorizontalOptions="End"
+                      VerticalOptions="Center"
+                      Grid.RowSpan="2"
+                      Margin="5">
+                    <Image Source="heart.png"
+                           BackgroundColor="Red"/>
+                    <Label x:Name="Exp"
+                           Text="{Binding EXP}"
+                           HorizontalOptions="Center"
+                           VerticalOptions="Center"
+                           HeightRequest="50"/>
+                </Grid>
+            </Grid>
+            <Grid>
+                <Label x:Name="Lvl"
+                       FontSize="Medium"/>
+                <ProgressBar Grid.Row="1"
+                             x:Name="ExpBar"
+                             ProgressColor="DeepSkyBlue"
+                             Opacity="0.5"
+                             ScaleY="7"/>
+                <Label Grid.Row="1"
+                       x:Name="NextLevel"
+                       Margin="5,0"
+                       FontSize="Medium"/>
+            </Grid>
+
+            <Grid Margin="0,25">
+                <Label Text="Achievements"
+                       Margin="5"
+                       FontSize="Title"
+                       FontAttributes="Bold"
+                       HeightRequest="0.01"
+                       HorizontalOptions="Center"/>
+                <CollectionView x:Name="Achievements"
+                                Margin="5,-60,0,0"
+                                SelectionMode="Single"
+                                SelectionChanged="OnAchievementTapped"
+                                Grid.Row="1"
+                                HeightRequest="300"
+                                VerticalOptions="Fill">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Grid Margin="2.5">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <Frame BorderColor="{Binding Status,Converter={StaticResource colorConverter}}"
+                                       Margin="5,1"
+                                       HorizontalOptions="Fill"
+                                       VerticalOptions="Fill"
+                                       Grid.RowSpan="2"
+                                       Grid.ColumnSpan="2"/>
+                                <Label Text="{Binding Name}"
+                                       Margin="10,0"
+                                       FontSize="Medium"
+                                       FontAttributes="Bold"/>
+                                    <Label Text="{Binding AchievementMessage}"
+                                           Margin="10,0"
+                                           Grid.Row="1"
+                                           FontSize="Caption"/>
+                            </Grid>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+                <Frame HorizontalOptions="Fill"
+                       VerticalOptions="Fill"
+                       Grid.RowSpan="2"
+                       BackgroundColor="Transparent"
+                       InputTransparent="True"/>
+            </Grid>
+
+            <Label x:Name="Date"
+                   FontAttributes="Bold"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

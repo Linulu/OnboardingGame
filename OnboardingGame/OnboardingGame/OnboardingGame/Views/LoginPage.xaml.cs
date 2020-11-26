@@ -9,6 +9,8 @@ using Xamarin.Forms.Xaml;
 using OnboardingGame.Pages;
 using OnboardingGame.Models;
 using System.IO;
+using System.Diagnostics;
+using System.Windows.Input;
 
 namespace OnboardingGame.Views
 {
@@ -16,6 +18,8 @@ namespace OnboardingGame.Views
     public partial class LoginPage : ContentPage
     {
         public Command LoginCommand { get; }
+        public string Username { get; set; }
+        public string Password { get; set; }
 
         public LoginPage()
         {
@@ -24,37 +28,57 @@ namespace OnboardingGame.Views
             Title = "Login";
             LoginCommand = new Command(OnLoginClicked);
 
+            Gesture.Command = new Command(async () => ProfileSetUp());
+
             this.BindingContext = this;
+        }
+
+        protected override async void OnAppearing() {
+            base.OnAppearing();
+
+            if (!(File.Exists(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "Data.db3"))))
+            {
+                await DisplayAlert("No Local Profile found","There seems to be no local profile on this device. Tap the Profile Setup button to set it up","Got it");
+            }
         }
 
         private async void OnLoginClicked(object obj)
         {
-            if (!(File.Exists(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "Data.db3"))))
+            if (File.Exists(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "Data.db3")))
             {
-                await App.InitializeDatabase();
-            }
-
-            if (await App.Database.GetPlayerProfile() == null)
-            {
-                string name = await DisplayPromptAsync("Profile Setup", "What's your name?");
-                if (!string.IsNullOrWhiteSpace(name)) {
-                    string password = await DisplayPromptAsync("Password Setup", "Select a password");
-                    if (!string.IsNullOrWhiteSpace(password)) {
-                        await App.Database.SavePlayerAsync(new PlayerProfile()
-                        {
-                            Name = name,
-                            Password = password
-                        });
+                if (!string.IsNullOrWhiteSpace(Username) || !string.IsNullOrWhiteSpace(Password))
+                {
+                    if (App.Database.GetPlayerProfile().Result.Name.CompareTo(Username) == 0 && App.Database.GetPlayerProfile().Result.Password.CompareTo(Password) == 0)
+                    {
                         await Shell.Current.GoToAsync($"//{nameof(TasksTab)}");
                     }
+                    else
+                    {
+                        await DisplayAlert("Error", "Wrong Username or Password", "Try Agian");
+                    }
+                }
+                else
+                {
+                    await DisplayAlert("Error", "No Username or Password", "Try Agian");
                 }
             }
             else {
-                string result = await DisplayPromptAsync("Current Profile: " + App.Database.GetPlayerProfile().Result.Name, "Password?");
-                if (App.Database.GetPlayerProfile().Result.Password.CompareTo(result) == 0) {
-                    // Prefixing with `//` switches to a different navigation stack instead of pushing to the active one
-                    await Shell.Current.GoToAsync($"//{nameof(TasksTab)}");
+                await DisplayAlert("No Data","Their currently exists no data in the app for a profile","Return");
+            }
+        }
+
+        private async void ProfileSetUp() {
+            if (!(File.Exists(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "Data.db3"))))
+            {
+                bool answer = await DisplayAlert("No Profile found", "There seems to be no Profile in the app currently.\nWould you like to set it up now?", "Yes", "No");
+                if (answer)
+                {
+                    await Navigation.PushAsync(new LoginSetupPage());
                 }
+            }
+            else
+            {
+                await DisplayAlert("Error", "There already exist a profile on this device", "Return");
             }
         }
     }

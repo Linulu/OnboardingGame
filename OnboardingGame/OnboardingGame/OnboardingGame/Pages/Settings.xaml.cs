@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using Rg.Plugins.Popup.Services;
 
 namespace OnboardingGame.Pages
 {
@@ -29,7 +30,18 @@ namespace OnboardingGame.Pages
             {
                 App.DeleteDatabase();
 
+                await DisplayAlert("Profile Deleted", "Your profile has been deleted", "Continue");
                 await Shell.Current.GoToAsync($"//{nameof(LoginPage)}");
+            }
+        }
+
+        async void OnTitlePress(object sender, EventArgs e) {
+            string result = await DisplayPromptAsync("Change title", "New title");
+            if (result != null)
+            {
+                PlayerProfile pP = await App.Database.GetPlayerProfile();
+                pP.Title = result;
+                await App.Database.SavePlayerAsync(pP);
             }
         }
 
@@ -40,6 +52,14 @@ namespace OnboardingGame.Pages
                 pP.Name = result;
                 await App.Database.SavePlayerAsync(pP);
             }
+        }
+
+        async void AboutButtonPress(object sender, EventArgs e) {
+            await PopupNavigation.Instance.PushAsync(new PopupPages.InfoPopup());
+        }
+
+        async void HowToButtonPress(object sender, EventArgs e) {
+            await PopupNavigation.Instance.PushAsync(new PopupPages.ListInfoPopup());
         }
     }
 }

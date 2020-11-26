@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Rg.Plugins.Popup.Services;
+using OnboardingGame.PopupPages;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -24,6 +26,20 @@ namespace OnboardingGame.Pages
 
             for(int i = 0; i < Lists.Count; i++) {
                 Children.Add(new TasksPage(Lists[i].ID));
+            }
+        }
+
+        protected async override void OnAppearing()
+        {
+            base.OnAppearing();
+            if (App.FirstTimeList)
+            {
+                await PopupNavigation.Instance.PushAsync(new ListInfoPopup());
+                App.FirstTimeList = false;
+            }
+            else
+            {
+                await App.Update();
             }
         }
     }
