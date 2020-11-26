@@ -10,7 +10,7 @@
     <Shell.FlyoutHeader>
         <Grid BackgroundColor="Black">
             <Image Aspect="Fill"
-                   Source="Phoniro_AssaAbloy.png"/>
+                   Source="phoniro_assaabloy.png"/>
         </Grid>
     </Shell.FlyoutHeader>
     <!--

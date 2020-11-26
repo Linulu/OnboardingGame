@@ -30,6 +30,8 @@ namespace OnboardingGame.Pages
         {
             base.OnAppearing();
 
+            await App.Update();
+
             pP = await App.Database.GetPlayerProfile();
 
             EXP = pP.EXP;
@@ -37,7 +39,7 @@ namespace OnboardingGame.Pages
             toNextLVL = (int)(3 * Math.Pow(Math.E, level) - 3);
 
             Lvl.Text = "Level: " + level;
-            NextLevel.Text = "To next level: " + (toNextLVL - EXP);
+            NextLevel.Text = "Amount of hearts needed for next level " + (1 + (toNextLVL - EXP));
             ExpBar.Progress = (double)EXP / toNextLVL;
 
             this.BindingContext = pP;

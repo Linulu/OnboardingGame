@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Rg.Plugins.Popup.Services;
+using OnboardingGame.PopupPages;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -17,6 +19,11 @@ namespace OnboardingGame.Pages
         public LoginSetupPage()
         {
             InitializeComponent();
+        }
+
+        protected async override void OnAppearing() {
+            base.OnAppearing();
+            await PopupNavigation.Instance.PushAsync(new InfoPopup());
         }
 
         async void OnFinishClicked(object sender, EventArgs e) {
@@ -34,6 +41,7 @@ namespace OnboardingGame.Pages
                         Title = Title.Text
                     });
                     await App.InitializeDatabase(CarBenifit.IsChecked);
+                    App.FirstTimeList = true;
                     await Navigation.PopAsync();
                     await Shell.Current.GoToAsync($"//{nameof(TasksTab)}");
                 }

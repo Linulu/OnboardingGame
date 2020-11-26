@@ -21,7 +21,8 @@
                         <Grid>
                             <ProgressBar Progress="{Binding Items, Converter={StaticResource completionConverter}}"
                                          ScaleY="10"
-                                         ProgressColor="Green"/>
+                                         ProgressColor="Green"
+                                         BackgroundColor="Gray"/>
                             <Label Text="{Binding Name}"
                                    Margin="3"
                                    FontSize="Large"

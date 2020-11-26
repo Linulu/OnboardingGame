@@ -8,8 +8,7 @@ using OnboardingGame.Models;
 using System.Reflection;
 using System.Diagnostics;
 using OnboardingGame.Pages;
-using System.Text.RegularExpressions;
-using System.Runtime.InteropServices;
+using OnboardingGame.PopupPages;
 using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -31,9 +30,12 @@ namespace OnboardingGame
         
         }
 
+        public static bool FirstTimeList { get; set; }
+
         public App()
         {
             InitializeComponent();
+            FirstTimeList = false;
 
             MainPage = new AppShell();
         }
@@ -44,32 +46,17 @@ namespace OnboardingGame
             Date
         }
 
-        public static async Task Update(AchievementType t) {
+        public static async Task Update() {
             /* Use this for creating pop-ups
-            await PopupNavigation.Instance.PushAsync(new PopupView());
+            await PopupNavigation.Instance.PushAsync(new PopupView(List<string> achievementsReached));
             */
-            switch (t) {
-                case AchievementType.List:
-                    List<string> listList = await ListUpdate();
-                    foreach (string el in listList)
-                    {
-                        Console.WriteLine(el);
-                    }
-                    break;
-                case AchievementType.EXP:
-                    List<string> expList = await EXPUpdate();
-                    foreach (string el in expList)
-                    {
-                        Console.WriteLine(el);
-                    }
-                    break;
-                case AchievementType.Date:
-                    List<string> dateList = await DateUpdate();
-                    foreach (string el in dateList) {
-                        Console.WriteLine(el);
-                    }
-                    break;
-            }
+            List<string> achievedAchievements = new List<string>();
+            achievedAchievements.AddRange(await ListUpdate()); 
+            achievedAchievements.AddRange(await EXPUpdate());
+            achievedAchievements.AddRange(await DateUpdate());
+            if (achievedAchievements.Count != 0) {
+                await PopupNavigation.Instance.PushAsync(new PopupView(achievedAchievements));
+            } 
         }
         private static async Task<List<string>> ListUpdate() {
             List<string> rV = new List<string>();

@@ -13,7 +13,7 @@
 
     <ContentPage.Content>
         <StackLayout Padding="10,0,10,0" VerticalOptions="Center">
-            <Image Source="Phoniro_AssaAbloy.png"/>
+            <Image Source="phoniro_assaabloy.png"/>
             <Entry VerticalOptions="Center" Placeholder="Username" Text="{Binding Username}"/>
             <Entry VerticalOptions="Center" IsPassword="True" Placeholder="Password" Text="{Binding Password}"/>
             <Button VerticalOptions="Center" Text="Login" Command="{Binding LoginCommand}"/>

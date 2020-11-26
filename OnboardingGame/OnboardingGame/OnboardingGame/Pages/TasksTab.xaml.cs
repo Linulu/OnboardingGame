@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Rg.Plugins.Popup.Services;
+using OnboardingGame.PopupPages;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -30,7 +32,15 @@ namespace OnboardingGame.Pages
         protected async override void OnAppearing()
         {
             base.OnAppearing();
-            await App.Update(App.AchievementType.Date);
+            if (App.FirstTimeList)
+            {
+                await PopupNavigation.Instance.PushAsync(new ListInfoPopup());
+                App.FirstTimeList = false;
+            }
+            else
+            {
+                await App.Update();
+            }
         }
     }
 }

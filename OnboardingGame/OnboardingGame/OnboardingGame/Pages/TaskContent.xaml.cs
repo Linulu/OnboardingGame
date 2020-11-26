@@ -31,7 +31,7 @@ namespace OnboardingGame.Pages
 
             task = (TaskItem)BindingContext;
 
-            Title_Label.Text = task.Title + " (" + App.Database.GetToDoListAsync(task.ListID).Result.EXP + ": Points)";
+            Title_Label.Text = task.Title + " (" + (await App.Database.GetToDoListAsync(task.ListID)).EXP + ": Hearts)";
 
             if (linkParser.Match(task.Description).Success)
             {
@@ -80,8 +80,6 @@ namespace OnboardingGame.Pages
                     task.Status = 1;
                     await App.Database.SaveItemAsync(task);
                     await Navigation.PopAsync();
-                    await App.Update(App.AchievementType.EXP);
-                    await App.Update(App.AchievementType.List);
                 }
             }
             else if (task.Status > 0)

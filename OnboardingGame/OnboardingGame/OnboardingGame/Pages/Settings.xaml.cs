@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using Rg.Plugins.Popup.Services;
 
 namespace OnboardingGame.Pages
 {
@@ -51,6 +52,14 @@ namespace OnboardingGame.Pages
                 pP.Name = result;
                 await App.Database.SavePlayerAsync(pP);
             }
+        }
+
+        async void AboutButtonPress(object sender, EventArgs e) {
+            await PopupNavigation.Instance.PushAsync(new PopupPages.InfoPopup());
+        }
+
+        async void HowToButtonPress(object sender, EventArgs e) {
+            await PopupNavigation.Instance.PushAsync(new PopupPages.ListInfoPopup());
         }
     }
 }

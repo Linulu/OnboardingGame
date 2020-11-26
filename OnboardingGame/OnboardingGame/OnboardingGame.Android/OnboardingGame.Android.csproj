@@ -106,10 +106,10 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\Phoniro_AssaAbloy.png" />
+    <AndroidResource Include="Resources\drawable\phoniro_assaabloy.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\Heart.png" />
+    <AndroidResource Include="Resources\drawable\heart.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <ProjectExtensions>

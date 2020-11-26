@@ -91,7 +91,7 @@ namespace OnboardingGame.Pages
 
         private bool CheckDate() {
             DateTime startDate = App.Database.GetPlayerProfile().Result.StartDate;
-            if (startDate.Date.CompareTo(DateTime.Now.Date) > -1) {
+            if (DateTime.Now.Ticks > startDate.Ticks) {
                 return true;
             }
             return false;

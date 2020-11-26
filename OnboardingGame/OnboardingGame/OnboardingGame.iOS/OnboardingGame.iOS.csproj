@@ -148,4 +148,10 @@
       <Name>OnboardingGame</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Heart.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Phoniro_AssaAbloy.png" />
+  </ItemGroup>
 </Project>

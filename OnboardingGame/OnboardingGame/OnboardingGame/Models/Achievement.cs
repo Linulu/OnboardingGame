@@ -16,5 +16,13 @@ namespace OnboardingGame.Models
         public long CurrentAmount { get; set; }
         public long RequiredAmount { get; set; }
         public bool Status{ get; set; }
+        public string AchievementMessage {
+            get {
+                if (Status) {
+                    return "Achieved";
+                }
+                return "Not Achieved";
+            }
+        }
     }
 }
