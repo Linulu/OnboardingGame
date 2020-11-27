@@ -522,3 +522,4 @@ C:\Users\lcg\Git\OnboardingGame\OnboardingGame\OnboardingGame\OnboardingGame.And
 C:\Users\lcg\Git\OnboardingGame\OnboardingGame\OnboardingGame\OnboardingGame.Android\obj\Debug\90\lp\36\jl\files.cache
 C:\Users\lcg\Git\OnboardingGame\OnboardingGame\OnboardingGame\OnboardingGame.Android\obj\Debug\90\lp\40\jl\files.cache
 C:\Users\lcg\Git\OnboardingGame\OnboardingGame\OnboardingGame\OnboardingGame.Android\obj\Debug\90\lp\41\jl\files.cache
+C:\Users\lcg\Git\OnboardingGame\OnboardingGame\OnboardingGame\OnboardingGame.Android\obj\Debug\90\res\drawable\appicon.png

@@ -5,8 +5,8 @@
   <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
   <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
   <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-  <application android:label="OnboardingGame.Android" android:theme="@style/MainTheme" android:name="android.app.Application" android:allowBackup="true" android:icon="@mipmap/icon" android:debuggable="true" android:extractNativeLibs="true">
-    <activity android:configChanges="orientation|smallestScreenSize|screenLayout|screenSize|uiMode" android:icon="@mipmap/icon" android:label="OnboardingGame" android:screenOrientation="portrait" android:theme="@style/MainTheme" android:name="crc64946d0ecb4320230b.MainActivity">
+  <application android:label="OnboardingGame.Android" android:theme="@style/MainTheme" android:name="android.app.Application" android:allowBackup="true" android:icon="@drawable/appicon" android:debuggable="true" android:extractNativeLibs="true">
+    <activity android:configChanges="orientation|smallestScreenSize|screenLayout|screenSize|uiMode" android:icon="@drawable/appicon" android:label="OnboardingGame" android:screenOrientation="portrait" android:theme="@style/MainTheme" android:name="crc64946d0ecb4320230b.MainActivity">
       <intent-filter>
         <action android:name="android.intent.action.MAIN" />
         <category android:name="android.intent.category.LAUNCHER" />

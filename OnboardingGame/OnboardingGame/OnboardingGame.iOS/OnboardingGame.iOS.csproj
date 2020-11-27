@@ -149,9 +149,12 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\Heart.png" />
+    <BundleResource Include="Resources\heart.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\Phoniro_AssaAbloy.png" />
+    <BundleResource Include="Resources\phoniro_assaabloy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\appicon.png" />
   </ItemGroup>
 </Project>
