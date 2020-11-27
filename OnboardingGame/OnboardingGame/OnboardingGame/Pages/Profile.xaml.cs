@@ -40,15 +40,14 @@ namespace OnboardingGame.Pages
 
             Lvl.Text = "Level: " + level;
             NextLevel.Text = "Amount of hearts needed for next level " + (1 + (toNextLVL - EXP));
-            ExpBar.Progress = (double)EXP / toNextLVL;
 
             this.BindingContext = pP;
 
-            //Date.Text = "Start Date: " + pP.StartDate.Date.ToString("MMMM/dd/yyyy");
             ExpSize();
 
             Achievements.ItemsSource = await App.Database.GetAchievement();
             Date.Text = "Start date: " + pP.StartDate.ToString("MMMM/dd/yyyy");
+            await ExpBar.ProgressTo((double)EXP / toNextLVL, 3000, Easing.BounceOut);
         }
 
         async void OnAchievementTapped(object sender, SelectionChangedEventArgs e) {

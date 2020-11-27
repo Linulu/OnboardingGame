@@ -523,3 +523,8 @@ C:\Users\lcg\Git\OnboardingGame\OnboardingGame\OnboardingGame\OnboardingGame.And
 C:\Users\lcg\Git\OnboardingGame\OnboardingGame\OnboardingGame\OnboardingGame.Android\obj\Debug\90\lp\40\jl\files.cache
 C:\Users\lcg\Git\OnboardingGame\OnboardingGame\OnboardingGame\OnboardingGame.Android\obj\Debug\90\lp\41\jl\files.cache
 C:\Users\lcg\Git\OnboardingGame\OnboardingGame\OnboardingGame\OnboardingGame.Android\obj\Debug\90\res\drawable\appicon.png
+C:\Users\lcg\Git\OnboardingGame\OnboardingGame\OnboardingGame\OnboardingGame.Android\obj\Debug\90\res\drawable\checklist.png
+C:\Users\lcg\Git\OnboardingGame\OnboardingGame\OnboardingGame\OnboardingGame.Android\obj\Debug\90\res\drawable\cog.png
+C:\Users\lcg\Git\OnboardingGame\OnboardingGame\OnboardingGame\OnboardingGame.Android\obj\Debug\90\res\drawable\id_card.png
+C:\Users\lcg\Git\OnboardingGame\OnboardingGame\OnboardingGame\OnboardingGame.Android\obj\Debug\90\res\drawable\power_button.png
+C:\Users\lcg\Git\OnboardingGame\OnboardingGame\OnboardingGame\OnboardingGame.Android\obj\Debug\90\res\drawable\star_formation.png

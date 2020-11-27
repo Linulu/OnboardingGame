@@ -43,9 +43,9 @@
                        FontSize="Medium"/>
                 <ProgressBar Grid.Row="1"
                              x:Name="ExpBar"
+                             ScaleY="7"
                              ProgressColor="DeepSkyBlue"
-                             Opacity="0.5"
-                             ScaleY="7"/>
+                             Opacity="0.5"/>
                 <Label Grid.Row="1"
                        x:Name="NextLevel"
                        Margin="5,0"

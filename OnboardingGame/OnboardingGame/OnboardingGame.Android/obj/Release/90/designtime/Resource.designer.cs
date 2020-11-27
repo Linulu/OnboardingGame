@@ -10875,13 +10875,13 @@ namespace OnboardingGame.Droid
 			public const int abc_vector_test = 2131165267;
 			
 			// aapt resource value: 0x7F070054
-			public const int avd_hide_password = 2131165268;
+			public const int appicon = 2131165268;
 			
 			// aapt resource value: 0x7F070055
-			public const int avd_show_password = 2131165269;
+			public const int avd_hide_password = 2131165269;
 			
 			// aapt resource value: 0x7F070056
-			public const int clipboard = 2131165270;
+			public const int avd_show_password = 2131165270;
 			
 			// aapt resource value: 0x7F070057
 			public const int design_bottom_navigation_item_background = 2131165271;
