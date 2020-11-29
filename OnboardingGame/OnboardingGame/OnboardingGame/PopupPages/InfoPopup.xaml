@@ -6,7 +6,6 @@
     <StackLayout Margin="12"
                  Padding="24"
                  Spacing="24"
-                 BackgroundColor="White"
                  HorizontalOptions="Center"
                  VerticalOptions="Center">
         <Label Text="About this Application"

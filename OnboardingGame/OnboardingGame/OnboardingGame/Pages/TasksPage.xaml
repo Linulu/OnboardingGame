@@ -7,6 +7,7 @@
         <ResourceDictionary>
             <converters:StatusToColorConverter x:Key="colorConverter"/>
             <converters:CompletionToProgressConverted x:Key="completionConverter"/>
+            <converters:StatusToImageConverter x:Key="imageConverter"/>
         </ResourceDictionary>
     </ContentPage.Resources>
     
@@ -41,10 +42,6 @@
                                 <ColumnDefinition Width="Auto"/>
                                 <ColumnDefinition Width="*"/>
                             </Grid.ColumnDefinitions>
-                            <Frame Grid.ColumnSpan="2"
-                                   Grid.RowSpan="2"
-                                   HorizontalOptions="Fill"
-                                   VerticalOptions="Fill"/>
                             <Label Text="{Binding Title}"
                                    LineBreakMode="TailTruncation"
                                    WidthRequest="250"
@@ -55,7 +52,7 @@
                                    Margin="5,0,0,0"
                                    FontSize="Small"
                                    Grid.Row="1"/>
-                            <Image Source="star_formation"
+                            <Image Source="{Binding Status, Converter={StaticResource imageConverter}}"
                                    HorizontalOptions="End"
                                    VerticalOptions="Center"
                                    HeightRequest="50"
@@ -63,6 +60,11 @@
                                    Grid.RowSpan="2"
                                    Grid.Column="1"
                                    BackgroundColor="{Binding Status,Converter={StaticResource colorConverter}}"/>
+                            <Frame Grid.ColumnSpan="2"
+                                   Grid.RowSpan="2"
+                                   HorizontalOptions="Fill"
+                                   VerticalOptions="Fill"
+                                   InputTransparent="True"/>
                         </Grid>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>

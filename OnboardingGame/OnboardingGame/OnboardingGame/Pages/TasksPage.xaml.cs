@@ -47,7 +47,6 @@ namespace OnboardingGame.Pages
             else {
                 GroupedList();
             }
-            
         }
 
         private async void GroupedList() { 
