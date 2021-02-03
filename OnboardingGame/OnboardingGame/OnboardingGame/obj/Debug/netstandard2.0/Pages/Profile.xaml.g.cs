@@ -23,7 +23,7 @@ namespace OnboardingGame.Pages {
         private global::Xamarin.Forms.Label Lvl;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
-        private global::Xamarin.Forms.ProgressBar ExpBar;
+        private global::OnboardingGame.Renderers.CutomProgressBar ExpBar;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
         private global::Xamarin.Forms.Label NextLevel;
@@ -39,7 +39,7 @@ namespace OnboardingGame.Pages {
             global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(Profile));
             Exp = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Label>(this, "Exp");
             Lvl = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Label>(this, "Lvl");
-            ExpBar = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.ProgressBar>(this, "ExpBar");
+            ExpBar = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::OnboardingGame.Renderers.CutomProgressBar>(this, "ExpBar");
             NextLevel = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Label>(this, "NextLevel");
             Achievements = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.CollectionView>(this, "Achievements");
             Date = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Label>(this, "Date");

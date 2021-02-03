@@ -2,6 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:converters="clr-namespace:OnboardingGame.Converters"
+             xmlns:renderers="clr-namespace:OnboardingGame.Renderers"
              Shell.TabBarIsVisible="False"
              Title="Profile"
              x:Class="OnboardingGame.Pages.Profile">
@@ -14,12 +15,10 @@
     <ContentPage.Content>
         <StackLayout Margin="20,35,20,20">
             <Grid>
-                <Frame HorizontalOptions="Fill"
-                       VerticalOptions="Fill"
-                       Grid.RowSpan="2"/>
                 <Label Text="{Binding Name}"
                        Margin="5"
-                       FontSize="Title"/>
+                       FontSize="Title"
+                       HeightRequest="40"/>
                 <Label Text="{Binding Title}"
                        Margin="5"
                        FontSize="Subtitle"
@@ -29,7 +28,7 @@
                       VerticalOptions="Center"
                       Grid.RowSpan="2"
                       Margin="5">
-                    <Image Source="heart.png"
+                    <Image Source="{AppThemeBinding Light=light_heart.png, Dark=dark_heart.png}"
                            BackgroundColor="Red"/>
                     <Label x:Name="Exp"
                            Text="{Binding EXP}"
@@ -37,15 +36,16 @@
                            VerticalOptions="Center"
                            HeightRequest="50"/>
                 </Grid>
+                <Frame HorizontalOptions="Fill"
+                       VerticalOptions="Fill"
+                       Grid.RowSpan="2"/>
             </Grid>
             <Grid>
                 <Label x:Name="Lvl"
                        FontSize="Medium"/>
-                <ProgressBar Grid.Row="1"
-                             x:Name="ExpBar"
-                             ScaleY="7"
-                             ProgressColor="DeepSkyBlue"
-                             Opacity="0.5"/>
+                <renderers:CutomProgressBar Grid.Row="1"
+                                            x:Name="ExpBar"
+                                            Opacity="0.5"/>
                 <Label Grid.Row="1"
                        x:Name="NextLevel"
                        Margin="5,0"
@@ -77,20 +77,30 @@
                                     <ColumnDefinition Width="Auto"/>
                                     <ColumnDefinition Width="*"/>
                                 </Grid.ColumnDefinitions>
-                                <Frame BorderColor="{Binding Status,Converter={StaticResource colorConverter}}"
-                                       Margin="5,1"
-                                       HorizontalOptions="Fill"
-                                       VerticalOptions="Fill"
-                                       Grid.RowSpan="2"
-                                       Grid.ColumnSpan="2"/>
                                 <Label Text="{Binding Name}"
                                        Margin="10,0"
                                        FontSize="Medium"
                                        FontAttributes="Bold"/>
-                                    <Label Text="{Binding AchievementMessage}"
-                                           Margin="10,0"
-                                           Grid.Row="1"
-                                           FontSize="Caption"/>
+                                <Label Text="{Binding AchievementMessage}"
+                                       Margin="10,0"
+                                       Grid.Row="1"
+                                       FontSize="Caption"/>
+                                <Image Source="{AppThemeBinding Light=light_trophy_cup.png, Dark=dark_trophy_cup.png}"
+                                       IsVisible="{Binding Status}"
+                                       BackgroundColor="Gold"
+                                       HorizontalOptions="End"
+                                       VerticalOptions="Center"
+                                       Margin="5"
+                                       Grid.RowSpan="2"
+                                       Grid.Column="1"
+                                       HeightRequest="50"/>
+                                <Frame BorderColor="{Binding Status,Converter={StaticResource colorConverter}}"
+                                       Margin="5,1"
+                                       HeightRequest="25"
+                                       HorizontalOptions="Fill"
+                                       VerticalOptions="Fill"
+                                       Grid.RowSpan="2"
+                                       Grid.ColumnSpan="2"/>
                             </Grid>
                         </DataTemplate>
                     </CollectionView.ItemTemplate>
@@ -98,7 +108,7 @@
                 <Frame HorizontalOptions="Fill"
                        VerticalOptions="Fill"
                        Grid.RowSpan="2"
-                       BackgroundColor="Transparent"
+                       
                        InputTransparent="True"/>
             </Grid>
 

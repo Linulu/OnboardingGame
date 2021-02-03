@@ -8,14 +8,16 @@
              Title="{Binding Title}"
              Shell.NavBarIsVisible="False"
              Shell.TabBarIsVisible="False"
-             Shell.FlyoutBehavior="Disabled">
+             Shell.FlyoutBehavior="Disabled"
+             BackgroundColor="{AppThemeBinding Light={StaticResource LightThemeColor}, Dark=Gray}">
     <ContentPage.BindingContext/>
 
     <ContentPage.Content>
-        <StackLayout Padding="10,0,10,0" VerticalOptions="Center">
-            <Image Source="phoniro_assaabloy.png"/>
-            <Entry VerticalOptions="Center" Placeholder="Username" Text="{Binding Username}"/>
-            <Entry VerticalOptions="Center" IsPassword="True" Placeholder="Password" Text="{Binding Password}"/>
+        <StackLayout Padding="10,0,10,0" VerticalOptions="Center"
+                     BackgroundColor="{AppThemeBinding Light={StaticResource LightThemeColor}, Dark=Gray}">
+            <Image Source="{AppThemeBinding Light=phoniro_assaabloy.png, Dark=lightgray_phoniro_assaabloy.png}"/>
+            <Entry VerticalOptions="Center" Placeholder="Username" PlaceholderColor="{AppThemeBinding Light=Gray, Dark=White}" Text="{Binding Username}"/>
+            <Entry VerticalOptions="Center" IsPassword="True" Placeholder="Password" PlaceholderColor="{AppThemeBinding Light=Gray, Dark=White}" Text="{Binding Password}"/>
             <Button VerticalOptions="Center" Text="Login" Command="{Binding LoginCommand}"/>
             <Label VerticalOptions="End" HorizontalOptions="End">
                 <Label.FormattedText>

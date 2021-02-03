@@ -6,7 +6,6 @@
     <StackLayout Margin="12"
                  Padding="24"
                  Spacing="24"
-                 BackgroundColor="White"
                  HorizontalOptions="Center"
                  VerticalOptions="Center">
         <Label Text="Welcome to the Onboarding App!"
@@ -21,8 +20,14 @@
         <Label Text="By finishing task you'll earn hearts. Earning enought hearts will make you level up. You can see your current level and the amount of hearts you've collected on the profile page. You can also aquire achievements in the app by reaching certain goals. You can find this information aswell in the Profile page."
                Margin="5"
                FontSize="Body"/>
-        <Label Text="Welcome aboard and good luck!"
-               FontAttributes="Bold"/>
+        <Grid>
+            <Label Text="Welcome aboard and good luck!"
+                   FontAttributes="Bold"/>
+            <Button Text="Ok"
+                    Clicked="OnOKButtonPress"
+                    HorizontalOptions="End"
+                    VerticalOptions="Center"/>
+        </Grid>
 
     </StackLayout>
 </pages:PopupPage>

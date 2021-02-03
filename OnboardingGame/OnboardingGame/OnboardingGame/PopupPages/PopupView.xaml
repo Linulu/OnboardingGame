@@ -6,10 +6,10 @@
     <StackLayout Margin="12"
                  Padding="24"
                  Spacing="24"
-                 BackgroundColor="White"
                  HorizontalOptions="Center"
                  VerticalOptions="Center">
-        <Label Text="Congratulations You've earned the following achievements:"
+
+        <Label Text="Congratulations! You've earned the following achievements:"
                FontSize="Title"
                FontAttributes="Bold"/>
         <CollectionView x:Name="Source"
