@@ -14,9 +14,10 @@
     <ContentPage.Content>
         <StackLayout Margin="20, 35, 20, 20">
             <CollectionView x:Name="listView"
-                      IsGrouped="True"
-                      SelectionMode="Single"
-                      SelectionChanged="OnListItemTapped">
+                            IsGrouped="True"
+                            SelectionMode="Single"
+                            SelectionChanged="OnListItemTapped"
+                            Scrolled="OnCollectionViewScrolled">
                 <CollectionView.GroupHeaderTemplate>
                     <DataTemplate>
                         <Grid>

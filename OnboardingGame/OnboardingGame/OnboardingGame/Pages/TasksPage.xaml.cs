@@ -18,6 +18,7 @@ namespace OnboardingGame.Pages
         private int ListID { get; set; }
 
         public List<TaskGroup> ListSource { get; private set; }
+        private int Index { get; set; }
 
         public TasksPage(int listID)
         {
@@ -30,6 +31,7 @@ namespace OnboardingGame.Pages
             base.OnAppearing();
 
             ToDoList l = await App.Database.GetToDoListAsync(ListID);
+            //listView.ScrollTo(Index);
 
             if (l.RestrictionDate)
             {
@@ -95,6 +97,10 @@ namespace OnboardingGame.Pages
                 return true;
             }
             return false;
+        }
+
+        async void OnCollectionViewScrolled(object sender, ItemsViewScrolledEventArgs e) {
+            Index = e.CenterItemIndex + (int)e.HorizontalOffset;
         }
         async void OnListItemTapped(object sender, SelectionChangedEventArgs e) {
             if (e.CurrentSelection != null)

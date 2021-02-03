@@ -2,62 +2,6 @@
 	"TaskItems":
 	[
 		{
-			"Title" : "Activate position",
-			"Description" : "Activate or create position  - see box folder for instructions https://assaabloy.box.com/s/50y9o0i2b6uy88ugogfjuhktdru2jxl0",
-			"ListID" : 0
-		},
-		{
-			"Title" : "Inform HR",
-			"Description" : "Inform HR about new employee and provide access to contract and personal information form",
-			"ListID" : 0
-		},
-		{
-			"Title" : "HR to Connect",
-			"Description" : "HR to connect new employee to created, activated position",
-			"ListID" : 0
-		},
-		{
-			"Title" : "Internal recruitment inside",
-			"Description" : "For internal recruitment/move of positions within your own organisation - make the amendments in GPS",
-			"ListID" : 0
-		},
-		{
-			"Title" : "Internal recruitment outside",
-			"Description" : "For internal recruitment/move of positions outside your own organisation - please contact HR
-			AD account with access as per IT process & policy is automatically activated - see separate tab",
-			"ListID" : 0
-		},
-		{
-			"Title" : "Make sure that i have a BOX account",
-			"Description" : "Create a new employee box folder in your own box folder on HR Department",
-			"ListID" : 0
-		},
-		{
-			"Title" : "Upload contract",
-			"Description" : "Signed employement contract is uploaded to the new employee folder and email is sent to Payroll - add email address to Payroll",
-			"ListID" : 0
-		},
-		{
-			"Title" : "Upload confidentiality agreement",
-			"Description" : "Signed confidentiality agreement is uploaded to the new employee folder on Box",
-			"ListID" : 0
-		},
-		{
-			"Title" : "Upload CV",
-			"Description" : "CV is uploaded to the new employee folder on Box",
-			"ListID" : 0
-		},
-		{
-			"Title" : "Fill out template",
-			"Description" : "Fill out template 'Personaluppgifter Phoniro' and upload to the new employee folder on Box and send an email to Payroll",
-			"ListID" : 0
-		},
-		{
-			"Title" : "Original employment contract sent",
-			"Description" : "Original employment contract is sent to XX for archiving",
-			"ListID" : 0
-		},
-		{
 			"Title" : "New employee Information published",
 			"Description" : "Information about the new employee is published on the Intranet",
 			"ListID" : 0
@@ -68,18 +12,38 @@
 			"ListID" : 0
 		},
 		{
+			"Title" : "Upload contract",
+			"Description" : "Signed employement contract is uploaded to the new employee folder and email is sent to Payroll - add email address to Payroll",
+			"ListID" : 0
+		},
+		{
+			"Title" : "Upload CV",
+			"Description" : "CV is uploaded to the new employee folder on Box",
+			"ListID" : 0
+		},
+		{
+			"Title" : "Upload confidentiality agreement",
+			"Description" : "Signed confidentiality agreement is uploaded to the new employee folder on Box",
+			"ListID" : 0
+		},
+		{
 			"Title" : "Workplace organised",
 			"Description" : "Workplace is organised - desk, chair etc",
 			"ListID" : 0
 		},
 		{
-			"Title" : "Access and logs",
-			"Description" : "Access and log in details to department specific platforms and tools",
+			"Title" : "Inform HR and Activate position",
+			"Description" : "Inform HR about new employee and provide access to contract and personal information form. Activate or create position  - see box folder for instructions",
 			"ListID" : 0
 		},
 		{
-			"Title" : "Company Car",
-			"Description" : "Company car (if in employment contract)",
+			"Title" : "Fill out template",
+			"Description" : "Fill out template 'Personaluppgifter Phoniro' and upload to the new employee folder on Box and send an email to Payroll",
+			"ListID" : 0
+		},
+		{
+			"Title" : "Access and logs",
+			"Description" : "Access and log in details to department specific platforms and tools",
 			"ListID" : 0
 		},
 		{
@@ -143,14 +107,8 @@
 			"CatagoryID" : 3
 		},
 		{
-			"Title" : "Team",
-			"Description" : "Team and team processess",
-			"ListID" : 1,
-			"CatagoryID" : 3
-		},
-		{
-			"Title" : "Colleagues",
-			"Description" : "Colleagues",
+			"Title" : "Team and Colleagues",
+			"Description" : "Team, colleagues and team processess",
 			"ListID" : 1,
 			"CatagoryID" : 3
 		},
@@ -173,20 +131,14 @@
 			"CatagoryID" : 3
 		},
 		{
-			"Title" : "Invitation email",
-			"Description" : "Invitation email from manager to employee re GPS",
-			"ListID" : 1,
-			"CatagoryID" : 4
-		},
-		{
 			"Title" : "Workspace, PC",
-			"Description" : "Workspace, PC (laptop bag SEK 500 incl VAT), keyboard, mouse, office material, business card, name badge, mail - internal/external",
+			"Description" : "Workspace, PC (laptop bag SEK 500 incl VAT), keyboard, mouse, office material, business card, name badge",
 			"ListID" : 1,
 			"CatagoryID" : 4
 		},
 		{
-			"Title" : "Phone, switchboard...",
-			"Description" : "Phone, switchboard, screen protection (SEK 400 incl VAT)",
+			"Title" : "Phone, Company apps...",
+			"Description" : "Phone, company apps, screen protection (SEK 400 incl VAT)",
 			"ListID" : 1,
 			"CatagoryID" : 4
 		},
@@ -230,12 +182,12 @@
 	"ListItems":
 	[
 		{
-			"ID" : 298,
+			"ID" : 982,
 			"Exp" : 4,
-			"Name" : "Prior to start date"
+			"Name" : "Boss Activities"
 		},
 		{
-			"ID" : 982,
+			"ID" : 298,
 			"Exp" : 15,
 			"Name" : "Welcome to Phoniro",
 			"RestrictionDate" : true

@@ -538,3 +538,5 @@ C:\Users\lcg\Git\OnboardingGame\OnboardingGame\OnboardingGame\OnboardingGame.And
 C:\Users\lcg\Git\OnboardingGame\OnboardingGame\OnboardingGame\OnboardingGame.Android\obj\Debug\90\res\drawable\dark_play_button.png
 C:\Users\lcg\Git\OnboardingGame\OnboardingGame\OnboardingGame\OnboardingGame.Android\obj\Debug\90\res\drawable\dark_hourglass.png
 C:\Users\lcg\Git\OnboardingGame\OnboardingGame\OnboardingGame\OnboardingGame.Android\obj\Debug\90\res\drawable\lightgray_phoniro_assaabloy.png
+C:\Users\lcg\Git\OnboardingGame\OnboardingGame\OnboardingGame\OnboardingGame.Android\obj\Debug\90\android\src\crc648e6caea864e7f848\RoundedFrameRendererAndroid.java
+C:\Users\lcg\Git\OnboardingGame\OnboardingGame\OnboardingGame\OnboardingGame.Android\obj\Debug\90\android\src\crc648e6caea864e7f848\CustomProgressBarRendererAndroid.java
