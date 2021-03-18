@@ -38,7 +38,7 @@ namespace OnboardingGame.Pages
                 if (CheckDate())
                 {
                     l.RestrictionDate = false;
-                    await App.Database.UpdateListAsync(l);
+                    await App.Database.SaveListAsync(l);
                     GroupedList();
                 }
                 else

@@ -1,21 +1,21 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\lcg\\Git\\OnboardingGame\\OnboardingGame\\OnboardingGame\\OnboardingGame.Android\\OnboardingGame.Android.csproj": {}
+    "C:\\Users\\lcg\\Source\\Repos\\OnboardingGame\\OnboardingGame\\OnboardingGame\\OnboardingGame.Android\\OnboardingGame.Android.csproj": {}
   },
   "projects": {
-    "C:\\Users\\lcg\\Git\\OnboardingGame\\OnboardingGame\\OnboardingGame\\OnboardingGame.Android\\OnboardingGame.Android.csproj": {
+    "C:\\Users\\lcg\\Source\\Repos\\OnboardingGame\\OnboardingGame\\OnboardingGame\\OnboardingGame.Android\\OnboardingGame.Android.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\lcg\\Git\\OnboardingGame\\OnboardingGame\\OnboardingGame\\OnboardingGame.Android\\OnboardingGame.Android.csproj",
+        "projectUniqueName": "C:\\Users\\lcg\\Source\\Repos\\OnboardingGame\\OnboardingGame\\OnboardingGame\\OnboardingGame.Android\\OnboardingGame.Android.csproj",
         "projectName": "OnboardingGame.Android",
-        "projectPath": "C:\\Users\\lcg\\Git\\OnboardingGame\\OnboardingGame\\OnboardingGame\\OnboardingGame.Android\\OnboardingGame.Android.csproj",
+        "projectPath": "C:\\Users\\lcg\\Source\\Repos\\OnboardingGame\\OnboardingGame\\OnboardingGame\\OnboardingGame.Android\\OnboardingGame.Android.csproj",
         "packagesPath": "C:\\Users\\lcg\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\lcg\\Git\\OnboardingGame\\OnboardingGame\\OnboardingGame\\OnboardingGame.Android\\obj\\",
+        "outputPath": "C:\\Users\\lcg\\Source\\Repos\\OnboardingGame\\OnboardingGame\\OnboardingGame\\OnboardingGame.Android\\obj\\",
         "projectStyle": "PackageReference",
         "skipContentFileWrite": true,
         "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\"
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
           "C:\\Users\\lcg\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -32,8 +32,8 @@
         "frameworks": {
           "monoandroid90": {
             "projectReferences": {
-              "C:\\Users\\lcg\\Git\\OnboardingGame\\OnboardingGame\\OnboardingGame\\OnboardingGame\\OnboardingGame.csproj": {
-                "projectPath": "C:\\Users\\lcg\\Git\\OnboardingGame\\OnboardingGame\\OnboardingGame\\OnboardingGame\\OnboardingGame.csproj"
+              "C:\\Users\\lcg\\Source\\Repos\\OnboardingGame\\OnboardingGame\\OnboardingGame\\OnboardingGame\\OnboardingGame.csproj": {
+                "projectPath": "C:\\Users\\lcg\\Source\\Repos\\OnboardingGame\\OnboardingGame\\OnboardingGame\\OnboardingGame\\OnboardingGame.csproj"
               }
             }
           }
@@ -48,11 +48,11 @@
             },
             "Xamarin.Essentials": {
               "target": "Package",
-              "version": "[1.5.3.2, )"
+              "version": "[1.6.1, )"
             },
             "Xamarin.Forms": {
               "target": "Package",
-              "version": "[4.8.0.1687, )"
+              "version": "[5.0.0.2012, )"
             },
             "sqlite-net-pcl": {
               "target": "Package",
@@ -62,18 +62,17 @@
         }
       }
     },
-    "C:\\Users\\lcg\\Git\\OnboardingGame\\OnboardingGame\\OnboardingGame\\OnboardingGame\\OnboardingGame.csproj": {
+    "C:\\Users\\lcg\\Source\\Repos\\OnboardingGame\\OnboardingGame\\OnboardingGame\\OnboardingGame\\OnboardingGame.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\lcg\\Git\\OnboardingGame\\OnboardingGame\\OnboardingGame\\OnboardingGame\\OnboardingGame.csproj",
+        "projectUniqueName": "C:\\Users\\lcg\\Source\\Repos\\OnboardingGame\\OnboardingGame\\OnboardingGame\\OnboardingGame\\OnboardingGame.csproj",
         "projectName": "OnboardingGame",
-        "projectPath": "C:\\Users\\lcg\\Git\\OnboardingGame\\OnboardingGame\\OnboardingGame\\OnboardingGame\\OnboardingGame.csproj",
+        "projectPath": "C:\\Users\\lcg\\Source\\Repos\\OnboardingGame\\OnboardingGame\\OnboardingGame\\OnboardingGame\\OnboardingGame.csproj",
         "packagesPath": "C:\\Users\\lcg\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\lcg\\Git\\OnboardingGame\\OnboardingGame\\OnboardingGame\\OnboardingGame\\obj\\",
+        "outputPath": "C:\\Users\\lcg\\Source\\Repos\\OnboardingGame\\OnboardingGame\\OnboardingGame\\OnboardingGame\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
           "C:\\Users\\lcg\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -115,7 +114,7 @@
             },
             "Rg.Plugins.Popup": {
               "target": "Package",
-              "version": "[2.0.0.7, )"
+              "version": "[2.0.0.10, )"
             },
             "SQLiteNetExtensions": {
               "target": "Package",
@@ -123,11 +122,11 @@
             },
             "Xamarin.Essentials": {
               "target": "Package",
-              "version": "[1.5.3.2, )"
+              "version": "[1.6.1, )"
             },
             "Xamarin.Forms": {
               "target": "Package",
-              "version": "[4.8.0.1687, )"
+              "version": "[5.0.0.2012, )"
             },
             "sqlite-net-pcl": {
               "target": "Package",
@@ -144,7 +143,7 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.200\\RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -37,8 +37,13 @@ namespace OnboardingGame.Data
         }
         public Task<TaskItem> GetTaskItem(int id)
         {
-            return _database.Table<TaskItem>().Where(i => i.ID == id).FirstOrDefaultAsync();
+            if (id >= 0 && _database.Table<ToDoList>().ToListAsync().Result.Count > id)
+            {
+                return _database.Table<TaskItem>().Where(i => i.ID == id).FirstOrDefaultAsync();
+            }
+            return null;
         }
+
         public Task<int> SaveItemAsync(TaskItem item)
         {
             if (item.ID != 0)
@@ -64,12 +69,16 @@ namespace OnboardingGame.Data
         {
             return _database.Table<ToDoList>().Where(i => i.ID == id).FirstOrDefaultAsync();
         }
-        public Task<int> InsertListAsync(ToDoList item)
+        public Task<int> SaveListAsync(ToDoList item)
         {
-            return _database.InsertAsync(item);
-        }
-        public Task<int> UpdateListAsync(ToDoList item) {
-            return _database.UpdateAsync(item);
+            if (item.ID != 0)
+            {
+                return _database.UpdateAsync(item);
+            }
+            else
+            {
+                return _database.InsertAsync(item);
+            }
         }
         public Task<int> DeleteItemAsync(ToDoList item)
         {

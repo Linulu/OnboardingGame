@@ -141,7 +141,7 @@ namespace OnboardingGame
 
             for (int i = 0; i < list.ListItems.Count; i++)
             {
-                await Database.InsertListAsync(list.ListItems[i]);
+                await Database.SaveListAsync(list.ListItems[i]);
 
                 foreach (TaskItem element in list.TaskItems)
                 {

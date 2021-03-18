@@ -2,263 +2,221 @@
 	"TaskItems":
 	[
 		{
-			"Title" : "Activate position",
-			"Description" : "Activate or create position  - see box folder for instructions https://assaabloy.box.com/s/50y9o0i2b6uy88ugogfjuhktdru2jxl0",
-			"ListID" : 0
-		},
-		{
-			"Title" : "Inform HR",
-			"Description" : "Inform HR about new employee and provide access to contract and personal information form",
-			"ListID" : 0
-		},
-		{
-			"Title" : "HR to Connect",
-			"Description" : "HR to connect new employee to created, activated position",
-			"ListID" : 0
-		},
-		{
-			"Title" : "Internal recruitment inside",
-			"Description" : "For internal recruitment/move of positions within your own organisation - make the amendments in GPS",
-			"ListID" : 0
-		},
-		{
-			"Title" : "Internal recruitment outside",
-			"Description" : "For internal recruitment/move of positions outside your own organisation - please contact HR
-			AD account with access as per IT process & policy is automatically activated - see separate tab",
-			"ListID" : 0
-		},
-		{
-			"Title" : "Create box",
-			"Description" : "Create a new employee box folder in your own box folder on HR Department",
-			"ListID" : 1
-		},
-		{
-			"Title" : "Upload contract",
-			"Description" : "Signed employement contract is uploaded to the new employee folder and email is sent to Payroll - add email address to Payroll",
-			"ListID" : 1
-		},
-		{
-			"Title" : "Upload confidentiality agreement",
-			"Description" : "Signed confidentiality agreement is uploaded to the new employee folder on Box",
-			"ListID" : 1
-		},
-		{
-			"Title" : "Upload CV",
-			"Description" : "CV is uploaded to the new employee folder on Box",
-			"ListID" : 1
-		},
-		{
-			"Title" : "Fill out template",
-			"Description" : "Fill out template 'Personaluppgifter Phoniro' and upload to the new employee folder on Box and send an email to Payroll",
-			"ListID" : 1
-		},
-		{
-			"Title" : "Original employment contract sent",
-			"Description" : "Original employment contract is sent to XX for archiving",
-			"ListID" : 1
-		},
-		{
 			"Title" : "New employee Information published",
 			"Description" : "Information about the new employee is published on the Intranet",
-			"ListID" : 1
+			"ListID" : 0
 		},
 		{
 			"Title" : "Laptop/phone order",
 			"Description" : "Laptop and phone order is sent to IT",
-			"ListID" : 1
+			"ListID" : 0
 		},
 		{
 			"Title" : "Workplace organised",
 			"Description" : "Workplace is organised - desk, chair etc",
-			"ListID" : 1
+			"ListID" : 0
+		},
+		{
+			"Title" : "Upload contract",
+			"Description" : "Signed employement contract is uploaded to the new employee folder and email is sent to Payroll - add email address to Payroll",
+			"ListID" : 0
+		},
+		{
+			"Title" : "Upload confidentiality agreement",
+			"Description" : "Signed confidentiality agreement is uploaded to the new employee folder on Box",
+			"ListID" : 0
+		},
+		{
+			"Title" : "Upload CV",
+			"Description" : "CV is uploaded to the new employee folder on Box",
+			"ListID" : 0
+		},
+		{
+			"Title" : "Inform HR and Activate position",
+			"Description" : "Inform HR about new employee and provide access to contract and personal information form. Activate or create position  - see box folder for instructions",
+			"ListID" : 0
+		},
+		{
+			"Title" : "Fill out template",
+			"Description" : "Fill out template 'Personaluppgifter Phoniro' and upload to the new employee folder on Box and send an email to Payroll",
+			"ListID" : 0
 		},
 		{
 			"Title" : "Access and logs",
 			"Description" : "Access and log in details to department specific platforms and tools",
-			"ListID" : 1
+			"ListID" : 0
 		},
 		{
 			"Title" : "Company Car",
 			"Description" : "Company car (if in employment contract)",
-			"ListID" : 1
+			"ListID" : 0
 		},
 		{
 			"Title" : "Tour of the premises",
 			"Description" : "Tour of the premises, health & safety information, skyddsombud",
-			"ListID" : 2,
+			"ListID" : 1,
 			"CatagoryID" : 1
 		},
 		{
 			"Title" : "Work space",
 			"Description" : "Work space",
-			"ListID" : 2,
+			"ListID" : 1,
 			"CatagoryID" : 1
 		},
 		{
 			"Title" : "Lunch with colleagues",
 			"Description" : "Lunch with colleagues",
-			"ListID" : 2,
+			"ListID" : 1,
 			"CatagoryID" : 1
 		},
 		{
 			"Title" : "History of the company",
 			"Description" : "History, organisation, vision & mission, strategy, policies",
-			"ListID" : 2,
+			"ListID" : 1,
 			"CatagoryID" : 2
 		},
 		{
 			"Title" : "Company products",
 			"Description" : "Products",
-			"ListID" : 2,
+			"ListID" : 1,
 			"CatagoryID" : 2
 		},
 		{
 			"Title" : "Code of Conduct",
 			"Description" : "Code of Conduct",
-			"ListID" : 2,
+			"ListID" : 1,
 			"CatagoryID" : 2
 		},
 		{
 			"Title" : "Quality system",
 			"Description" : "Quality systems (ISO)",
-			"ListID" : 2,
+			"ListID" : 1,
 			"CatagoryID" : 2
 		},
 		{
 			"Title" : "Introduction training",
 			"Description" : "Introduction training (2 days)",
-			"ListID" : 2,
+			"ListID" : 1,
 			"CatagoryID" : 2
 		},
 		{
 			"Title" : "Policies",
 			"Description" : "Policies - global & local",
-			"ListID" : 2,
+			"ListID" : 1,
 			"CatagoryID" : 2
 		},
 		{
 			"Title" : "Responsibilities",
 			"Description" : "Areas of responsibility",
-			"ListID" : 2,
+			"ListID" : 1,
 			"CatagoryID" : 3
 		},
 		{
-			"Title" : "Team",
-			"Description" : "Team and team processess",
-			"ListID" : 2,
-			"CatagoryID" : 3
-		},
-		{
-			"Title" : "Colleagues",
-			"Description" : "Colleagues",
-			"ListID" : 2,
+			"Title" : "Team and Colleagues",
+			"Description" : "Team, colleagues and team processess",
+			"ListID" : 1,
 			"CatagoryID" : 3
 		},
 		{
 			"Title" : "Job description",
 			"Description" : "Job description",
-			"ListID" : 2,
+			"ListID" : 1,
 			"CatagoryID" : 3
 		},
 		{
 			"Title" : "Routines",
 			"Description" : "Routines",
-			"ListID" : 2,
+			"ListID" : 1,
 			"CatagoryID" : 3
 		},
 		{
 			"Title" : "Departmentspecific programs",
 			"Description" : "Departmentspecific programs",
-			"ListID" : 2,
+			"ListID" : 1,
 			"CatagoryID" : 3
 		},
 		{
 			"Title" : "Invitation email",
 			"Description" : "Invitation email from manager to employee re GPS",
-			"ListID" : 2,
+			"ListID" : 1,
 			"CatagoryID" : 4
 		},
 		{
 			"Title" : "Workspace, PC",
 			"Description" : "Workspace, PC (laptop bag SEK 500 incl VAT), keyboard, mouse, office material, business card, name badge, mail - internal/external",
-			"ListID" : 2,
+			"ListID" : 1,
 			"CatagoryID" : 4
 		},
 		{
-			"Title" : "Phone, switchboard...",
-			"Description" : "Phone, switchboard, screen protection (SEK 400 incl VAT)",
-			"ListID" : 2,
+			"Title" : "Phone, Company apps...",
+			"Description" : "Phone, company apps, screen protection (SEK 400 incl VAT)",
+			"ListID" : 1,
 			"CatagoryID" : 4
 		},
 		{
 			"Title" : "Credit card",
 			"Description" : "Credit card as needed (handled by the employee, company pays for annual fee, max SEK 500/year)",
-			"ListID" : 2,
+			"ListID" : 1,
 			"CatagoryID" : 4
 		},
 		{
 			"Title" : "Alarm systems, keys",
 			"Description" : "Alarm system, keys",
-			"ListID" : 2,
+			"ListID" : 1,
 			"CatagoryID" : 4
 		},
 		{
 			"Title" : "Performance management",
 			"Description" : "Performance management - objectives and development",
-			"ListID" : 2,
+			"ListID" : 1,
 			"CatagoryID" : 4
 		},
 		{
 			"Title" : "Salary",
 			"Description" : "Salary policy, compensation criteria, annual salary review process",
-			"ListID" : 2,
+			"ListID" : 1,
 			"CatagoryID" : 4
 		},
 		{
 			"Title" : "Confidentiality agreement",
 			"Description" : "Confidentiality agreement - upload to employee file on Box",
-			"ListID" : 2,
+			"ListID" : 1,
 			"CatagoryID" : 4
 		},
 		{
 			"Title" : "Employment Information",
 			"Description" : "Employment information (BOX/Phoniro employees/Employee guide/Administration/HR/Nyanställda/Informationsblad..)",
-			"ListID" : 2,
+			"ListID" : 1,
 			"CatagoryID" : 4
 		},
 		{
 			"Title" : "Driving journal",
 			"Description" : "Driving journal",
-			"ListID" : 2,
+			"ListID" : 1,
 			"CatagoryID" : 5
 		},
 		{
 			"Title" : "Car policy",
 			"Description" : "Company Car policy",
-			"ListID" : 2,
+			"ListID" : 1,
 			"CatagoryID" : 5
 		},
 		{
 			"Title" : "Fuel cards",
 			"Description" : "Fuel cards",
-			"ListID" : 2,
+			"ListID" : 1,
 			"CatagoryID" : 5
 		}
 	],
 	"ListItems":
 	[
 		{
-			"ID" : 298,
-			"Exp" : 3,
-			"Name" : "Prior to start date - GPS"
-		},
-		{
-			"ID" : 829,
-			"Exp" : 4,
-			"Name" : "Prior to start date - Payroll"
-		},
-		{
 			"ID" : 982,
+			"Exp" : 4,
+			"Name" : "Prior to start date"
+		},
+		{
+			"ID" : 298,
 			"Exp" : 15,
 			"Name" : "Welcome to Phoniro",
 			"RestrictionDate" : true
