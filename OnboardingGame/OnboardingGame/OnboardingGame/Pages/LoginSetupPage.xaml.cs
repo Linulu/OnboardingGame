@@ -37,12 +37,12 @@ namespace OnboardingGame.Pages
                     {
                         Name = Username.Text,
                         Password = Password.Text,
-                        StartDate = Start_Date.Date,
-                        Title = Title.Text
+                        StartDate = Start_Date.Date
                     });
-                    await App.InitializeDatabase(CarBenifit.IsChecked);
+                    App.InitializeDatabase(CarBenifit.IsChecked);
                     App.FirstTimeList = true;
                     await Navigation.PopAsync();
+                    //await Shell.Current.GoToAsync($"Missons?list={await App.Database.GetToDoListAsync()}");
                     await Shell.Current.GoToAsync($"//{nameof(TasksTab)}");
                 }
             }

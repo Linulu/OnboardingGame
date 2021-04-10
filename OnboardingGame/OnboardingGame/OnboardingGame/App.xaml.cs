@@ -87,7 +87,7 @@ namespace OnboardingGame
             int EXP = 0;
             for (int i = 0; i < list.Count; i++)
             {
-                EXP += (await App.Database.GetAllDoneTasks(list[i].ID)) * list[i].EXP;
+                //EXP += (await App.Database.GetAllDoneTasks(list[i].ID)) * list[i].EXP;
             }
             pP.EXP = EXP;
             await App.Database.SavePlayerAsync(pP);
@@ -119,8 +119,8 @@ namespace OnboardingGame
         }
 
         //Initialize the Database here
-        public static async Task InitializeDatabase(bool carBenefits) {
-            var assembly = IntrospectionExtensions.GetTypeInfo(typeof(TasksTab)).Assembly;
+        public static void InitializeDatabase(bool carBenefits) {
+            var assembly = IntrospectionExtensions.GetTypeInfo(typeof(App)).Assembly;
             Stream stream;
             if (carBenefits)
             {
@@ -135,28 +135,8 @@ namespace OnboardingGame
 
             JSON_Data list = JsonConvert.DeserializeObject<JSON_Data>(line);
 
-            for (int i = 0; i < list.Catagories.Count; i++) {
-                await Database.SaveCatagoryAsync(list.Catagories[i]);
-            }
-
-            for (int i = 0; i < list.ListItems.Count; i++)
-            {
-                await Database.SaveListAsync(list.ListItems[i]);
-
-                foreach (TaskItem element in list.TaskItems)
-                {
-                    if (element.ListID == i)
-                    {
-                        element.ListID = list.ListItems[i].ID;
-                        element.Status = -1;
-                        await Database.SaveItemAsync(element);
-                    }
-                }
-            }
-
-            List<Achievement> aList = await AchievmentList.GetAchievementsAsync();
-            foreach (Achievement a in aList) {
-                await Database.SaveAchievement(a);
+            for (int i = 0; i < list.ListItems.Count; i++) {
+                Database.SaveListAsync(list.ListItems[i]);
             }
         }
         public static void DeleteDatabase() {

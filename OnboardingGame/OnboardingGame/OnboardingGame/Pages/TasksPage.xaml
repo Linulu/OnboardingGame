@@ -16,8 +16,7 @@
             <CollectionView x:Name="listView"
                             IsGrouped="True"
                             SelectionMode="Single"
-                            SelectionChanged="OnListItemTapped"
-                            Scrolled="OnCollectionViewScrolled">
+                            SelectionChanged="OnListItemTapped">
                 <CollectionView.GroupHeaderTemplate>
                     <DataTemplate>
                         <Grid>

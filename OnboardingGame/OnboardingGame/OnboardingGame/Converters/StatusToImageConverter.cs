@@ -16,6 +16,7 @@ namespace OnboardingGame.Converters
             {
                 if (v < 0)
                 {
+                    
                     return "light_play_button.png";
                 }
                 else if (v == 0)

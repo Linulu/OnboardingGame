@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using OnboardingGame.Pages;
 using OnboardingGame.ViewModels;
 using OnboardingGame.Views;
 using Xamarin.Forms;

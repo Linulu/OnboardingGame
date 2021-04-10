@@ -109,19 +109,6 @@ C:\Users\lcg\Source\Repos\OnboardingGame\OnboardingGame\OnboardingTests\bin\Debu
 C:\Users\lcg\Source\Repos\OnboardingGame\OnboardingGame\OnboardingTests\bin\Debug\netcoreapp3.1\Xamarin.Forms.Core.dll
 C:\Users\lcg\Source\Repos\OnboardingGame\OnboardingGame\OnboardingTests\bin\Debug\netcoreapp3.1\Xamarin.Forms.Platform.dll
 C:\Users\lcg\Source\Repos\OnboardingGame\OnboardingGame\OnboardingTests\bin\Debug\netcoreapp3.1\Xamarin.Forms.Xaml.dll
-C:\Users\lcg\Source\Repos\OnboardingGame\OnboardingGame\OnboardingTests\bin\Debug\netcoreapp3.1\cs\Microsoft.TestPlatform.AdapterUtilities.resources.dll
-C:\Users\lcg\Source\Repos\OnboardingGame\OnboardingGame\OnboardingTests\bin\Debug\netcoreapp3.1\de\Microsoft.TestPlatform.AdapterUtilities.resources.dll
-C:\Users\lcg\Source\Repos\OnboardingGame\OnboardingGame\OnboardingTests\bin\Debug\netcoreapp3.1\es\Microsoft.TestPlatform.AdapterUtilities.resources.dll
-C:\Users\lcg\Source\Repos\OnboardingGame\OnboardingGame\OnboardingTests\bin\Debug\netcoreapp3.1\fr\Microsoft.TestPlatform.AdapterUtilities.resources.dll
-C:\Users\lcg\Source\Repos\OnboardingGame\OnboardingGame\OnboardingTests\bin\Debug\netcoreapp3.1\it\Microsoft.TestPlatform.AdapterUtilities.resources.dll
-C:\Users\lcg\Source\Repos\OnboardingGame\OnboardingGame\OnboardingTests\bin\Debug\netcoreapp3.1\ja\Microsoft.TestPlatform.AdapterUtilities.resources.dll
-C:\Users\lcg\Source\Repos\OnboardingGame\OnboardingGame\OnboardingTests\bin\Debug\netcoreapp3.1\ko\Microsoft.TestPlatform.AdapterUtilities.resources.dll
-C:\Users\lcg\Source\Repos\OnboardingGame\OnboardingGame\OnboardingTests\bin\Debug\netcoreapp3.1\pl\Microsoft.TestPlatform.AdapterUtilities.resources.dll
-C:\Users\lcg\Source\Repos\OnboardingGame\OnboardingGame\OnboardingTests\bin\Debug\netcoreapp3.1\pt-BR\Microsoft.TestPlatform.AdapterUtilities.resources.dll
-C:\Users\lcg\Source\Repos\OnboardingGame\OnboardingGame\OnboardingTests\bin\Debug\netcoreapp3.1\ru\Microsoft.TestPlatform.AdapterUtilities.resources.dll
-C:\Users\lcg\Source\Repos\OnboardingGame\OnboardingGame\OnboardingTests\bin\Debug\netcoreapp3.1\tr\Microsoft.TestPlatform.AdapterUtilities.resources.dll
-C:\Users\lcg\Source\Repos\OnboardingGame\OnboardingGame\OnboardingTests\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.TestPlatform.AdapterUtilities.resources.dll
-C:\Users\lcg\Source\Repos\OnboardingGame\OnboardingGame\OnboardingTests\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.TestPlatform.AdapterUtilities.resources.dll
 C:\Users\lcg\Source\Repos\OnboardingGame\OnboardingGame\OnboardingTests\bin\Debug\netcoreapp3.1\runtimes\alpine-x64\native\libe_sqlite3.so
 C:\Users\lcg\Source\Repos\OnboardingGame\OnboardingGame\OnboardingTests\bin\Debug\netcoreapp3.1\runtimes\linux-arm\native\libe_sqlite3.so
 C:\Users\lcg\Source\Repos\OnboardingGame\OnboardingGame\OnboardingTests\bin\Debug\netcoreapp3.1\runtimes\linux-arm64\native\libe_sqlite3.so
@@ -136,3 +123,6 @@ C:\Users\lcg\Source\Repos\OnboardingGame\OnboardingGame\OnboardingTests\bin\Debu
 C:\Users\lcg\Source\Repos\OnboardingGame\OnboardingGame\OnboardingTests\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\e_sqlite3.dll
 C:\Users\lcg\Source\Repos\OnboardingGame\OnboardingGame\OnboardingTests\bin\Debug\netcoreapp3.1\OnboardingGame.dll
 C:\Users\lcg\Source\Repos\OnboardingGame\OnboardingGame\OnboardingTests\bin\Debug\netcoreapp3.1\OnboardingGame.pdb
+C:\Users\lcg\Source\Repos\OnboardingGame\OnboardingGame\OnboardingTests\bin\Debug\netcoreapp3.1\Castle.Core.dll
+C:\Users\lcg\Source\Repos\OnboardingGame\OnboardingGame\OnboardingTests\bin\Debug\netcoreapp3.1\FakeItEasy.dll
+C:\Users\lcg\Source\Repos\OnboardingGame\OnboardingGame\OnboardingTests\bin\Debug\netcoreapp3.1\SQLiteNetExtensionsAsync.dll

@@ -30,7 +30,7 @@ namespace OnboardingGame.Pages
         {
             base.OnAppearing();
 
-            await App.Update();
+            //await App.Update();
 
             pP = await App.Database.GetPlayerProfile();
 
@@ -48,7 +48,7 @@ namespace OnboardingGame.Pages
             Achievements.ItemsSource = await App.Database.GetAchievement();
             Date.Text = "Start date: " + pP.StartDate.ToString("MMMM/dd/yyyy");
 
-            //ExpBar.Progress = (double)EXP / toNextLVL;
+            ExpBar.Progress = (double)EXP / toNextLVL;
             await ExpBar.ProgressTo((double)EXP / toNextLVL, 3000, Easing.BounceOut);
         }
 

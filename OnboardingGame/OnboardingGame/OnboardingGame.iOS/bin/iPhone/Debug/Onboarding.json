@@ -1,248 +1,160 @@
 ﻿{
-	"TaskItems":
-	[
+	"ListItems": [
 		{
-			"Title" : "New employee Information published",
-			"Description" : "Information about the new employee is published on the Intranet",
-			"ListID" : 0
+			"Name": "Boss Activities",
+			"TaskItem": [
+				{
+					"Title": "New employee Information published",
+					"Description": "Information about the new employee is published on the Intranet",
+					"Points": 5
+				},
+				{
+					"Title": "Laptop/phone order",
+					"Description": "Laptop and phone order is sent to IT",
+					"Points": 5
+				},
+				{
+					"Title": "Upload contract",
+					"Description": "Signed employement contract is uploaded to the new employee folder and email is sent to Payroll - add email address to Payroll",
+					"Points": 5
+				},
+				{
+					"Title": "Upload CV",
+					"Description": "CV is uploaded to the new employee folder on Box",
+					"Points": 5
+				},
+				{
+					"Title": "Upload confidentiality agreement",
+					"Description": "Signed confidentiality agreement is uploaded to the new employee folder on Box",
+					"Points": 5
+				},
+				{
+					"Title": "Workplace organised",
+					"Description": "Workplace is organised - desk, chair etc",
+					"Points": 5
+				},
+				{
+					"Title": "Inform HR and Activate position",
+					"Description": "Inform HR about new employee and provide access to contract and personal information form. Activate or create position  - see box folder for instructions",
+					"Points": 5
+				},
+				{
+					"Title": "Fill out template",
+					"Description": "Fill out template 'Personaluppgifter Phoniro' and upload to the new employee folder on Box and send an email to Payroll",
+					"Points": 5
+				},
+				{
+					"Title": "Access and logs",
+					"Description": "Access and log in details to department specific platforms and tools",
+					"Points": 5
+				}
+			]
 		},
 		{
-			"Title" : "Laptop/phone order",
-			"Description" : "Laptop and phone order is sent to IT",
-			"ListID" : 0
-		},
-		{
-			"Title" : "Workplace organised",
-			"Description" : "Workplace is organised - desk, chair etc",
-			"ListID" : 0
-		},
-		{
-			"Title" : "Upload contract",
-			"Description" : "Signed employement contract is uploaded to the new employee folder and email is sent to Payroll - add email address to Payroll",
-			"ListID" : 0
-		},
-		{
-			"Title" : "Upload confidentiality agreement",
-			"Description" : "Signed confidentiality agreement is uploaded to the new employee folder on Box",
-			"ListID" : 0
-		},
-		{
-			"Title" : "Upload CV",
-			"Description" : "CV is uploaded to the new employee folder on Box",
-			"ListID" : 0
-		},
-		{
-			"Title" : "Inform HR and Activate position",
-			"Description" : "Inform HR about new employee and provide access to contract and personal information form. Activate or create position  - see box folder for instructions",
-			"ListID" : 0
-		},
-		{
-			"Title" : "Fill out template",
-			"Description" : "Fill out template 'Personaluppgifter Phoniro' and upload to the new employee folder on Box and send an email to Payroll",
-			"ListID" : 0
-		},
-		{
-			"Title" : "Access and logs",
-			"Description" : "Access and log in details to department specific platforms and tools",
-			"ListID" : 0
-		},
-		{
-			"Title" : "Company Car",
-			"Description" : "Company car (if in employment contract)",
-			"ListID" : 0
-		},
-		{
-			"Title" : "Tour of the premises",
-			"Description" : "Tour of the premises, health & safety information, skyddsombud",
-			"ListID" : 1,
-			"CatagoryID" : 1
-		},
-		{
-			"Title" : "Work space",
-			"Description" : "Work space",
-			"ListID" : 1,
-			"CatagoryID" : 1
-		},
-		{
-			"Title" : "Lunch with colleagues",
-			"Description" : "Lunch with colleagues",
-			"ListID" : 1,
-			"CatagoryID" : 1
-		},
-		{
-			"Title" : "History of the company",
-			"Description" : "History, organisation, vision & mission, strategy, policies",
-			"ListID" : 1,
-			"CatagoryID" : 2
-		},
-		{
-			"Title" : "Company products",
-			"Description" : "Products",
-			"ListID" : 1,
-			"CatagoryID" : 2
-		},
-		{
-			"Title" : "Code of Conduct",
-			"Description" : "Code of Conduct",
-			"ListID" : 1,
-			"CatagoryID" : 2
-		},
-		{
-			"Title" : "Quality system",
-			"Description" : "Quality systems (ISO)",
-			"ListID" : 1,
-			"CatagoryID" : 2
-		},
-		{
-			"Title" : "Introduction training",
-			"Description" : "Introduction training (2 days)",
-			"ListID" : 1,
-			"CatagoryID" : 2
-		},
-		{
-			"Title" : "Policies",
-			"Description" : "Policies - global & local",
-			"ListID" : 1,
-			"CatagoryID" : 2
-		},
-		{
-			"Title" : "Responsibilities",
-			"Description" : "Areas of responsibility",
-			"ListID" : 1,
-			"CatagoryID" : 3
-		},
-		{
-			"Title" : "Team and Colleagues",
-			"Description" : "Team, colleagues and team processess",
-			"ListID" : 1,
-			"CatagoryID" : 3
-		},
-		{
-			"Title" : "Job description",
-			"Description" : "Job description",
-			"ListID" : 1,
-			"CatagoryID" : 3
-		},
-		{
-			"Title" : "Routines",
-			"Description" : "Routines",
-			"ListID" : 1,
-			"CatagoryID" : 3
-		},
-		{
-			"Title" : "Departmentspecific programs",
-			"Description" : "Departmentspecific programs",
-			"ListID" : 1,
-			"CatagoryID" : 3
-		},
-		{
-			"Title" : "Invitation email",
-			"Description" : "Invitation email from manager to employee re GPS",
-			"ListID" : 1,
-			"CatagoryID" : 4
-		},
-		{
-			"Title" : "Workspace, PC",
-			"Description" : "Workspace, PC (laptop bag SEK 500 incl VAT), keyboard, mouse, office material, business card, name badge, mail - internal/external",
-			"ListID" : 1,
-			"CatagoryID" : 4
-		},
-		{
-			"Title" : "Phone, Company apps...",
-			"Description" : "Phone, company apps, screen protection (SEK 400 incl VAT)",
-			"ListID" : 1,
-			"CatagoryID" : 4
-		},
-		{
-			"Title" : "Credit card",
-			"Description" : "Credit card as needed (handled by the employee, company pays for annual fee, max SEK 500/year)",
-			"ListID" : 1,
-			"CatagoryID" : 4
-		},
-		{
-			"Title" : "Alarm systems, keys",
-			"Description" : "Alarm system, keys",
-			"ListID" : 1,
-			"CatagoryID" : 4
-		},
-		{
-			"Title" : "Performance management",
-			"Description" : "Performance management - objectives and development",
-			"ListID" : 1,
-			"CatagoryID" : 4
-		},
-		{
-			"Title" : "Salary",
-			"Description" : "Salary policy, compensation criteria, annual salary review process",
-			"ListID" : 1,
-			"CatagoryID" : 4
-		},
-		{
-			"Title" : "Confidentiality agreement",
-			"Description" : "Confidentiality agreement - upload to employee file on Box",
-			"ListID" : 1,
-			"CatagoryID" : 4
-		},
-		{
-			"Title" : "Employment Information",
-			"Description" : "Employment information (BOX/Phoniro employees/Employee guide/Administration/HR/Nyanställda/Informationsblad..)",
-			"ListID" : 1,
-			"CatagoryID" : 4
-		},
-		{
-			"Title" : "Driving journal",
-			"Description" : "Driving journal",
-			"ListID" : 1,
-			"CatagoryID" : 5
-		},
-		{
-			"Title" : "Car policy",
-			"Description" : "Company Car policy",
-			"ListID" : 1,
-			"CatagoryID" : 5
-		},
-		{
-			"Title" : "Fuel cards",
-			"Description" : "Fuel cards",
-			"ListID" : 1,
-			"CatagoryID" : 5
-		}
-	],
-	"ListItems":
-	[
-		{
-			"ID" : 982,
-			"Exp" : 4,
-			"Name" : "Prior to start date"
-		},
-		{
-			"ID" : 298,
-			"Exp" : 15,
-			"Name" : "Welcome to Phoniro",
-			"RestrictionDate" : true
-		}
-	],
-	"Catagories":
-	[
-		{
-			"ID" : 1,
-			"Name" : "First day in the office"
-		},
-		{
-			"ID" : 2,
-			"Name" : "The Company"
-		},
-		{
-			"ID" : 3,
-			"Name" : "Department/new position"
-		},
-		{
-			"ID" : 4,
-			"Name" : "Admin and practicalities around the office and work space"
-		},
-		{
-			"ID" : 5,
-			"Name" : "Company Car"
+			"Name": "Welcome to Phoniro",
+			"TaskItem": [
+				{
+					"Title": "Tour of the premises",
+					"Description": "Tour of the premises, health & safety information, skyddsombud"
+				},
+				{
+					"Title": "Work space",
+					"Description": "Work space"
+				},
+				{
+					"Title": "Lunch with colleagues",
+					"Description": "Lunch with colleagues"
+				},
+				{
+					"Title": "History of the company",
+					"Description": "History, organisation, vision & mission, strategy, policies"
+				},
+				{
+					"Title": "Company products",
+					"Description": "Products"
+				},
+				{
+					"Title": "Code of Conduct",
+					"Description": "Code of Conduct"
+				},
+				{
+					"Title": "Quality system",
+					"Description": "Quality systems (ISO)"
+				},
+				{
+					"Title": "Introduction training",
+					"Description": "Introduction training (2 days)"
+				},
+				{
+					"Title": "Policies",
+					"Description": "Policies - global & local"
+				},
+				{
+					"Title": "Responsibilities",
+					"Description": "Areas of responsibility"
+				},
+				{
+					"Title": "Team and Colleagues",
+					"Description": "Team, colleagues and team processess"
+				},
+				{
+					"Title": "Job description",
+					"Description": "Job description"
+				},
+				{
+					"Title": "Routines",
+					"Description": "Routines"
+				},
+				{
+					"Title": "Departmentspecific programs",
+					"Description": "Departmentspecific programs"
+				},
+				{
+					"Title": "Workspace, PC",
+					"Description": "Workspace, PC (laptop bag SEK 500 incl VAT), keyboard, mouse, office material, business card, name badge"
+				},
+				{
+					"Title": "Phone, Company apps...",
+					"Description": "Phone, company apps, screen protection (SEK 400 incl VAT)"
+				},
+				{
+					"Title": "Credit card",
+					"Description": "Credit card as needed (handled by the employee, company pays for annual fee, max SEK 500/year)"
+				},
+				{
+					"Title": "Alarm systems, keys",
+					"Description": "Alarm system, keys"
+				},
+				{
+					"Title": "Performance management",
+					"Description": "Performance management - objectives and development"
+				},
+				{
+					"Title": "Salary",
+					"Description": "Salary policy, compensation criteria, annual salary review process"
+				},
+				{
+					"Title": "Confidentiality agreement",
+					"Description": "Confidentiality agreement - upload to employee file on Box"
+				},
+				{
+					"Title": "Employment Information",
+					"Description": "Employment information (BOX/Phoniro employees/Employee guide/Administration/HR/Nyanställda/Informationsblad..)"
+				},
+				{
+					"Title": "Driving journal",
+					"Description": "Driving journal"
+				},
+				{
+					"Title": "Car policy",
+					"Description": "Company Car policy"
+				},
+				{
+					"Title": "Fuel cards",
+					"Description": "Fuel cards"
+				}
+			]
 		}
 	]
 }
+		

@@ -50,6 +50,7 @@ namespace OnboardingGame.Views
                 {
                     if (App.Database.GetPlayerProfile().Result.Name.CompareTo(Username) == 0 && App.Database.GetPlayerProfile().Result.Password.CompareTo(Password) == 0)
                     {
+                        //await Shell.Current.GoToAsync($"Missons?list={await App.Database.GetToDoListAsync()}");
                         await Shell.Current.GoToAsync($"//{nameof(TasksTab)}");
                     }
                     else

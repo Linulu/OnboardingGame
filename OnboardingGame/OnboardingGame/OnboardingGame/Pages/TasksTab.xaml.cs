@@ -16,22 +16,38 @@ namespace OnboardingGame.Pages
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class TasksTab : TabbedPage
     {
-        public List<ToDoList> Lists { get; private set; }
+        private List<ToDoList> lists;
+        private PlayerProfile player;
 
-        public TasksTab()
+        public TasksTab() {
+            InitializeComponent();
+
+            lists = App.Database.GetToDoListAsync().Result;
+            player = App.Database.GetPlayerProfile().Result;
+
+            for (int i = 0; i < lists.Count; i++) {
+                Children.Add(new TasksPage(lists[i]));
+            }
+        }
+
+        public TasksTab(List<ToDoList> lists, PlayerProfile player)
         {
             InitializeComponent();
 
-            Lists = App.Database.GetToDoListAsync().Result;
+            this.lists = lists;
+            this.player = player; 
 
-            for(int i = 0; i < Lists.Count; i++) {
-                Children.Add(new TasksPage(Lists[i].ID));
+            for(int i = 0; i < this.lists.Count; i++) {
+                Children.Add(new TasksPage(this.lists[i]));
             }
         }
 
         protected async override void OnAppearing()
         {
             base.OnAppearing();
+
+            Title = "Missons, Points: " + App.Database.GetPlayerProfile(player.ID).Result.EXP;
+
             if (App.FirstTimeList)
             {
                 await PopupNavigation.Instance.PushAsync(new ListInfoPopup());
@@ -39,7 +55,7 @@ namespace OnboardingGame.Pages
             }
             else
             {
-                await App.Update();
+                //await App.Update();
             }
         }
     }

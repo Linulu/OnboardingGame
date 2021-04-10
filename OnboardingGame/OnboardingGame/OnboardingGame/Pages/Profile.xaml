@@ -19,14 +19,10 @@
                        Margin="5"
                        FontSize="Title"
                        HeightRequest="40"/>
-                <Label Text="{Binding Title}"
-                       Margin="5"
-                       FontSize="Subtitle"
-                       Grid.Row="1"/>
-                
+
                 <Grid HorizontalOptions="End"
                       VerticalOptions="Center"
-                      Grid.RowSpan="2"
+                      Grid.Column="1"
                       Margin="5">
                     <Image Source="{AppThemeBinding Light=light_heart.png, Dark=dark_heart.png}"
                            BackgroundColor="Red"/>
@@ -38,7 +34,7 @@
                 </Grid>
                 <Frame HorizontalOptions="Fill"
                        VerticalOptions="Fill"
-                       Grid.RowSpan="2"/>
+                       Grid.ColumnSpan="2"/>
             </Grid>
             <Grid>
                 <Label x:Name="Lvl"

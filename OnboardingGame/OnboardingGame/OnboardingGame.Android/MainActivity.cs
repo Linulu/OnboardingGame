@@ -19,7 +19,7 @@ namespace OnboardingGame.Droid
 
             base.OnCreate(savedInstanceState);
 
-            Rg.Plugins.Popup.Popup.Init(this, savedInstanceState);
+            Rg.Plugins.Popup.Popup.Init(this);
 
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);

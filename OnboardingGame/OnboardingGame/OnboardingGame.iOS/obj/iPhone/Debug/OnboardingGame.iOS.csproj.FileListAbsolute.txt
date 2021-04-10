@@ -146,3 +146,5 @@ C:\Users\lcg\source\repos\OnboardingGame\OnboardingGame\OnboardingGame\Onboardin
 C:\Users\lcg\source\repos\OnboardingGame\OnboardingGame\OnboardingGame\OnboardingGame.iOS\obj\iPhone\Debug\OnboardingGame.iOS.exe
 C:\Users\lcg\source\repos\OnboardingGame\OnboardingGame\OnboardingGame\OnboardingGame.iOS\obj\iPhone\Debug\OnboardingGame.iOS.pdb
 C:\Users\lcg\Source\Repos\OnboardingGame\OnboardingGame\OnboardingGame\OnboardingGame.iOS\bin\iPhone\Debug\OnboardingGame.pdb
+C:\Users\lcg\Source\Repos\OnboardingGame\OnboardingGame\OnboardingGame\OnboardingGame.iOS\bin\iPhone\Debug\SQLiteNetExtensionsAsync.dll
+C:\Users\lcg\Source\Repos\OnboardingGame\OnboardingGame\OnboardingGame\OnboardingGame.iOS\bin\iPhone\Debug\SQLiteNetExtensionsAsync.pdb

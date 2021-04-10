@@ -2,7 +2,7 @@
   "version": 3,
   "targets": {
     "Xamarin.iOS,Version=v1.0": {
-      "Newtonsoft.Json/12.0.3": {
+      "Newtonsoft.Json/13.0.1": {
         "type": "package",
         "compile": {
           "lib/netstandard2.0/Newtonsoft.Json.dll": {}
@@ -11,11 +11,14 @@
           "lib/netstandard2.0/Newtonsoft.Json.dll": {}
         }
       },
-      "Rg.Plugins.Popup/2.0.0.10": {
+      "Rg.Plugins.Popup/2.0.0.11": {
         "type": "package",
         "dependencies": {
           "Xamarin.Forms": "4.5.0.657"
         },
+        "frameworkAssemblies": [
+          "System.Drawing.Common.dll"
+        ],
         "compile": {
           "lib/xamarinios10/Rg.Plugins.Popup.dll": {}
         },
@@ -46,6 +49,19 @@
         },
         "runtime": {
           "lib/netstandard1.1/SQLiteNetExtensions.dll": {}
+        }
+      },
+      "SQLiteNetExtensions.Async/2.1.0": {
+        "type": "package",
+        "dependencies": {
+          "SQLiteNetExtensions": "2.0.0",
+          "sqlite-net-pcl": "1.4.118"
+        },
+        "compile": {
+          "lib/netstandard1.1/SQLiteNetExtensionsAsync.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.1/SQLiteNetExtensionsAsync.dll": {}
         }
       },
       "SQLitePCLRaw.bundle_green/2.0.3": {
@@ -271,9 +287,10 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
-          "Newtonsoft.Json": "12.0.3",
-          "Rg.Plugins.Popup": "2.0.0.10",
+          "Newtonsoft.Json": "13.0.1",
+          "Rg.Plugins.Popup": "2.0.0.11",
           "SQLiteNetExtensions": "2.1.0",
+          "SQLiteNetExtensions.Async": "2.1.0",
           "Xamarin.Essentials": "1.6.1",
           "Xamarin.Forms": "5.0.0.2012",
           "sqlite-net-pcl": "1.7.335"
@@ -287,7 +304,7 @@
       }
     },
     "Xamarin.iOS,Version=v1.0/win": {
-      "Newtonsoft.Json/12.0.3": {
+      "Newtonsoft.Json/13.0.1": {
         "type": "package",
         "compile": {
           "lib/netstandard2.0/Newtonsoft.Json.dll": {}
@@ -296,11 +313,14 @@
           "lib/netstandard2.0/Newtonsoft.Json.dll": {}
         }
       },
-      "Rg.Plugins.Popup/2.0.0.10": {
+      "Rg.Plugins.Popup/2.0.0.11": {
         "type": "package",
         "dependencies": {
           "Xamarin.Forms": "4.5.0.657"
         },
+        "frameworkAssemblies": [
+          "System.Drawing.Common.dll"
+        ],
         "compile": {
           "lib/xamarinios10/Rg.Plugins.Popup.dll": {}
         },
@@ -331,6 +351,19 @@
         },
         "runtime": {
           "lib/netstandard1.1/SQLiteNetExtensions.dll": {}
+        }
+      },
+      "SQLiteNetExtensions.Async/2.1.0": {
+        "type": "package",
+        "dependencies": {
+          "SQLiteNetExtensions": "2.0.0",
+          "sqlite-net-pcl": "1.4.118"
+        },
+        "compile": {
+          "lib/netstandard1.1/SQLiteNetExtensionsAsync.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.1/SQLiteNetExtensionsAsync.dll": {}
         }
       },
       "SQLitePCLRaw.bundle_green/2.0.3": {
@@ -556,9 +589,10 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
-          "Newtonsoft.Json": "12.0.3",
-          "Rg.Plugins.Popup": "2.0.0.10",
+          "Newtonsoft.Json": "13.0.1",
+          "Rg.Plugins.Popup": "2.0.0.11",
           "SQLiteNetExtensions": "2.1.0",
+          "SQLiteNetExtensions.Async": "2.1.0",
           "Xamarin.Essentials": "1.6.1",
           "Xamarin.Forms": "5.0.0.2012",
           "sqlite-net-pcl": "1.7.335"
@@ -572,7 +606,7 @@
       }
     },
     "Xamarin.iOS,Version=v1.0/win-x64": {
-      "Newtonsoft.Json/12.0.3": {
+      "Newtonsoft.Json/13.0.1": {
         "type": "package",
         "compile": {
           "lib/netstandard2.0/Newtonsoft.Json.dll": {}
@@ -581,11 +615,14 @@
           "lib/netstandard2.0/Newtonsoft.Json.dll": {}
         }
       },
-      "Rg.Plugins.Popup/2.0.0.10": {
+      "Rg.Plugins.Popup/2.0.0.11": {
         "type": "package",
         "dependencies": {
           "Xamarin.Forms": "4.5.0.657"
         },
+        "frameworkAssemblies": [
+          "System.Drawing.Common.dll"
+        ],
         "compile": {
           "lib/xamarinios10/Rg.Plugins.Popup.dll": {}
         },
@@ -616,6 +653,19 @@
         },
         "runtime": {
           "lib/netstandard1.1/SQLiteNetExtensions.dll": {}
+        }
+      },
+      "SQLiteNetExtensions.Async/2.1.0": {
+        "type": "package",
+        "dependencies": {
+          "SQLiteNetExtensions": "2.0.0",
+          "sqlite-net-pcl": "1.4.118"
+        },
+        "compile": {
+          "lib/netstandard1.1/SQLiteNetExtensionsAsync.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.1/SQLiteNetExtensionsAsync.dll": {}
         }
       },
       "SQLitePCLRaw.bundle_green/2.0.3": {
@@ -841,9 +891,10 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
-          "Newtonsoft.Json": "12.0.3",
-          "Rg.Plugins.Popup": "2.0.0.10",
+          "Newtonsoft.Json": "13.0.1",
+          "Rg.Plugins.Popup": "2.0.0.11",
           "SQLiteNetExtensions": "2.1.0",
+          "SQLiteNetExtensions.Async": "2.1.0",
           "Xamarin.Essentials": "1.6.1",
           "Xamarin.Forms": "5.0.0.2012",
           "sqlite-net-pcl": "1.7.335"
@@ -857,7 +908,7 @@
       }
     },
     "Xamarin.iOS,Version=v1.0/win-x86": {
-      "Newtonsoft.Json/12.0.3": {
+      "Newtonsoft.Json/13.0.1": {
         "type": "package",
         "compile": {
           "lib/netstandard2.0/Newtonsoft.Json.dll": {}
@@ -866,11 +917,14 @@
           "lib/netstandard2.0/Newtonsoft.Json.dll": {}
         }
       },
-      "Rg.Plugins.Popup/2.0.0.10": {
+      "Rg.Plugins.Popup/2.0.0.11": {
         "type": "package",
         "dependencies": {
           "Xamarin.Forms": "4.5.0.657"
         },
+        "frameworkAssemblies": [
+          "System.Drawing.Common.dll"
+        ],
         "compile": {
           "lib/xamarinios10/Rg.Plugins.Popup.dll": {}
         },
@@ -901,6 +955,19 @@
         },
         "runtime": {
           "lib/netstandard1.1/SQLiteNetExtensions.dll": {}
+        }
+      },
+      "SQLiteNetExtensions.Async/2.1.0": {
+        "type": "package",
+        "dependencies": {
+          "SQLiteNetExtensions": "2.0.0",
+          "sqlite-net-pcl": "1.4.118"
+        },
+        "compile": {
+          "lib/netstandard1.1/SQLiteNetExtensionsAsync.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.1/SQLiteNetExtensionsAsync.dll": {}
         }
       },
       "SQLitePCLRaw.bundle_green/2.0.3": {
@@ -1126,9 +1193,10 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
-          "Newtonsoft.Json": "12.0.3",
-          "Rg.Plugins.Popup": "2.0.0.10",
+          "Newtonsoft.Json": "13.0.1",
+          "Rg.Plugins.Popup": "2.0.0.11",
           "SQLiteNetExtensions": "2.1.0",
+          "SQLiteNetExtensions.Async": "2.1.0",
           "Xamarin.Essentials": "1.6.1",
           "Xamarin.Forms": "5.0.0.2012",
           "sqlite-net-pcl": "1.7.335"
@@ -1143,10 +1211,10 @@
     }
   },
   "libraries": {
-    "Newtonsoft.Json/12.0.3": {
-      "sha512": "6mgjfnRB4jKMlzHSl+VD+oUc1IebOZabkbyWj2RiTgWwYPPuaK1H97G1sHqGwPlS5npiF5Q0OrxN1wni2n5QWg==",
+    "Newtonsoft.Json/13.0.1": {
+      "sha512": "ppPFpBcvxdsfUonNcvITKqLl3bqxWbDCZIzDWHzjpdAHRFfZe0Dw9HmA0+za13IdyrgJwpkDTDA9fHaxOrt20A==",
       "type": "package",
-      "path": "newtonsoft.json/12.0.3",
+      "path": "newtonsoft.json/13.0.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -1165,19 +1233,15 @@
         "lib/netstandard1.3/Newtonsoft.Json.xml",
         "lib/netstandard2.0/Newtonsoft.Json.dll",
         "lib/netstandard2.0/Newtonsoft.Json.xml",
-        "lib/portable-net40+sl5+win8+wp8+wpa81/Newtonsoft.Json.dll",
-        "lib/portable-net40+sl5+win8+wp8+wpa81/Newtonsoft.Json.xml",
-        "lib/portable-net45+win8+wp8+wpa81/Newtonsoft.Json.dll",
-        "lib/portable-net45+win8+wp8+wpa81/Newtonsoft.Json.xml",
-        "newtonsoft.json.12.0.3.nupkg.sha512",
+        "newtonsoft.json.13.0.1.nupkg.sha512",
         "newtonsoft.json.nuspec",
         "packageIcon.png"
       ]
     },
-    "Rg.Plugins.Popup/2.0.0.10": {
-      "sha512": "zsAM5InbgG41MqAuGIRiox7+oDMVWTcKLpO39UCRQjZQEblkDsjIvxBIBALWHCBP6F/xf9CrPlyXOzQQGYVcEA==",
+    "Rg.Plugins.Popup/2.0.0.11": {
+      "sha512": "Fa225jLSyum7oFwmC2tZeJqf0b/m2ZpvVSEVIhqmxcme4nEW6rl1Ncnj6zGIOjKlZ05m8L3mxdFdiI/TxI5InQ==",
       "type": "package",
-      "path": "rg.plugins.popup/2.0.0.10",
+      "path": "rg.plugins.popup/2.0.0.11",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -1218,7 +1282,7 @@
         "lib/xamarinwatchos10/Rg.Plugins.Popup.pdb",
         "lib/xamarinwatchos10/Rg.Plugins.Popup.xml",
         "readme.txt",
-        "rg.plugins.popup.2.0.0.10.nupkg.sha512",
+        "rg.plugins.popup.2.0.0.11.nupkg.sha512",
         "rg.plugins.popup.nuspec"
       ]
     },
@@ -1247,6 +1311,35 @@
         "lib/netstandard1.1/SQLiteNetExtensions.pdb",
         "sqlitenetextensions.2.1.0.nupkg.sha512",
         "sqlitenetextensions.nuspec",
+        "src/SQLiteNetExtensions/Attributes/CascadeOperation.cs",
+        "src/SQLiteNetExtensions/Attributes/ForeignKeyAttribute.cs",
+        "src/SQLiteNetExtensions/Attributes/ManyToManyAttribute.cs",
+        "src/SQLiteNetExtensions/Attributes/ManyToOneAttribute.cs",
+        "src/SQLiteNetExtensions/Attributes/OneToManyAttribute.cs",
+        "src/SQLiteNetExtensions/Attributes/OneToOneAttribute.cs",
+        "src/SQLiteNetExtensions/Attributes/RelationshipAttribute.cs",
+        "src/SQLiteNetExtensions/Attributes/TextBlobAttribute.cs",
+        "src/SQLiteNetExtensions/Exceptions/IncorrectRelationshipException.cs",
+        "src/SQLiteNetExtensions/Extensions/ReadOperations.cs",
+        "src/SQLiteNetExtensions/Extensions/ReflectionExtensions.cs",
+        "src/SQLiteNetExtensions/Extensions/TextBlob/ITextBlobSerializer.cs",
+        "src/SQLiteNetExtensions/Extensions/TextBlob/Serializers/JsonBlobSerializer.cs",
+        "src/SQLiteNetExtensions/Extensions/TextBlob/TextBlobOperations.cs",
+        "src/SQLiteNetExtensions/Extensions/WriteOperations.cs",
+        "src/SQLiteNetExtensions/Properties/AssemblyInfo.cs"
+      ]
+    },
+    "SQLiteNetExtensions.Async/2.1.0": {
+      "sha512": "jiIewsMh0Zfv1dB5Jp9eylckDOmVqNx5uPoFunfwAJApimL71bja7OxF55pFlz7TTiSm0rTkn3aWE6Gz89qUDw==",
+      "type": "package",
+      "path": "sqlitenetextensions.async/2.1.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netstandard1.1/SQLiteNetExtensionsAsync.dll",
+        "lib/netstandard1.1/SQLiteNetExtensionsAsync.pdb",
+        "sqlitenetextensions.async.2.1.0.nupkg.sha512",
+        "sqlitenetextensions.async.nuspec",
         "src/SQLiteNetExtensions/Attributes/CascadeOperation.cs",
         "src/SQLiteNetExtensions/Attributes/ForeignKeyAttribute.cs",
         "src/SQLiteNetExtensions/Attributes/ManyToManyAttribute.cs",
@@ -1702,6 +1795,7 @@
     "Xamarin.iOS,Version=v1.0": [
       "OnboardingGame >= 1.0.0",
       "SQLiteNetExtensions >= 2.1.0",
+      "SQLiteNetExtensions.Async >= 2.1.0",
       "Xamarin.Essentials >= 1.6.1",
       "Xamarin.Forms >= 5.0.0.2012",
       "sqlite-net-pcl >= 1.7.335"
@@ -1750,6 +1844,10 @@
       "xamarinios10": {
         "dependencies": {
           "SQLiteNetExtensions": {
+            "target": "Package",
+            "version": "[2.1.0, )"
+          },
+          "SQLiteNetExtensions.Async": {
             "target": "Package",
             "version": "[2.1.0, )"
           },
