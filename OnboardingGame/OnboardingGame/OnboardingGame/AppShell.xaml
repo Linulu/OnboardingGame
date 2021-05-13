@@ -11,7 +11,7 @@
     <Shell.FlyoutHeader>
         <Grid BackgroundColor="{AppThemeBinding Light={StaticResource LightThemeColor}, Dark=Gray}">
             <Image Aspect="AspectFill"
-                   Source="{AppThemeBinding Light=phoniro_assaabloy.png, Dark=lightgray_phoniro_assaabloy.png}"/>
+                   Source="Xperience.png"/>
         </Grid>
     </Shell.FlyoutHeader>
     <!--

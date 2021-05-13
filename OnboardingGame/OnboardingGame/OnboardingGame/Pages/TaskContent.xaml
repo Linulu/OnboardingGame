@@ -28,12 +28,14 @@
                    Grid.ColumnSpan="2"
                    HorizontalOptions="Fill"
                    VerticalOptions="Fill"/>
+             
             <Label Margin="10"
                    Grid.Row="1"
                    Grid.ColumnSpan="2"
                    FontSize="Large"
-                   Text="Description:"
+                   Text="Misson Assignment:"
                    FontAttributes="Bold"/>
+             
             <Label x:Name="Description_Label"
                    Margin="10"
                    FontSize="Large"

@@ -40,7 +40,6 @@ namespace OnboardingGame.Pages
                         StartDate = Start_Date.Date
                     });
                     App.InitializeDatabase(CarBenifit.IsChecked);
-                    App.FirstTimeList = true;
                     await Navigation.PopAsync();
                     //await Shell.Current.GoToAsync($"Missons?list={await App.Database.GetToDoListAsync()}");
                     await Shell.Current.GoToAsync($"//{nameof(TasksTab)}");

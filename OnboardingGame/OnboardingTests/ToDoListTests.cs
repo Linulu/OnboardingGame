@@ -13,20 +13,20 @@ namespace OnboardingTests
 
             ToDoList item = new ToDoList("Name", list);
 
-            Assert.AreEqual("Name", item.Name);
-            Assert.AreEqual(list, item.TaskItem);
+            Assert.AreEqual("Name", item.name);
+            Assert.AreEqual(list, item.tasks);
 
             ToDoList item2 = new ToDoList();
 
-            Assert.AreEqual("", item2.Name);
-            Assert.AreEqual(null, item2.TaskItem);
+            Assert.AreEqual("", item2.name);
+            Assert.AreEqual(null, item2.tasks);
         }
 
         public void List_Get_Method_Test() {
             ToDoList item = new ToDoList("Name", new List<TaskItem>());
 
-            Assert.AreEqual("Name", item.Name);
-            Assert.IsNotNull(item.TaskItem);
+            Assert.AreEqual("Name", item.name);
+            Assert.IsNotNull(item.tasks);
         }
     }
 }

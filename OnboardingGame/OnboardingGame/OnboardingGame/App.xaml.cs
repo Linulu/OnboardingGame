@@ -13,6 +13,7 @@ using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Rg.Plugins.Popup.Services;
+using OnboardingGame.Interfaces;
 
 namespace OnboardingGame
 {
@@ -27,122 +28,61 @@ namespace OnboardingGame
                 }
                 return database;
             }  
-        
         }
 
-        public static bool FirstTimeList { get; set; }
+        private static List<IObserver> observers = new List<IObserver>();
+
+        private static RestConnection connection;
+        private static Dictionary<string, int> status;
 
         public App()
         {
             InitializeComponent();
-            FirstTimeList = false;
+            
+            connection = new RestConnection("https://onboardingxperience.azurewebsites.net");
+            status.Add("ToDo", -1);
+            status.Add("Active", 0);
+            status.Add("Done", 1);
 
             MainPage = new AppShell();
         }
 
-        public enum AchievementType {
-            List,
-            EXP,
-            Date
+        public static void Attach(IObserver observer) {
+            observers.Add(observer);
         }
 
-        public static async Task Update() {
-            /* Use this for creating pop-ups
-            await PopupNavigation.Instance.PushAsync(new PopupView(List<string> achievementsReached));
-            */
-            List<string> achievedAchievements = new List<string>();
-            achievedAchievements.AddRange(await ListUpdate()); 
-            achievedAchievements.AddRange(await EXPUpdate());
-            achievedAchievements.AddRange(await DateUpdate());
-            if (achievedAchievements.Count != 0) {
-                await PopupNavigation.Instance.PushAsync(new PopupView(achievedAchievements));
-            } 
-        }
-        private static async Task<List<string>> ListUpdate() {
-            List<string> rV = new List<string>();
-            List<Achievement> aList = await Database.GetAchievementByType(AchievementType.List);
-            foreach(Achievement element in aList)
-            {
-                if (element.TargetID != 0)
-                {
-                    element.CurrentAmount = await Database.GetAllDoneTasks(element.TargetID);
-                }
-                else {
-                    element.CurrentAmount = await Database.GetAllDoneTasks();
-                }
-                element.Status = (element.CurrentAmount >= element.RequiredAmount);
-                if (element.Status) {
-                    rV.Add(element.Name);
-                }
-                await Database.SaveAchievement(element);
+        public static void ObserverUpdate() {
+            foreach (IObserver o in observers) {
+                o.Update();
             }
-            return rV;
-        }
-        private static async Task<List<string>> EXPUpdate() {
-            List<string> rV = new List<string>();
-            List<Achievement> aList = await Database.GetAchievementByType(AchievementType.EXP);
-
-            PlayerProfile pP = await App.Database.GetPlayerProfile();
-            List<ToDoList> list = await App.Database.GetToDoListAsync();
-            int EXP = 0;
-            for (int i = 0; i < list.Count; i++)
-            {
-                //EXP += (await App.Database.GetAllDoneTasks(list[i].ID)) * list[i].EXP;
-            }
-            pP.EXP = EXP;
-            await App.Database.SavePlayerAsync(pP);
-
-            foreach (Achievement element in aList)
-            {
-                element.CurrentAmount = pP.EXP;
-                element.Status = (element.CurrentAmount >= element.RequiredAmount);
-                if (element.Status) {
-                    rV.Add(element.Name);
-                }
-                await Database.SaveAchievement(element);
-            }
-            return rV;
-        }
-        private static async Task<List<string>> DateUpdate() {
-            List<string> rV = new List<string>();
-            List<Achievement> aList = await Database.GetAchievementByType(AchievementType.Date);
-            foreach (Achievement element in aList)
-            {
-                element.CurrentAmount = DateTime.Now.Ticks;
-                element.Status = (element.CurrentAmount >= element.RequiredAmount);
-                if (element.Status) {
-                    rV.Add(element.Name);
-                }
-                await Database.SaveAchievement(element);
-            }
-            return rV;
         }
 
         //Initialize the Database here
-        public static void InitializeDatabase(bool carBenefits) {
-            var assembly = IntrospectionExtensions.GetTypeInfo(typeof(App)).Assembly;
-            Stream stream;
-            if (carBenefits)
-            {
-                stream = assembly.GetManifestResourceStream("OnboardingGame.Onboarding.json");
-            }
-            else {
-                stream = assembly.GetManifestResourceStream("OnboardingGame.Onboarding_NoCar.json");
-            }
+        public static async void InitializeDatabase(string username, string password) {
 
-            StreamReader file = new StreamReader(stream);
-            string line = file.ReadToEnd();
+            List<JSON_Data> data = await connection.GetDataAsync(username, password);
+            List<ToDoList> lists = new List<ToDoList>();
 
-            JSON_Data list = JsonConvert.DeserializeObject<JSON_Data>(line);
-
-            for (int i = 0; i < list.ListItems.Count; i++) {
-                Database.SaveListAsync(list.ListItems[i]);
+            for (int i = 0; i < data.Count; i++) {
+                List<TaskItem> task = new List<TaskItem>();
+                for(int j = 0; j < data[i].tasks.Count; j++)
+                {
+                    task.Add(new TaskItem
+                    {
+                        title = data[i].tasks[j].title,
+                        description = data[i].tasks[j].description,
+                        points = data[i].tasks[j].points,
+                        status = status[data[i].tasks[j].status]
+                    });
+                }
+                lists.Add(new ToDoList(data[i].name, task));
             }
         }
         public static void DeleteDatabase() {
             Database.DeleteDatabase();
             database = null;
             File.Delete(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "Data.db3"));
+            Application.Current.MainPage = new AppShell();
         }
     }
 }

@@ -1,4 +1,6 @@
 ﻿using OnboardingGame.Models;
+using OnboardingGame.PopupPages;
+using Rg.Plugins.Popup.Services;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -16,9 +18,9 @@ namespace OnboardingGame.Pages
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class TaskContent : ContentPage
     {
-        public TaskItem task;
+        public Models.TaskItem task;
 
-        public TaskContent(TaskItem item)
+        public TaskContent(Models.TaskItem item)
         {
             InitializeComponent();
 
@@ -29,15 +31,15 @@ namespace OnboardingGame.Pages
         {
             base.OnAppearing();
 
-            Title_Label.Text = task.Title + " (" + task.Points + ": Hearts)";
+            Title_Label.Text = task.title + " (" + task.points + ": Hearts)";
 
-            Description_Label.Text = task.Description;
+            Description_Label.Text = task.description;
 
-            if (task.Status < 0)
+            if (task.status < 0)
             {
                 StatusBar.Color = Color.Red;
             }
-            else if (task.Status == 0)
+            else if (task.status == 0)
             {
                 StatusBar.Color = Color.Yellow;
             }
@@ -48,33 +50,34 @@ namespace OnboardingGame.Pages
 
         async void OnStartButtonClicked(object sender, EventArgs e) {
 
-            if (task.Status < 0) {
-                bool answer = await DisplayAlert("Attention", "Once a task has been started it can not be undone. Do you whish to continue?", "Yes", "No");
+            if (task.status < 0) {
+                bool answer = await DisplayAlert("Attention", "Once a task has been started it can not be undone. Do you wish to continue?", "Yes", "No");
                 if (answer) {
                     task.UpdateStatus(0);
                     await App.Database.SaveItemAsync(task);
                     await Navigation.PopAsync();
                 }
             }
-            else if (task.Status > 0) {
+            else if (task.status > 0) {
                 await DisplayAlert("Finished","You've already finished this task","Return");
             }
         }
 
         async void OnFinishButtonClicked(object sender, EventArgs e)
         {
-            if (task.Status <= 0) {
+            if (task.status <= 0) {
                 bool answer = await DisplayAlert("Attention", "Once a task has been finished it can not be undone. Do you whish to continue?", "Yes", "No");
                 if (answer) {
                     task.UpdateStatus(1);
                     PlayerProfile pp = await App.Database.GetPlayerProfile();
-                    pp.AddPoints(task.Points);
+                    pp.AddPoints(task.points);
                     await App.Database.SavePlayerAsync(pp);
                     await App.Database.SaveItemAsync(task);
                     await Navigation.PopAsync();
+                    await PopupNavigation.Instance.PushAsync(new TaskCompleted(task));
                 }
             }
-            else if (task.Status > 0)
+            else if (task.status > 0)
             {
                 await DisplayAlert("Finished", "You've already comepleted this task", "Return");
             }

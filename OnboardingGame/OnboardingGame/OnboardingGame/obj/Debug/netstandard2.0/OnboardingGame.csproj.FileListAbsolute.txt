@@ -56,3 +56,5 @@ C:\Users\lcg\source\repos\OnboardingGame\OnboardingGame\OnboardingGame\Onboardin
 C:\Users\lcg\source\repos\OnboardingGame\OnboardingGame\OnboardingGame\OnboardingGame\obj\Debug\netstandard2.0\OnboardingGame.dll
 C:\Users\lcg\source\repos\OnboardingGame\OnboardingGame\OnboardingGame\OnboardingGame\obj\Debug\netstandard2.0\ref\OnboardingGame.dll
 C:\Users\lcg\source\repos\OnboardingGame\OnboardingGame\OnboardingGame\OnboardingGame\obj\Debug\netstandard2.0\OnboardingGame.pdb
+C:\Users\lcg\Source\Repos\OnboardingGame\OnboardingGame\OnboardingGame\OnboardingGame\obj\Debug\netstandard2.0\PopupPages\TaskCompleted.xaml.g.cs
+C:\Users\lcg\Source\Repos\OnboardingGame\OnboardingGame\OnboardingGame\OnboardingGame\obj\Debug\netstandard2.0\PopupPages\PopupTask.xaml.g.cs

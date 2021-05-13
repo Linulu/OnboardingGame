@@ -2,8 +2,7 @@
 <TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              Shell.TabBarIsVisible="False"
-             x:Class="OnboardingGame.Pages.TasksTab">
-    <!--BarBackgroundColor="{StaticResource Primary}"-->
-  <!--Pages can be added as references or inline-->
-    
+             x:Class="OnboardingGame.Pages.TasksTab"
+             BarBackgroundColor="{StaticResource Primary}">
+    <!--Pages can be added as references or inline-->
 </TabbedPage>

@@ -4,6 +4,11 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Collections.Generic;
 using System.Reflection;
 using System;
+using Xamarin.Forms.Internals;
+using Xamarin.Forms;
+using FakeItEasy;
+
+using OnboardingGame;
 
 namespace OnboardingTests
 {

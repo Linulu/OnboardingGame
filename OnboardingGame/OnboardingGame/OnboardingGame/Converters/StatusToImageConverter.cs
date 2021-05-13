@@ -12,37 +12,19 @@ namespace OnboardingGame.Converters
         {
             int v = (int)value;
 
-            if (Application.Current.RequestedTheme == OSAppTheme.Light)
+            if (v < 0)
             {
-                if (v < 0)
-                {
-                    
-                    return "light_play_button.png";
-                }
-                else if (v == 0)
-                {
-                    return "light_hourglass.png";
-                }
-                else if (v > 0)
-                {
-                    return "light_confirmed.png";
-                }
+                return "TransparentStart.png";
             }
-            else if (Application.Current.RequestedTheme == OSAppTheme.Dark)
+            else if (v == 0)
             {
-                if (v < 0)
-                {
-                    return "dark_play_button.png";
-                }
-                else if (v == 0)
-                {
-                    return "dark_hourglass.png";
-                }
-                else if (v > 0)
-                {
-                    return "dark_confirmed.png";
-                }
+                return "TransparentOngoing.png";
             }
+            else if (v > 0)
+            {
+                return "Clear_Star_Formation.png";
+            }
+
             return null;
 
         }

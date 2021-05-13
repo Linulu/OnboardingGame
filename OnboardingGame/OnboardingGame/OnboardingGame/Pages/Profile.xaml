@@ -17,86 +17,73 @@
             <Grid>
                 <Label Text="{Binding Name}"
                        Margin="5"
-                       FontSize="Title"
-                       HeightRequest="40"/>
+                       FontSize="Title"/>
 
                 <Grid HorizontalOptions="End"
                       VerticalOptions="Center"
-                      Grid.Column="1"
+                      WidthRequest="100"
+                      HeightRequest="110"
                       Margin="5">
-                    <Image Source="{AppThemeBinding Light=light_heart.png, Dark=dark_heart.png}"
-                           BackgroundColor="Red"/>
+                    <Image Source="Clear_Star_Formation.png"
+                           Aspect="AspectFill"/>
                     <Label x:Name="Exp"
                            Text="{Binding EXP}"
                            HorizontalOptions="Center"
                            VerticalOptions="Center"
-                           HeightRequest="50"/>
+                           HeightRequest="35"/>
                 </Grid>
                 <Frame HorizontalOptions="Fill"
-                       VerticalOptions="Fill"
-                       Grid.ColumnSpan="2"/>
+                       VerticalOptions="Fill"/>
             </Grid>
             <Grid>
                 <Label x:Name="Lvl"
-                       FontSize="Medium"/>
-                <renderers:CutomProgressBar Grid.Row="1"
-                                            x:Name="ExpBar"
-                                            Opacity="0.5"/>
+                       FontSize="Medium"
+                       FontAttributes="Bold"/>
+                <ProgressBar Grid.Row="1"
+                             x:Name="ExpBar"
+                             ProgressColor="DeepSkyBlue"
+                             ScaleY="5.5"
+                             Opacity="0.5"/>
                 <Label Grid.Row="1"
+                       Margin="0,-3"
                        x:Name="NextLevel"
-                       Margin="5,0"
                        FontSize="Medium"/>
             </Grid>
 
             <Grid Margin="0,25">
-                <Label Text="Achievements"
+                <Label Text="Accomplished Missons"
                        Margin="5"
                        FontSize="Title"
                        FontAttributes="Bold"
                        HeightRequest="0.01"
                        HorizontalOptions="Center"/>
-                <CollectionView x:Name="Achievements"
-                                Margin="5,-60,0,0"
-                                SelectionMode="Single"
-                                SelectionChanged="OnAchievementTapped"
+
+                <CollectionView x:Name="Completed"
+                                Margin="5,-100,0,0"
+                                SelectionMode="None"
                                 Grid.Row="1"
                                 HeightRequest="300"
                                 VerticalOptions="Fill">
                     <CollectionView.ItemTemplate>
                         <DataTemplate>
-                            <Grid Margin="2.5">
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="Auto"/>
-                                    <RowDefinition Height="*"/>
-                                </Grid.RowDefinitions>
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="Auto"/>
-                                    <ColumnDefinition Width="*"/>
-                                </Grid.ColumnDefinitions>
-                                <Label Text="{Binding Name}"
-                                       Margin="10,0"
-                                       FontSize="Medium"
-                                       FontAttributes="Bold"/>
-                                <Label Text="{Binding AchievementMessage}"
-                                       Margin="10,0"
-                                       Grid.Row="1"
-                                       FontSize="Caption"/>
-                                <Image Source="{AppThemeBinding Light=light_trophy_cup.png, Dark=dark_trophy_cup.png}"
-                                       IsVisible="{Binding Status}"
-                                       BackgroundColor="Gold"
-                                       HorizontalOptions="End"
-                                       VerticalOptions="Center"
-                                       Margin="5"
-                                       Grid.RowSpan="2"
-                                       Grid.Column="1"
-                                       HeightRequest="50"/>
-                                <Frame BorderColor="{Binding Status,Converter={StaticResource colorConverter}}"
-                                       Margin="5,1"
-                                       HeightRequest="25"
-                                       HorizontalOptions="Fill"
-                                       VerticalOptions="Fill"
-                                       Grid.RowSpan="2"
-                                       Grid.ColumnSpan="2"/>
+                            <Grid Margin="5">
+                                <Frame BorderColor="Green"
+                                       BackgroundColor="White"
+                                       CornerRadius="5"
+                                       Padding="8"
+                                       VerticalOptions="Start">
+                                    <StackLayout>
+                                        <Label Text="{Binding Title}"
+                                               FontSize="Medium"
+                                               FontAttributes="Bold" />
+
+                                        <BoxView Color="Green"
+                                                 HeightRequest="2"
+                                                 HorizontalOptions="Fill" />
+
+                                        <Label Text="{Binding Description}"/>
+                                    </StackLayout>
+                                </Frame>
                             </Grid>
                         </DataTemplate>
                     </CollectionView.ItemTemplate>
@@ -104,12 +91,8 @@
                 <Frame HorizontalOptions="Fill"
                        VerticalOptions="Fill"
                        Grid.RowSpan="2"
-                       
                        InputTransparent="True"/>
             </Grid>
-
-            <Label x:Name="Date"
-                   FontAttributes="Bold"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

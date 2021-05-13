@@ -10,11 +10,12 @@ using OnboardingGame.PopupPages;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using OnboardingGame.Data;
+using OnboardingGame.Interfaces;
 
 namespace OnboardingGame.Pages
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class TasksTab : TabbedPage
+    public partial class TasksTab : TabbedPage, IObserver
     {
         private List<ToDoList> lists;
         private PlayerProfile player;
@@ -24,6 +25,8 @@ namespace OnboardingGame.Pages
 
             lists = App.Database.GetToDoListAsync().Result;
             player = App.Database.GetPlayerProfile().Result;
+
+            App.Attach(this);
 
             for (int i = 0; i < lists.Count; i++) {
                 Children.Add(new TasksPage(lists[i]));
@@ -42,20 +45,21 @@ namespace OnboardingGame.Pages
             }
         }
 
+        public void Update()
+        {
+            Title = "🌟 Collected: " + App.Database.GetPlayerProfile(player.ID).Result.EXP;
+        }
+
         protected async override void OnAppearing()
         {
             base.OnAppearing();
 
-            Title = "Missons, Points: " + App.Database.GetPlayerProfile(player.ID).Result.EXP;
+            App.ObserverUpdate();
 
-            if (App.FirstTimeList)
+            if (Data.Settings.FirstRun)
             {
-                await PopupNavigation.Instance.PushAsync(new ListInfoPopup());
-                App.FirstTimeList = false;
-            }
-            else
-            {
-                //await App.Update();
+                await DisplayAlert("Welcome Aboard!","If you ever need a run down of how this app works. Navigate yourself to the settings menu and tap the About This App buttons.","Got it!");
+                Data.Settings.FirstRun = false;
             }
         }
     }

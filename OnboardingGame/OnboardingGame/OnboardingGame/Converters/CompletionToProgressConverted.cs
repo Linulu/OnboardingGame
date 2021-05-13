@@ -15,7 +15,7 @@ namespace OnboardingGame.Converters
             double progress = 0;
 
             for (int i = 0; i < items.Count; i++) {
-                if (items[i].Status > 0) {
+                if (items[i].status > 0) {
                     progress++;
                 }
             }

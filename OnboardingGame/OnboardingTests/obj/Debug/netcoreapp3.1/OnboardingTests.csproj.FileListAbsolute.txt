@@ -126,3 +126,6 @@ C:\Users\lcg\Source\Repos\OnboardingGame\OnboardingGame\OnboardingTests\bin\Debu
 C:\Users\lcg\Source\Repos\OnboardingGame\OnboardingGame\OnboardingTests\bin\Debug\netcoreapp3.1\Castle.Core.dll
 C:\Users\lcg\Source\Repos\OnboardingGame\OnboardingGame\OnboardingTests\bin\Debug\netcoreapp3.1\FakeItEasy.dll
 C:\Users\lcg\Source\Repos\OnboardingGame\OnboardingGame\OnboardingTests\bin\Debug\netcoreapp3.1\SQLiteNetExtensionsAsync.dll
+C:\Users\lcg\Source\Repos\OnboardingGame\OnboardingGame\OnboardingTests\bin\Debug\netcoreapp3.1\Moq.dll
+C:\Users\lcg\Source\Repos\OnboardingGame\OnboardingGame\OnboardingTests\bin\Debug\netcoreapp3.1\System.Net.Http.Extensions.dll
+C:\Users\lcg\Source\Repos\OnboardingGame\OnboardingGame\OnboardingTests\bin\Debug\netcoreapp3.1\System.Net.Http.Primitives.dll

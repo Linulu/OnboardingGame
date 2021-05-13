@@ -46,15 +46,15 @@ namespace OnboardingTests
             ToDoList item = new ToDoList ("Name", items);
             database.SaveListAsync(item);
             Assert.AreEqual(item.ID, database.GetToDoListAsync(item.ID).Result.ID);
-            Assert.AreEqual(item.Name, database.GetToDoListAsync(database.GetTaskItem().Result[0].ListID).Result.Name);
-            Assert.AreEqual(item.Name, database.GetToDoListAsync(database.GetTaskItem().Result[1].ListID).Result.Name);
-            Assert.AreEqual(items[0].Title, database.GetToDoListAsync(database.GetTaskItem().Result[0].ListID).Result.TaskItem[0].Title);
-            Assert.AreEqual(items[0].Title, database.GetToDoListAsync().Result[0].TaskItem[0].Title);
-            Assert.AreEqual(2, database.GetToDoListAsync().Result[0].TaskItem.Count);
+            Assert.AreEqual(item.name, database.GetToDoListAsync(database.GetTaskItem().Result[0].ListID).Result.name);
+            Assert.AreEqual(item.name, database.GetToDoListAsync(database.GetTaskItem().Result[1].ListID).Result.name);
+            Assert.AreEqual(items[0].title, database.GetToDoListAsync(database.GetTaskItem().Result[0].ListID).Result.tasks[0].title);
+            Assert.AreEqual(items[0].title, database.GetToDoListAsync().Result[0].tasks[0].title);
+            Assert.AreEqual(2, database.GetToDoListAsync().Result[0].tasks.Count);
 
-            item.Name = "Billy";
+            item.name = "Billy";
             database.SaveListAsync(item);
-            Assert.AreEqual(item.Name, database.GetToDoListAsync(item.ID).Result.Name);
+            Assert.AreEqual(item.name, database.GetToDoListAsync(item.ID).Result.name);
 
             database.SaveListAsync(new List<ToDoList> { new ToDoList("Name", new List<TaskItem>()), new ToDoList("Name", new List<TaskItem>()) });
             Assert.AreEqual(3, database.GetToDoListAsync().Result.Count);
@@ -73,11 +73,11 @@ namespace OnboardingTests
 
             TaskItem billy = new TaskItem("Billy", "", 0);
             database.SaveItemAsync(billy).Wait();
-            Assert.AreEqual(billy.Title, database.GetTaskItem(billy.ID).Result.Title);
+            Assert.AreEqual(billy.title, database.GetTaskItem(billy.ID).Result.title);
 
-            billy.Title = "Steve";
+            billy.title = "Steve";
             database.SaveItemAsync(billy).Wait();
-            Assert.AreEqual(billy.Title, database.GetTaskItem(billy.ID).Result.Title);
+            Assert.AreEqual(billy.title, database.GetTaskItem(billy.ID).Result.title);
 
             database.SaveItemAsync(new List<TaskItem> { new TaskItem("1", "Desc", 1), new TaskItem("1", "Desc", 1) });
             Assert.AreEqual(6, database.GetTaskItem().Result.Count);

@@ -28,7 +28,7 @@ namespace OnboardingGame.Views
             Title = "Login";
             LoginCommand = new Command(OnLoginClicked);
 
-            Gesture.Command = new Command(async () => ProfileSetUp());
+            Gesture.Command = new Command(() => ProfileSetUp());
 
             this.BindingContext = this;
         }
