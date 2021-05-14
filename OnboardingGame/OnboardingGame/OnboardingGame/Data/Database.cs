@@ -17,29 +17,29 @@ namespace OnboardingGame.Data
 
         public Database(string dbPath) {
             _database = new SQLiteAsyncConnection(dbPath, true);
-            _database.CreateTableAsync<Models.TaskItem>().Wait();
+            _database.CreateTableAsync<TaskItem>().Wait();
             _database.CreateTableAsync<ToDoList>().Wait();
             _database.CreateTableAsync<PlayerProfile>().Wait();
         }
 
         public void DeleteDatabase() {
-            _database.DropTableAsync<Models.TaskItem>().Wait();
+            _database.DropTableAsync<TaskItem>().Wait();
             _database.DropTableAsync<ToDoList>().Wait();
             _database.DropTableAsync<PlayerProfile>().Wait();
             _database.CloseAsync().Wait();
         }
 
         //TaskItem_________________________________________________________________
-        public Task<List<Models.TaskItem>> GetTaskItem()
+        public Task<List<TaskItem>> GetTaskItem()
         {
-            return _database.Table<Models.TaskItem>().ToListAsync();
+            return _database.Table<TaskItem>().ToListAsync();
         }
-        public Task<Models.TaskItem> GetTaskItem(int id)
+        public Task<TaskItem> GetTaskItem(int id)
         {
-            return _database.Table<Models.TaskItem>().Where(i => i.ID == id).FirstOrDefaultAsync();    
+            return _database.Table<TaskItem>().Where(i => i.ID == id).FirstOrDefaultAsync();    
         }
 
-        public Task<int> SaveItemAsync(Models.TaskItem item)
+        public Task<int> SaveItemAsync(TaskItem item)
         {
             if (!(item is null))
             {
@@ -54,16 +54,16 @@ namespace OnboardingGame.Data
             }
             return null;
         }
-        public void SaveItemAsync(List<Models.TaskItem> items) {
+        public void SaveItemAsync(List<TaskItem> items) {
             if (!(items is null))
             {
                 for (int i = 0; i < items.Count; i++)
                 {
-                   SaveItemAsync(items[i]).Wait();
+                    SaveItemAsync(items[i]).Wait();
                 }
             }
         }
-        public Task<int> DeleteItemAsync(Models.TaskItem item)
+        public Task<int> DeleteItemAsync(TaskItem item)
         {
             if (!(item is null))
             {
@@ -153,18 +153,18 @@ namespace OnboardingGame.Data
 
         //Return a list of TaskItems who's ListID matches that of the given id 
         //parameter. Use this method to get all the TaskItems from a given ToDoList 
-        public Task<List<Models.TaskItem>> GetTasksFromListAsync(int id) {
-            return _database.Table<Models.TaskItem>().Where(i => i.ListID == id).ToListAsync();
+        public Task<List<TaskItem>> GetTasksFromListAsync(int id) {
+            return _database.Table<TaskItem>().Where(i => i.ListID == id).ToListAsync();
         }
         public Task<ToDoList> GetLatestSavedList() {
             return _database.Table<ToDoList>().ElementAtAsync(_database.Table<ToDoList>().CountAsync().Result - 1);
         }
-        public Task<List<Models.TaskItem>> GetAllDoneTasks(int id)
+        public Task<List<TaskItem>> GetAllDoneTasks(int id)
         {
-            return _database.Table<Models.TaskItem>().Where(i => i.ListID == id && i.status >= 1).ToListAsync();
+            return _database.Table<TaskItem>().Where(i => i.ListID == id && i.status >= 1).ToListAsync();
         }
-        public Task<List<Models.TaskItem>> GetAllDoneTasks() {
-            return _database.Table<Models.TaskItem>().Where(i => i.status >= 1).ToListAsync();
+        public Task<List<TaskItem>> GetAllDoneTasks() {
+            return _database.Table<TaskItem>().Where(i => i.status >= 1).ToListAsync();
         }
     }
 }

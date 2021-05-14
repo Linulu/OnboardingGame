@@ -8,7 +8,7 @@
     ".NETCoreApp,Version=v3.1": {
       "OnboardingTests/1.0.0": {
         "dependencies": {
-          "FakeItEasy": "7.0.1",
+          "FakeItEasy": "7.0.2",
           "MSTest.TestAdapter": "2.2.3",
           "MSTest.TestFramework": "2.2.3",
           "Microsoft.NET.Test.Sdk": "16.9.4",
@@ -16,6 +16,8 @@
           "Moq": "4.16.1",
           "OnboardingGame": "1.0.0",
           "SQLiteNetExtensions.Async": "2.1.0",
+          "Xamarin.Essentials": "1.6.1",
+          "Xamarin.Forms": "5.0.0.2012",
           "coverlet.collector": "3.0.3"
         },
         "runtime": {
@@ -43,14 +45,14 @@
         }
       },
       "coverlet.collector/3.0.3": {},
-      "FakeItEasy/7.0.1": {
+      "FakeItEasy/7.0.2": {
         "dependencies": {
           "Castle.Core": "4.4.0"
         },
         "runtime": {
           "lib/netstandard2.1/FakeItEasy.dll": {
             "assemblyVersion": "7.0.0.0",
-            "fileVersion": "7.0.1.0"
+            "fileVersion": "7.0.2.0"
           }
         }
       },
@@ -1370,12 +1372,12 @@
       "path": "coverlet.collector/3.0.3",
       "hashPath": "coverlet.collector.3.0.3.nupkg.sha512"
     },
-    "FakeItEasy/7.0.1": {
+    "FakeItEasy/7.0.2": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-Sky2WqHWd6FbwvqWlZ7hdaln4bb56bveH+QYiqeKehdejrtb+Y/eYsVCYQ9m7KI6iJW/OT7NnuZrqTSYg0VAgA==",
-      "path": "fakeiteasy/7.0.1",
-      "hashPath": "fakeiteasy.7.0.1.nupkg.sha512"
+      "sha512": "sha512-fiI9h1ziOgF29qVUD8AB5SgB8YBmosL8+Euk1jRiZ5t3FRXDAHxA6zhy/lAC/y6Et4YlgHYJFDcqBA+f5Zyrag==",
+      "path": "fakeiteasy/7.0.2",
+      "hashPath": "fakeiteasy.7.0.2.nupkg.sha512"
     },
     "Microsoft.Bcl/1.1.10": {
       "type": "package",

@@ -14,6 +14,8 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using Rg.Plugins.Popup.Services;
 using OnboardingGame.Interfaces;
+using OnboardingGame.REST_Data;
+using System.Linq;
 
 namespace OnboardingGame
 {
@@ -33,13 +35,14 @@ namespace OnboardingGame
         private static List<IObserver> observers = new List<IObserver>();
 
         private static RestConnection connection;
-        private static Dictionary<string, int> status;
+        private static readonly Dictionary<string, int> status = new Dictionary<string, int>();
 
         public App()
         {
             InitializeComponent();
-            
+
             connection = new RestConnection("https://onboardingxperience.azurewebsites.net");
+
             status.Add("ToDo", -1);
             status.Add("Active", 0);
             status.Add("Done", 1);
@@ -57,32 +60,66 @@ namespace OnboardingGame
             }
         }
 
+        public static async Task<bool> LoginUser(string username, string password) {
+            return await connection.ValidateUserAsync(username, password);
+        }
+
+        public static async System.Threading.Tasks.Task UpdateTask(TaskItem item) {
+            REST_Data.Task task = new REST_Data.Task
+            {
+                title = item.title,
+                description = item.description,
+                points = item.points,
+                status = status.FirstOrDefault(x => x.Value == item.status).Key
+            };
+
+            PlayerProfile player = await Database.GetPlayerProfile();
+            await connection.UpdateStatusAsync(player.Name, player.Password, task);
+        }
+
         //Initialize the Database here
-        public static async void InitializeDatabase(string username, string password) {
+        public static async System.Threading.Tasks.Task InitializeDatabase(string username, string password) {
 
             List<JSON_Data> data = await connection.GetDataAsync(username, password);
             List<ToDoList> lists = new List<ToDoList>();
+            int pp = 0;
 
             for (int i = 0; i < data.Count; i++) {
-                List<TaskItem> task = new List<TaskItem>();
+                List<TaskItem> tasks = new List<TaskItem>();
                 for(int j = 0; j < data[i].tasks.Count; j++)
                 {
-                    task.Add(new TaskItem
+                    TaskItem task = new TaskItem
                     {
                         title = data[i].tasks[j].title,
                         description = data[i].tasks[j].description,
                         points = data[i].tasks[j].points,
                         status = status[data[i].tasks[j].status]
-                    });
+                    };
+
+                    if (task.status > 0) {
+                        pp += task.points;
+                    }
+
+                    tasks.Add(task);
                 }
-                lists.Add(new ToDoList(data[i].name, task));
+                lists.Add(new ToDoList(data[i].name, tasks));
             }
+
+            PlayerProfile player = new PlayerProfile
+            {
+                Name = username,
+                Password = password
+            };
+            player.AddPoints(pp);
+            await App.Database.SavePlayerAsync(player);
+
+            Database.SaveListAsync(lists);
         }
+
         public static void DeleteDatabase() {
             Database.DeleteDatabase();
             database = null;
             File.Delete(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "Data.db3"));
-            Application.Current.MainPage = new AppShell();
         }
     }
 }

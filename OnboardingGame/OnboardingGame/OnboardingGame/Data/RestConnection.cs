@@ -35,7 +35,7 @@ namespace OnboardingGame.Data
                 Method = HttpMethod.Get,
                 RequestUri = uri,
                 Content = new StringContent(user, Encoding.UTF8, "application/json")
-            };
+            }; 
 
             HttpResponseMessage response = await client.SendAsync(request).ConfigureAwait(false);
 

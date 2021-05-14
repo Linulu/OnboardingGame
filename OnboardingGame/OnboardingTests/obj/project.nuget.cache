@@ -1,12 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "ovvWszELgx6XyvzZwu66E1keIMVabQLr+8mkY1tyk1HKODncN3U8HSTGIkblt/W6MZsEP4l/fh+SnU+tLd4wYQ==",
+  "dgSpecHash": "Gyf2A4aUDtPRBxXQHX+n9aqPnB19xEaa6IgLbdfvtX5VW5jJApekm9zen56BHeRcFt/VMQp2L2dKRSm0UBzaTQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\lcg\\Source\\Repos\\OnboardingGame\\OnboardingGame\\OnboardingTests\\OnboardingTests.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\lcg\\.nuget\\packages\\castle.core\\4.4.0\\castle.core.4.4.0.nupkg.sha512",
     "C:\\Users\\lcg\\.nuget\\packages\\coverlet.collector\\3.0.3\\coverlet.collector.3.0.3.nupkg.sha512",
-    "C:\\Users\\lcg\\.nuget\\packages\\fakeiteasy\\7.0.1\\fakeiteasy.7.0.1.nupkg.sha512",
+    "C:\\Users\\lcg\\.nuget\\packages\\fakeiteasy\\7.0.2\\fakeiteasy.7.0.2.nupkg.sha512",
     "C:\\Users\\lcg\\.nuget\\packages\\microsoft.bcl\\1.1.10\\microsoft.bcl.1.1.10.nupkg.sha512",
     "C:\\Users\\lcg\\.nuget\\packages\\microsoft.bcl.build\\1.0.14\\microsoft.bcl.build.1.0.14.nupkg.sha512",
     "C:\\Users\\lcg\\.nuget\\packages\\microsoft.codecoverage\\16.9.4\\microsoft.codecoverage.16.9.4.nupkg.sha512",

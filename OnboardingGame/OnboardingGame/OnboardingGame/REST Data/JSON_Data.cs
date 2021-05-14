@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace OnboardingGame.Models
+namespace OnboardingGame.REST_Data
 {
     public class JSON_Data
     {

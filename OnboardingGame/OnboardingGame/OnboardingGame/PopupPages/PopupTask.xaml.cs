@@ -15,9 +15,9 @@ namespace OnboardingGame.PopupPages
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class PopupTask : PopupPage
     {
-        private Models.TaskItem task;
+        private TaskItem task;
 
-        public PopupTask(Models.TaskItem item)
+        public PopupTask(TaskItem item)
         {
             InitializeComponent();
 
@@ -61,13 +61,13 @@ namespace OnboardingGame.PopupPages
 
         async void OnStartButtonClicked(object sender, EventArgs e)
         {
-
             if (task.status < 0)
             {
                 bool answer = await DisplayAlert("Hold up!", "Are you sure you wish to brave the dangers that this misson entails? To take on the challenges this misson brings? If so go ahead and make your choice.", "Yes", "No");
                 if (answer)
                 {
                     task.UpdateStatus(0);
+                    await App.UpdateTask(task);
                     await App.Database.SaveItemAsync(task);
                     await PopupNavigation.Instance.PopAsync();
                     App.ObserverUpdate();
@@ -89,6 +89,7 @@ namespace OnboardingGame.PopupPages
                     task.UpdateStatus(1);
                     PlayerProfile pp = await App.Database.GetPlayerProfile();
                     pp.AddPoints(task.points);
+                    await App.UpdateTask(task);
                     await App.Database.SavePlayerAsync(pp);
                     await App.Database.SaveItemAsync(task);
                     await PopupNavigation.Instance.PopAsync();

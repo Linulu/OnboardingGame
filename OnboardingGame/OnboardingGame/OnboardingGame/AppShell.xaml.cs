@@ -17,6 +17,7 @@ namespace OnboardingGame
 
         private async void OnMenuItemClicked(object sender, EventArgs e)
         {
+            App.DeleteDatabase();
             await Shell.Current.GoToAsync("//LoginPage");
         }
     }

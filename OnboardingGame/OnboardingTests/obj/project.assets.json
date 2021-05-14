@@ -29,7 +29,7 @@
           "build/netstandard1.0/coverlet.collector.targets": {}
         }
       },
-      "FakeItEasy/7.0.1": {
+      "FakeItEasy/7.0.2": {
         "type": "package",
         "dependencies": {
           "Castle.Core": "4.3.1"
@@ -2073,14 +2073,14 @@
         "coverlet.collector.nuspec"
       ]
     },
-    "FakeItEasy/7.0.1": {
-      "sha512": "Sky2WqHWd6FbwvqWlZ7hdaln4bb56bveH+QYiqeKehdejrtb+Y/eYsVCYQ9m7KI6iJW/OT7NnuZrqTSYg0VAgA==",
+    "FakeItEasy/7.0.2": {
+      "sha512": "fiI9h1ziOgF29qVUD8AB5SgB8YBmosL8+Euk1jRiZ5t3FRXDAHxA6zhy/lAC/y6Et4YlgHYJFDcqBA+f5Zyrag==",
       "type": "package",
-      "path": "fakeiteasy/7.0.1",
+      "path": "fakeiteasy/7.0.2",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "fakeiteasy.7.0.1.nupkg.sha512",
+        "fakeiteasy.7.0.2.nupkg.sha512",
         "fakeiteasy.nuspec",
         "images/FakeItEasy.png",
         "lib/net45/FakeItEasy.dll",
@@ -7374,7 +7374,7 @@
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
-      "FakeItEasy >= 7.0.1",
+      "FakeItEasy >= 7.0.2",
       "MSTest.TestAdapter >= 2.2.3",
       "MSTest.TestFramework >= 2.2.3",
       "Microsoft.NET.Test.Sdk >= 16.9.4",
@@ -7382,6 +7382,8 @@
       "Moq >= 4.16.1",
       "OnboardingGame >= 1.0.0",
       "SQLiteNetExtensions.Async >= 2.1.0",
+      "Xamarin.Essentials >= 1.6.1",
+      "Xamarin.Forms >= 5.0.0.2012",
       "coverlet.collector >= 3.0.3"
     ]
   },
@@ -7435,7 +7437,7 @@
         "dependencies": {
           "FakeItEasy": {
             "target": "Package",
-            "version": "[7.0.1, )"
+            "version": "[7.0.2, )"
           },
           "MSTest.TestAdapter": {
             "target": "Package",
@@ -7461,6 +7463,14 @@
             "target": "Package",
             "version": "[2.1.0, )"
           },
+          "Xamarin.Essentials": {
+            "target": "Package",
+            "version": "[1.6.1, )"
+          },
+          "Xamarin.Forms": {
+            "target": "Package",
+            "version": "[5.0.0.2012, )"
+          },
           "coverlet.collector": {
             "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
             "suppressParent": "All",
@@ -7483,7 +7493,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.203\\RuntimeIdentifierGraph.json"
       }
     }
   },

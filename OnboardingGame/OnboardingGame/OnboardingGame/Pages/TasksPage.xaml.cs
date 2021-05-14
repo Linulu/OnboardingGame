@@ -19,7 +19,7 @@ namespace OnboardingGame.Pages
     public partial class TasksPage : ContentPage, IObserver
     {
         private string name;
-        private List<Models.TaskItem> list;
+        private List<TaskItem> list;
 
         private int index = 0;
 

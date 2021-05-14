@@ -28,44 +28,25 @@ namespace OnboardingGame.Views
             Title = "Login";
             LoginCommand = new Command(OnLoginClicked);
 
-            Gesture.Command = new Command(() => ProfileSetUp());
-
             this.BindingContext = this;
         }
 
-        protected override async void OnAppearing() {
+        protected override void OnAppearing() {
             base.OnAppearing();
-
-            if (!(File.Exists(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "Data.db3"))))
-            {
-                await DisplayAlert("No Local Profile found","There seems to be no local profile on this device. Tap the Profile Setup button to set it up","Got it");
-            }
         }
 
         private async void OnLoginClicked(object obj)
         {
-            if (File.Exists(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "Data.db3")))
+            if (await App.LoginUser(Username, Password))
             {
-                if (!string.IsNullOrWhiteSpace(Username) || !string.IsNullOrWhiteSpace(Password))
-                {
-                    if (App.Database.GetPlayerProfile().Result.Name.CompareTo(Username) == 0 && App.Database.GetPlayerProfile().Result.Password.CompareTo(Password) == 0)
-                    {
-                        //await Shell.Current.GoToAsync($"Missons?list={await App.Database.GetToDoListAsync()}");
-                        await Shell.Current.GoToAsync($"//{nameof(TasksTab)}");
-                    }
-                    else
-                    {
-                        await DisplayAlert("Error", "Wrong Username or Password", "Try Agian");
-                    }
-                }
-                else
-                {
-                    await DisplayAlert("Error", "No Username or Password", "Try Agian");
-                }
+                App.DeleteDatabase();
+
+                await App.InitializeDatabase(Username, Password);
+                await Shell.Current.GoToAsync($"//{nameof(TasksTab)}");
+                return;
             }
-            else {
-                await DisplayAlert("No Data","Their currently exists no data in the app for a profile","Return");
-            }
+
+            await DisplayAlert("Wrong username or password", "Maybe your finger slipped when you tried to login?", "Try Again");
         }
 
         private async void ProfileSetUp() {
