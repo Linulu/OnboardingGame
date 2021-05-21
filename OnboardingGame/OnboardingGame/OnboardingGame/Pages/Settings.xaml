@@ -6,9 +6,6 @@
              x:Class="OnboardingGame.Pages.Settings">
     <ContentPage.Content>
         <StackLayout Margin="20,35,20,20">
-            <Button Text="Change Profile Name"
-                    BackgroundColor="LightSeaGreen"
-                    Clicked="ProfileButtonPress"/>
             <Button Text="About this app"
                     BackgroundColor="LightSeaGreen"
                     Clicked="AboutButtonPress"/>

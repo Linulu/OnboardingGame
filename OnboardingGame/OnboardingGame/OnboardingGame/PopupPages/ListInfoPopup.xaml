@@ -11,13 +11,13 @@
         <Label Text="Welcome to the Onboarding App!"
                FontSize="Title"
                FontAttributes="Bold"/>
-        <Label Text="This app is meant to work as a fun and interactive to do list about the tasks you need to do as a new employee of the company. This is the To Do List page, this page is filled with different lists with a vareity of task you need to complete."
+        <Label Text="This app is meant to work as a fun and interactive to do list about the tasks you need to do as a new employee of the company."
                Margin="5"
                FontSize="Body"/>
         <Label Text="Tapping on a task will give you a more detailed explanation of what you need to do in order to complete it. Tapping start let's you know that you've started the task and finishing it means you're done. Once a task is finished it can not be started again."
                Margin="5"
                FontSize="Body"/>
-        <Label Text="By finishing task you'll earn hearts. Earning enought hearts will make you level up. You can see your current level and the amount of hearts you've collected on the profile page. You can also aquire achievements in the app by reaching certain goals. You can find this information aswell in the Profile page."
+        <Label Text="By finishing task you'll earn stars. Earning enought stars will make you level up. You can see your current level and the amount of stars you've collected on the profile page."
                Margin="5"
                FontSize="Body"/>
         <Grid>
