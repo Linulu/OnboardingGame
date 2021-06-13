@@ -16,8 +16,7 @@
             <CollectionView x:Name="listView"
                             IsGrouped="True"
                             SelectionMode="Single"
-                            SelectionChanged="OnListItemTapped"
-                            Scrolled="OnCollectionViewScrolled">
+                            SelectionChanged="OnListItemTapped">
                 <CollectionView.GroupHeaderTemplate>
                     <DataTemplate>
                         <Grid>
@@ -35,6 +34,7 @@
                     <DataTemplate>
                         <Grid Padding="10"
                               Margin="5">
+
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="Auto"/>
                                 <RowDefinition Height="*"/>
@@ -43,24 +43,23 @@
                                 <ColumnDefinition Width="Auto"/>
                                 <ColumnDefinition Width="*"/>
                             </Grid.ColumnDefinitions>
-                            <Label Text="{Binding Title}"
+                            <Label Text="{Binding title}"
                                    LineBreakMode="TailTruncation"
                                    WidthRequest="250"
                                    Margin="5,0,0,0"
                                    FontSize="Medium"
                                    FontAttributes="Bold"/>
-                            <Label Text="{Binding StatusMessage}"
+                            <Label Text="{Binding points}"
                                    Margin="5,0,0,0"
                                    FontSize="Small"
                                    Grid.Row="1"/>
-                            <Image Source="{Binding Status, Converter={StaticResource imageConverter}}"
+                            <Image Source="{Binding status, Converter={StaticResource imageConverter}}"
                                    HorizontalOptions="End"
                                    VerticalOptions="Center"
                                    HeightRequest="50"
                                    Margin="5"
                                    Grid.RowSpan="2"
-                                   Grid.Column="1"
-                                   BackgroundColor="{Binding Status,Converter={StaticResource colorConverter}}"/>
+                                   Grid.Column="1"/>
                             <Frame Grid.ColumnSpan="2"
                                    Grid.RowSpan="2"
                                    HorizontalOptions="Fill"

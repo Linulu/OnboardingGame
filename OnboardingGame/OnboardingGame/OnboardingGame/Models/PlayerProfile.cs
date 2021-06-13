@@ -8,6 +8,16 @@ namespace OnboardingGame.Models
 {
     public class PlayerProfile
     {
+        public PlayerProfile() { 
+            
+        }
+
+        public void AddPoints(int points) {
+            if (points > 0) {
+                EXP += points;
+            }
+        }
+
         [PrimaryKey, AutoIncrement]
         public int ID { get; set; }
         public int EXP { get; set; }

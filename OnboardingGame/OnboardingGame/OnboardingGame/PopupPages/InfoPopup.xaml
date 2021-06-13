@@ -11,10 +11,9 @@
         <Label Text="About this Application"
                FontSize="Title"
                FontAttributes="Bold"/>
-        <Label Text="This is the profile setup page where you'll setup your local profile in the app. Your username and password are used to log in to the application for future use. The data saved in the application is only saved locally on the device and cannot be accessed from any external sources. This application is meant to be used as a personal checklist for you to see what you have left to do before being fully onboard the company."
+        <Label Text="Your username and password are used to log in to the application for future use. The data saved in the application is only saved locally on the device and cannot be accessed from any external sources. This application is meant to be used as a personal checklist for you to see what you have left to do before being fully onboard the company."
                Margin="5"
                FontSize="Body"/>
-        <Label Text="Fill in the the infromation on this page and let's get started. Tap outside this popup to exit."/>
 
     </StackLayout>
 </pages:PopupPage>

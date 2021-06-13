@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<pages:PopupPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="OnboardingGame.PopupPages.TaskCompleted"
+             xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+             BackgroundInputTransparent="False"
+             InputTransparent="False">
+
+    <StackLayout HorizontalOptions="Center"
+                 VerticalOptions="Center"
+                 BackgroundColor="Transparent"
+                 InputTransparent="False"
+                 CascadeInputTransparent="True">
+        <Grid Margin="50">
+            <Image x:Name="Image1"
+                   TranslationY="-80"
+                   Source="Clear_Star_Formation.png"
+                   Opacity="0"
+                   Scale="0.7"/>
+            <Image x:Name="Image2"
+                   TranslationX="100"
+                   TranslationY="60"
+                   Source="Clear_Star_Formation.png"
+                   Opacity="0"
+                   Scale="0.7"/>
+            <Image x:Name="Image3"
+                   TranslationX="-100"
+                   TranslationY="60"
+                   Source="Clear_Star_Formation.png"
+                   Opacity="0"
+                   Scale="0.7"/>
+            <Label Text="Mission Completed!"
+                   TextColor="GhostWhite"
+                   FontSize="Large"
+                   TextDecorations="Underline"
+                   FontAttributes="Bold"
+                   Scale="2"
+                   VerticalOptions="Center"
+                   HorizontalOptions="Center"/>
+
+            <Frame BorderColor="Green"
+                   BackgroundColor="White"
+                   CornerRadius="5"
+                   Padding="8"
+                   Grid.Row="1"
+                   VerticalOptions="Start">
+                <StackLayout>
+                    <Label x:Name="TitleLabel"
+                           Text="Task Name"
+                           FontSize="Medium"
+                           FontAttributes="Bold" />
+                    <BoxView Color="Green"
+                             HeightRequest="2"
+                             HorizontalOptions="Fill" />
+                    <Label x:Name="DescriptionLabel"
+                           Text="Task Description"/>
+                </StackLayout>
+            </Frame>
+           
+        </Grid>
+
+    </StackLayout>
+    
+</pages:PopupPage>

@@ -28,12 +28,14 @@
                    Grid.ColumnSpan="2"
                    HorizontalOptions="Fill"
                    VerticalOptions="Fill"/>
+             
             <Label Margin="10"
                    Grid.Row="1"
                    Grid.ColumnSpan="2"
                    FontSize="Large"
-                   Text="Description:"
+                   Text="Misson Assignment:"
                    FontAttributes="Bold"/>
+             
             <Label x:Name="Description_Label"
                    Margin="10"
                    FontSize="Large"
@@ -46,12 +48,6 @@
                      Margin="5,0,5,0"
                      Grid.Row="2"
                      Grid.ColumnSpan="2"/>
-            <Label Margin="10"
-                   Grid.Row="2"
-                   Text="{Binding StatusMessage}"
-                   Grid.ColumnSpan="2"
-                   HorizontalOptions="Center"
-                   VerticalOptions="Center"/>
 
             <Button Clicked="OnStartButtonClicked" 
                    Grid.Row="3" 

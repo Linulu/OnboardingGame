@@ -65,7 +65,7 @@
                             <VisualState x:Name="Selected">
                                 <VisualState.Setters>
                                     <Setter Property="BackgroundColor"
-                                        Value="DeepSkyBlue" />
+                                        Value="Gray" />
                                 </VisualState.Setters>
                             </VisualState>
                         </VisualStateGroup>

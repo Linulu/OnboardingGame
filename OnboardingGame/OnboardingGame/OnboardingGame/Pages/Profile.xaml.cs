@@ -24,13 +24,14 @@ namespace OnboardingGame.Pages
         public Profile()
         {
             InitializeComponent();
+            
         }
 
         protected override async void OnAppearing()
         {
             base.OnAppearing();
 
-            await App.Update();
+            //await App.Update();
 
             pP = await App.Database.GetPlayerProfile();
 
@@ -39,38 +40,31 @@ namespace OnboardingGame.Pages
             toNextLVL = (int)(3 * Math.Pow(Math.E, level) - 3);
 
             Lvl.Text = "Level: " + level;
-            NextLevel.Text = "Amount of hearts needed for next level " + (1 + (toNextLVL - EXP));
+            NextLevel.Text = "Want to level up? You need " + (1 + (toNextLVL - EXP) + " more stars");
 
             this.BindingContext = pP;
 
             ExpSize();
 
-            Achievements.ItemsSource = await App.Database.GetAchievement();
-            Date.Text = "Start date: " + pP.StartDate.ToString("MMMM/dd/yyyy");
+            Completed.ItemsSource = await App.Database.GetAllDoneTasks();
 
-            //ExpBar.Progress = (double)EXP / toNextLVL;
+            ExpBar.Progress = 0;
+            ExpBar.Progress = (double)EXP / toNextLVL;
             await ExpBar.ProgressTo((double)EXP / toNextLVL, 3000, Easing.BounceOut);
-        }
-
-        async void OnAchievementTapped(object sender, SelectionChangedEventArgs e) {
-            if (e.CurrentSelection != null) {
-                Achievement a = e.CurrentSelection.FirstOrDefault() as Achievement;
-                await DisplayAlert(a.Name,"Description:\n"+a.Description,"Return");
-            }
         }
 
         private void ExpSize()
         {
             int length = Exp.Text.Length;
-            if (length > 11)
+            if (length > 9)
             {
                 Exp.FontSize = Device.GetNamedSize(NamedSize.Micro, Exp);
             }
-            else if (length > 8)
+            else if (length > 6)
             {
                 Exp.FontSize = Device.GetNamedSize(NamedSize.Small, Exp);
             }
-            else if (length > 6)
+            else if (length > 4)
             {
                 Exp.FontSize = Device.GetNamedSize(NamedSize.Medium, Exp);
             }

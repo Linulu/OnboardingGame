@@ -10,34 +10,41 @@ namespace OnboardingGame.Models
 {
     public class TaskItem
     {
+        public TaskItem() {
+            title = "";
+            description = "";
+            points = 0;
+            status = -1;
+        }
+
+        public TaskItem(string name, string description, int points) {
+            title = name;
+            this.description = description;
+            this.points = points;
+            status = -1;
+        }
+        
         [PrimaryKey, AutoIncrement]
         public int ID { get; set; }
-        
-        public int Status { get; set; }
-        public string Title { get; set; }
-        public string Description { get; set; }
+        public int status { get; set; }
+        public string title { get; set; }
+        public string description { get; set; }
+        public int points { get; set; }
 
         [ForeignKey(typeof(ToDoList))]
         public int ListID { get; set; }
 
-        [ForeignKey(typeof(Catagory))]
-        public int CatagoryID { get; set; }
-
-        public string StatusMessage {
-            get {
-                if (Status < 0)
-                {
-                    return "Not Started";
-                }
-                else if (Status > 0)
-                {
-                    return "Finished";
-                }
-                else if (Status == 0)
-                {
-                    return "Started";
-                }
-                return "No status set";
+        public void UpdateStatus(int i) {
+            if (i < 0)
+            {
+                status = -1;
+            }
+            else if (i == 0)
+            {
+                status = 0;
+            }
+            else if (i > 0) {
+                status = 1;
             }
         }
     }

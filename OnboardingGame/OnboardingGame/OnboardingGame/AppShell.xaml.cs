@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using OnboardingGame.Pages;
 using OnboardingGame.ViewModels;
 using OnboardingGame.Views;
 using Xamarin.Forms;
@@ -16,6 +17,7 @@ namespace OnboardingGame
 
         private async void OnMenuItemClicked(object sender, EventArgs e)
         {
+            App.DeleteDatabase();
             await Shell.Current.GoToAsync("//LoginPage");
         }
     }

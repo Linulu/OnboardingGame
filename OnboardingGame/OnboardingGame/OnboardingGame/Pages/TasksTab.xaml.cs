@@ -10,36 +10,56 @@ using OnboardingGame.PopupPages;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using OnboardingGame.Data;
+using OnboardingGame.Interfaces;
 
 namespace OnboardingGame.Pages
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class TasksTab : TabbedPage
+    public partial class TasksTab : TabbedPage, IObserver
     {
-        public List<ToDoList> Lists { get; private set; }
+        private List<ToDoList> lists;
+        private PlayerProfile player;
 
-        public TasksTab()
+        public TasksTab() {
+            InitializeComponent();
+
+            lists = App.Database.GetToDoListAsync().Result;
+            player = App.Database.GetPlayerProfile().Result;
+
+            App.Attach(this);
+
+            for (int i = 0; i < lists.Count; i++) {
+                Children.Add(new TasksPage(lists[i]));
+            }
+        }
+
+        public TasksTab(List<ToDoList> lists, PlayerProfile player)
         {
             InitializeComponent();
 
-            Lists = App.Database.GetToDoListAsync().Result;
+            this.lists = lists;
+            this.player = player; 
 
-            for(int i = 0; i < Lists.Count; i++) {
-                Children.Add(new TasksPage(Lists[i].ID));
+            for(int i = 0; i < this.lists.Count; i++) {
+                Children.Add(new TasksPage(this.lists[i]));
             }
+        }
+
+        public void Update()
+        {
+            Title = "🌟 Collected: " + App.Database.GetPlayerProfile(player.ID).Result.EXP;
         }
 
         protected async override void OnAppearing()
         {
             base.OnAppearing();
-            if (App.FirstTimeList)
+
+            App.ObserverUpdate();
+
+            if (Data.Settings.FirstRun)
             {
-                await PopupNavigation.Instance.PushAsync(new ListInfoPopup());
-                App.FirstTimeList = false;
-            }
-            else
-            {
-                await App.Update();
+                await DisplayAlert("Welcome Aboard!","If you ever need a run down of how this app works. Navigate yourself to the settings menu and tap the About This App buttons.","Got it!");
+                Data.Settings.FirstRun = false;
             }
         }
     }
