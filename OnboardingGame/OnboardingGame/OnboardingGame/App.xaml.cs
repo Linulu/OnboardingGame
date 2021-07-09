@@ -41,7 +41,7 @@ namespace OnboardingGame
         {
             InitializeComponent();
 
-            connection = new RestConnection("https://onboardingxperience.azurewebsites.net");
+            connection = new RestConnection("https://onboarding_xperience.phoniro.se");
 
             status.Add("ToDo", -1);
             status.Add("Active", 0);
