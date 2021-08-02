@@ -3,6 +3,7 @@ using OnboardingGame.Models;
 using OnboardingGame.REST_Data;
 using System;
 using System.Collections.Generic;
+using System.Net;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,7 +17,10 @@ namespace OnboardingGame.Data
         private string baseUri;
 
         public RestConnection(string uri) {
-            client = new HttpClient();
+            HttpClientHandler clientHandler = new HttpClientHandler();
+            clientHandler.ServerCertificateCustomValidationCallback = (sender, cert, chain, sslPolicyErrors) => { return true; };
+
+            client = new HttpClient(clientHandler);
             baseUri = uri;
         }
 
