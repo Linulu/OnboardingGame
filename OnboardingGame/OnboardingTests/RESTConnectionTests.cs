@@ -12,7 +12,7 @@ namespace OnboardingTests
     [TestClass]
     public class RESTConnectionTests
     {
-        static string value = "https://onboardingxperience.azurewebsites.net";
+        static string value = "https://onboarding_xperience.phoniro.se";
         RestConnection connection = new RestConnection(value);
 
         [TestMethod]
@@ -25,32 +25,32 @@ namespace OnboardingTests
         [TestMethod]
         public void Validate_User_Test() {
             Assert.IsFalse(connection.ValidateUserAsync("", "").Result);
-            Assert.IsTrue(connection.ValidateUserAsync("TestUserName", "TestPassword").Result);
+            Assert.IsTrue(connection.ValidateUserAsync("test", "test").Result);
         }
 
         [TestMethod]
         public void GETData_Test() {
             Assert.IsNull(connection.GetDataAsync("", "").Result);
-            Assert.IsNotNull(connection.GetDataAsync("TestUserName", "TestPassword").Result);
+            Assert.IsNotNull(connection.GetDataAsync("test", "test").Result);
         }
 
         [TestMethod]
         public void PUTData_Test() {
             Assert.IsFalse(connection.UpdateStatusAsync("", "", null).Result);
 
-            List<JSON_Data> data = connection.GetDataAsync("TestUserName", "TestPassword").Result;
+            List<JSON_Data> data = connection.GetDataAsync("test", "test").Result;
 
             Task task = data[0].tasks[0];
 
             task.status = "Active";
 
-            Assert.IsTrue(connection.UpdateStatusAsync("TestUserName", "TestPassword", task).Result);
+            Assert.IsTrue(connection.UpdateStatusAsync("test", "test", task).Result);
 
-            data = connection.GetDataAsync("TestUserName", "TestPassword").Result;
+            data = connection.GetDataAsync("test", "test").Result;
             Assert.AreEqual(task.status, data[0].tasks[0].status);
 
             task.status = "ToDo";
-            connection.UpdateStatusAsync("TestUserName", "TestPassword", task).Wait();
+            connection.UpdateStatusAsync("test", "test", task).Wait();
         }
     }
 }
